@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}LOGIN PAGE {% endblock %}
+
+        {% block content %}
+
+
+
+
+      
+     
+    <div class="container"> 
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<div class="card-body">
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                    <p>{{msg}}</p>     
+                {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+
+        <!--   form starts here --> 
+        <div class="login-form">   
+
+        <form action="/signup" method="post">
+            <h1> SIGN_UP </h1>
+        <!--   <p>{{ name }}</p>
+            <p> {{ usr }} </p>--> 
+            <P>  Name : <input type="text" name="username_s" /> </P> 
+            <P>  Email : <input type="email" name="useremail_s" /> </P> 
+            <P> <input class="submit" type="submit" class="btn btn-secondary" value="submitea" /> </P> 
+
+        </form>
+
+    </div>
+            <!--   form ends here --> 
+        <h2 style="color:rgb(172, 46, 0)">  Monday Media login </h2>
+        <h1>  BEST QUALITY WEBSITE DESIGNERS  </h1>
+    
+</div>
+    
+    </div>
+        {% endblock %}ss

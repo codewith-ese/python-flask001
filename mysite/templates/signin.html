@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}SIGN IN PAGE {% endblock %}
+
+        {% block content %}
+
+
+
+
+      
+     
+    <div class="container"> 
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<div class="card-body">
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                    <p>{{msg}}</p>     
+                {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+
+        <!--   form starts here --> 
+        <div class="login-form">   
+
+        <form action="#" method="post">
+            <h1> LOGIN </h1>
+        <!--   <p>{{ name }}</p>
+            <p> {{ usr }} </p>--> 
+            <P>  Name : <input type="text" name="us_name" /> </P> 
+            <P>  Email : <input type="email" name="us_email" /> </P> 
+            <P> <input class="submit" type="submit" class="btn btn-secondary" value="submitea" /> </P> 
+
+        </form>
+       
+      <p>  <a href="{{ url_for('signup')}}">  SINGUP </a> </p>
+
+    </div>
+
+    {{  mesage }}
+            <!--   form ends here --> 
+        <h2 style="color:rgb(172, 46, 0)">  Monday Media login </h2>
+       <!--  <h1>  BEST QUALITY WEBSITE DESIGNERS  </h1>  --> 
+    
+</div>
+    
+    </div>
+        {% endblock %}ss

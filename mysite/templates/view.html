@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}view all users{% endblock %}
+
+{% block content %}
+
+    {% for items in values %}
+    <p> Name: {{items.name}},  Email: {{items.email}}</p> 
+
+    <img src="static/images/002.jpg" class="rounded mx-auto d-block" width="400" height="250" alt="monday ese">
+ 
+    
+    {% endfor %}
+
+{% endblock %}

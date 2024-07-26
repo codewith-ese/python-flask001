@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}{{ Class_room}} {% endblock %}
+
+
+
+        {% block content %}
+
+    <div class="container">
+
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+      <!--  <div class="card-body">
+
+
+        <div class="alert alert-primary d-flex align-items-center" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+          <div>
+            name:  {{ user_name}}
+          </div>
+
+        </div> -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+        <div class="card-body">
+
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+          <div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                <p>{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+          </div>
+        </div>
+
+
+    </div>
+
+    <br/>
+
+      <div class="card-body">
+
+
+
+
+    <!-- WHITE TABLE END HERE -->
+
+
+
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
+    <div class="card-body">
+        <div class="inner-card-body">
+
+        <div class=".inner-card-item">
+
+              <div class="btn-group-two">
+                  <button class="button">NAME  :    ******   {{ user_name}}</button>
+                  <button class="button">EMAIL :    ******   {{ user_email}}</button>
+                  <button class="button">PHONE :    *******  {{ user_phone}} </button>
+
+                </div>
+        </div> <!-- inner card ends here -->
+
+        <div class=".inner-card-item">
+             <img src="static/images/018.png" id="grid-m-img" alt="Monday Eseinone">
+        </div> <!-- inner card ends here -->
+
+
+          <div class=".inner-card-item">
+             <h3> Welcome to my website  </h3>
+             <p> Video tutorial content will be uploaded here soon.</p>
+        </div> <!-- inner card ends here -->
+        </div>
+
+
+</div>
+
+  </div>
+
+
+        {% endblock %}

@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+{% block title %} {{ title }} {% endblock %}
+
+
+
+        {% block content %}
+
+        
+        <div class="card-body">
+          <table class="table table-dark table-striped">
+            <tbody>
+              <tr>
+              <td style="padding-left: 20px;" > ID </td>
+              <td style="padding-left: 20px;">User Name</td>
+              <td style="padding-left: 20px;">Email</td>
+              <td style="padding-left: 20px;">Date Registered</td>
+              <td style="padding-left: 20px;">Delete</td>
+              </tr>
+          </tbody>
+          </table>
+          
+          {% for new_users in userDetails %}   
+        
+        <!--   This table displayed all users in database screen -->
+
+
+         <!-- <thead>
+              <tr>
+              <th style="padding-left: 20px;" class="th" scope="col">ID</th>
+              <th style="padding-left: 20px;" scope="col"> User Name</th>
+              <th style="padding-left: 20px;" class="th" scope="col">Email</th>
+              <th style="padding-left: 20px;" scope="col"> Date Registered </th>
+              </tr>
+          </thead> 
+
+          <tbody>
+            <tr>
+           <td style="padding-left: 20px;" class="td" scope="col">  <h3> ID </h3> </td>
+            <h2> <td style="padding-left: 20px;" scope="col"> User Name</td></h2>
+              <h2><td style="padding-left: 20px;" class="td" scope="col">Email</td></h2>
+                <h2> <td style="padding-left: 20px;" scope="col"> Date Registered </td></h2>
+            </tr>
+          </tbody> -->
+          <table class="table table-dark table-striped">
+          
+       
+
+          <tbody>
+              <tr>
+              <td style="padding-left: 20px;" >{{ new_users [0]}}</td>
+              <td style="padding-left: 20px;">{{ new_users [1]}}</td>
+              <td style="padding-left: 20px;">{{ new_users [2]}}</td>
+              <td style="padding-left: 20px;">{{ new_users [3]}}</td>
+              <td style="padding-left: 20px;"><button>save </button></td>
+              </tr>
+          </tbody>
+      <!--      <tbody>
+            <tr>
+            <td style="padding-left: 20px;" >{{ new_users [4]}}</td>
+         <td style="padding-left: 20px;">{{ new_users [5]}}</td>
+            <td style="padding-left: 20px;">{{ new_users [6]}}</td>
+            <td style="padding-left: 20px;">{{ new_users [7]}}</td>
+            </tr>
+        </tbody>
+        <tbody>
+          <tr>
+          <td style="padding-left: 20px;" >{{ new_users [8]}}</td>
+          <td style="padding-left: 20px;">{{ new_users [9]}}</td>
+          <td style="padding-left: 20px;">{{ new_users [10]}}</td>
+          <td style="padding-left: 20px;">{{ new_users [11]}}</td>
+          </tr>
+      </tbody>  --> 
+
+
+        </table>
+        
+          <!-- @@@@@@@@  loop through table data with jinger  ends here @@@@@@@@@@@-->
+          {% endfor %}
+        <br/>
+        </div>
+    <div class="container">
+
+      
+
+    <!--   image gallery  -->
+    <style>
+      div.gallery {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+
+      }
+
+      div.gallery:hover {
+        border: 1px solid #777;
+      }
+
+      div.gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+
+      }
+
+      div.desc {
+        padding: 15px;
+        text-align: center;
+        color: blue;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+      }
+
+      @media only screen and (max-width: 700px) {
+        .responsive {
+          width: 49.99999%;
+          margin: 6px 0;
+        }
+      }
+
+      @media only screen and (max-width: 500px) {
+        .responsive {
+          width: 100%;
+        }
+      }
+
+      .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      </style>
+      </head>
+      <body>
+
+
+
+         <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <div class="card-body">
+
+<!-- This code will display the time and date -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->   <!-- This code will display the time and date -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<div class="card-body"> <div class="time_display">
+   <h1>  Class1 </h1>
+</div> <!-- time ends here -->
+</div> <!-- card for time ends here -->
+<!-- Time code ends here  -->
+<br/>
+                    <!-- Home page Welcome message   -->
+    <h2> Email Address: eeseinone@gmail.com  </h2>
+    <h3> Phone Number: 08075236542 </h3>
+
+   <p id="padded-p"> VIDEOS COMMING SOON .</p>
+
+   <br/>
+
+</div> <!-- card body div closes here -->
+<br/>
+
+ <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
+</div>
+
+
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->   <!-- This code will display the time and date -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!--  <div class="card-body">
+
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="#">
+            <img src="static/images/001.jpg" alt="Cinque Terre" width="600" height="400">
+          </a>
+          <div class="desc">M1</div>
+        </div>
+      </div>
+
+
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="#">
+            <img src="static/images/004.jpg" alt="Forest" width="600" height="400">
+          </a>
+          <div class="desc">E1</div>
+        </div>
+      </div>
+
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="#">
+            <img src="static/images/005.jpg" alt="Northern Lights" width="600" height="400">
+          </a>
+          <div class="desc">T1</div>
+        </div>
+      </div>
+
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="#">
+            <img src="static/images/018.png" alt="Mountains" width="600" height="400">
+          </a>
+          <div class="desc">B1</div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+    </div>  --> 
+
+ <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+    <div class="card-body">
+        <h2>THE CODING JURNEY</h2>
+
+        <p id="padded-p"> My programming journey started Years back when I was at the polytechnic,
+
+        I was much more interested in doing computer related stuff, even when I was a business student. As years
+        goes by, through consistent learning and dedication to doing what I am passionate about, I was able
+        to learn some few programming language which includes HTML, CSS, Python, and little bit of the Java Script.
+        </p>
+
+
+
+    </div>
+<br/>
+
+    </div>
+
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
+        {% endblock %}

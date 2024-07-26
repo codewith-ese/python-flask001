@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}user{% endblock %}
+
+{% block content %}
+
+
+<!-- This email can only display on the smaller screen -->
+<div class="email-display">
+    <p> {{ email }} </p>
+    </div>
+
+    
+<div class="container">
+
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<div class="card-body">
+
+    <!-- This code will display the time and date -->
+    <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- card content code goes here -->   <!-- This code will display the time and date -->
+    <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <div class="card-body"> <div class="time_display">
+       <h1>  Contact Me </h1>
+    </div> <!-- time ends here -->
+    </div> <!-- card for time ends here -->
+    <!-- Time code ends here  -->
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+        <p>{{msg}}</p>    
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+ <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!--  Here I displayed the Email of the user  directly on this page top-->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<br/>
+
+
+                        <!-- Tutorial page Welcome message   -->
+        <h2> Welcome to Ese Tech   </h2>
+
+
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!--  signin form starts  here  -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+     
+    {{ button_display }}
+     <br/>
+
+     <div class="login-form">
+       
+     <form action="#" method="post">
+       <p> Email:  <input type="email" name="email" placeholder=" Enter Email" value="{{email if email}}"/> </p>
+       <p>  <input type="file" name="file" placeholder=" Enter Email" value="folder"/> </p>
+         <input class="submit" type="submit" value="submit"/> 
+     </form>
+     
+     <br/>
+     <br/>
+ 
+    </div>
+      <!--  Logout form starts here  -->
+    <div class="logout-form">
+        <a href="/logout" button type="button" class="btn btn-danger">Logout</button> </a>
+        <a href="{{ url_for('contact')}}" button type="button" class="btn btn-danger">Materials </button> </a>
+
+    </div>
+     <!--  Logout form ends here  -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!--  signin form ends here  -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+    </div> <!-- card body div closes here -->
+    <br/>
+
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <div class="card-body">
+        <!-- Button starts Here   -->
+        <a href="/logout" button type="button" class="btn btn-danger">Logout</button> </a>
+        <a href="{{ url_for('contact')}}" button type="button" class="btn btn-danger">Materials </button> </a>
+
+        <img src="static/images/018.png" class="rounded mx-auto d-block" width="350" height="200" alt="monday ese">
+    </div>
+
+</div>
+  
+{% endblock %}

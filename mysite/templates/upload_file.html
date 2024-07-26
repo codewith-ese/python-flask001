@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}WELCOME TO MONDAY MEDIA BLOG {% endblock %}
+
+
+        {% block content %} 
+
+        <div class="container">
+          <div class="card-body">
+
+<!-- This code will display the time and date -->
+<div class="card-body"> <div class="time_display">
+   <h1>Date: {{ display_time }} </h1> 
+</div> <!-- time ends here --> 
+</div> <!-- card for time ends here -->
+<!-- Time code ends here  -->
+
+<!-- form starts here  -->
+<div class="form_center"> 
+    <h1> Please select one of the following:</h1>
+<form action="/add_item" method = "POST">
+    <p>Add Item :  <input type = "text" name = "adding_new_item" /></p>
+    <p><input type = "submit" class="submit" value = "submit" /></p>
+</form>
+</div>
+<!-- form ends here  -->
+
+<img src="{{ user_image }}" alt="User Image">
+
+
+<div class="home-image">
+    <img src="static/images/md.png" alt="Monday Eseinone">
+</div>
+<img id="mobile-only" src="static/images/md.png" alt="Monday Eseinone">
+<!--  Home image -->
+
+<!-- new button starts here -->
+<div id="button-n" class="card-body">
+
+<div class="btn-group-two">
+    <button class="button">1</button>
+    <button class="button">2</button>
+    <button class="button">3</button>
+    <button class="button">4</button>
+    <button class="button">5</button>
+    <button class="button">6</button>
+    <button class="button">7</button>
+    <button class="button">8</button>
+    <button class="button">9</button>
+    <button class="button">0</button>
+    <button class="button">C</button>
+    <button class="button">/</button>
+    <button class="button">X</button>
+    <button class="button">-</button>
+    <button class="button">=</button>
+    <button class="button">. </button>
+  </div>
+</div>
+<!-- new button ends here -->
+
+
+
+<br/>
+<br/>
+
+<a href="#" class="btn btn-primary">Connect with US </a>       
+<a href="{{ url_for('class1')}}" class="btn btn-primary">Class1 </a>
+<a href="{{ url_for('contact')}}" class="btn btn-primary">Class Room </a>
+<a href="{{ url_for('it_class')}}" class="btn btn-secondary">it Class</a>
+
+<!-- link to other pages ends here  -->
+</div> <!-- card body div closes here -->
+</div> <!-- container div closes here -->
+
+        {% endblock %}

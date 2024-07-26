@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block title %}WELCOME TO MONDAY MEDIA BLOG {% endblock %}
+
+
+
+
+        {% block content %} 
+    <div class="container">
+      <!--   this is my time display code created with python code -->
+    <div class="card-body" style="padding-top: 10px; padding-bottom: 20px; border: 2px solid navy; background-color: red; float: right; width: 250px; height: 40px; border-radius: 4px;">
+      <p style="padding: 0;">Date: {{ display_time }} </p>
+        <!-- time code ends here  -->
+    </div>
+
+        <h2 style="color:rgb(172, 46, 0)"> Monday Media BLOG </h2>
+        <h1>  DIGITAL WORLD </h1>
+
+        <div class="card text-center">
+            <div class="card-header">
+              About Monday Eseinone
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Area of A Rectangle Calculate</h5>
+              <!-- <p class="card-text"> Here is the  calculation of your area </p>-->
+
+              <!-- Here i inserted the total calcualation of the area in a blue button -->
+              <a href="#" class="btn btn-primary">Total Area is: {{ area_cal }} </a>
+              <a href="{{ url_for('class1')}}" class="btn btn-primary">Class1 </a>
+              <br/>
+              <br/>
+
+              <table class="table table-dark table-striped">
+                <tbody>
+                    <tr>
+                     <!--  <th scope="row">3</th> -->
+                      <th scope="col">Total Area is: </th>
+                   <!--  <td> {{ area_cal }}</td>-->
+                      <td> {{ add_item }}{{ flash1 }} {{ flash2 }}{{ flash }}is added to the cart</td>
+                      <th scope="col"> {{ display_time }} </th>
+                      <th style="font-size: 18px; color: red;"> {{ flash }} </th>
+
+
+                      <!--  <th scope="row">3</th> -->
+                      <th scope="col">Total Area is: </th>
+                      <!--  <td> {{ area_cal }}</td>-->
+                        <td> {{ add_item }}{{ flash1 }} {{ flash2 }}{{ flash }}is added to the cart</td>
+                        <th scope="col"> {{ display_time }} </th>
+                        <th style="font-size: 18px; color: red;"> {{ flash }} </th>
+                     
+                      
+                    </tr>
+      
+                  </tbody>
+                    </table>
+              </div>
+
+             
+            </div>
+            <br/>
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Calculate Area of a Rectangle </h5>
+              <!-- HERE IS MY TABLE FOR FORM -->
+
+              
+              <!-- form starts here  -->
+                <form action="/area_page" method = "POST">
+                  <h1>Length:  <input type = "text" name = "user_length" /></h1>
+                  <h1>Width :   <input type = "text" name = "user_width" /></h1>
+                 <!-- <p>Phone Number <input type = "text" name = "user_phone" /></p>
+                  <p>Upload File : <input type = "file" name = "user_file" /></p> 
+                  <p>Age  : <input type = "number" name = "user_age" /></p>-->
+                  <p><input type = "submit" value = "submit" /></p>
+              </form>
+
+               <!-- form ends here  -->
+
+
+<!--  5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555-->
+
+<!-- form starts here  -->
+<div class="form_center"> 
+  <h1> Guessing game  :</h1>
+<form action="/add_item" method = "POST">
+  <p>Guess your number  :  <input type = "text" name = "guess_game" /></p>
+  <p><input type = "submit" class="submit" value = "submit" /></p>
+</form>
+</div>
+<!-- form ends here  -->
+
+<!--  uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu-->
+
+
+            </div>
+            <div class="card-footer text-body-secondary">
+          
+              <p id="timeDisplay"> -- </p>
+
+
+
+              <p id="demo"></p>
+
+
+
+              <script> 
+                const d = new Date();
+                d.setDate(d.getDate() + 50);
+                document.getElementById("demo").innerHTML = d;
+
+
+                //let hour = 10;
+                
+
+                if (hour >=6 && hour <12) {
+                  console.log('Good Morning');
+                  document.getElementById("timeDisplay").innerHTML = hour;
+                }
+                else if (hour >=12 && hour <18){
+                  console.log(' Good afternoon ');
+                  document.getElementById("timeDisplay").innerHTML = hour;
+                }
+                else
+                  console.log('Good evening ');
+                  document.getElementById("timeDisplay").innerHTML = hour;
+                  
+
+              </script>
+            </div>
+          </div>
+    
+    
+    
+    </div>
+
+    
+
+        {% endblock %}

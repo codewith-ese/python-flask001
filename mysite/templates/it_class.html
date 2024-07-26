@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}WELCOME TO MONDAY MEDIA BLOG {% endblock %}
+
+
+        {% block content %}
+
+        <div class="container">
+
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <!-- card content code goes here -->  <!-- grid items code goes here -->
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+      <!-- grid items code goes here -->
+        <div class="card-body">
+          <div class="grid-item">
+              <br/>
+              <h2> Expenses Tracker </h2>
+              <br/>
+
+                <iframe width="60%" height="315"
+                src="https://www.youtube.com/embed/ReGDSu6GWwY?si=oQJO--FOUfXCykyC" title="YouTube video player"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+
+              <h2 ><a href="{{ url_for('income')}}" class="btn btn-primary">Expenses Tracker  </a> </h2>
+              <br/>
+
+                <img src="static/images/017.PNG" id="grid-small-img" alt="Monday Eseinone">
+
+        </div>
+      </div>
+
+ <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+                      <!-- Java script code -->
+ <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+              <script>
+                const d = new Date();
+                d.setDate(d.getDate() + 50);
+                document.getElementById("demo").innerHTML = d;
+
+
+                //let hour = 10;
+
+
+                if (hour >=6 && hour <12) {
+                  console.log('Good Morning');
+                  document.getElementById("timeDisplay").innerHTML = hour;
+                }
+                else if (hour >=12 && hour <18){
+                  console.log(' Good afternoon ');
+                  document.getElementById("timeDisplay").innerHTML = hour;
+                }
+                else
+                  console.log('Good evening ');
+                  document.getElementById("timeDisplay").innerHTML = hour;
+
+
+              </script>
+
+    </div><!-- main container close here  -->
+
+        {% endblock %}
+
+
