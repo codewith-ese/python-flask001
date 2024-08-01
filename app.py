@@ -77,10 +77,6 @@ def it_class():
     display_time = (ese_time.strftime("%A" "%X"))
     return render_template("it_class.html", display_time=display_time)
 
-@app.route("/testing1 ")
-def testing1():
-   
-    return "<p> texting </p>"
 
 @app.route("/class1")
 def class1():
