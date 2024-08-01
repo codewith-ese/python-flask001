@@ -83,6 +83,11 @@ def class1():
     title = "Class One"
     return render_template("class1.html", title=title)
 
+@app.route("/ta")
+def ta():
+    title = "Class One"
+    return "<p> ddd <\p> "
+
 @app.route("/view")
 def view():
     return render_template("view.html", values=users.query.all())
