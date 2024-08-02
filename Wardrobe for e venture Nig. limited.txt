@@ -1,0 +1,26 @@
+ Date: **************Friday18:12:06 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | WARDROBE FOR E VENTURE NIG. LIMITED |**** 
+ 
+  First Lenght: 40
+   First width:  120
+  Quantity of first Ms:  6
+ 
+  Second Lenght: 40
+   Second width:  40
+  Quantity of Second Ms :   6
+ 
+ Date: **************Friday18:15:01 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | WARDROBE FOR E VENTURE NIG. LIMITED |**** 
+ 
+  First Lenght: 40
+   First width:  120
+  Quantity of first Ms:  6
+ 
+  Second Lenght: 40
+   Second width:  40
+  Quantity of Second Ms :   6
+ 

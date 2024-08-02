@@ -11,7 +11,6 @@ from time import strftime
 from datetime import datetime
 
 import os
-
 from flask import Flask, redirect, url_for, render_template, request, session, flash
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy
@@ -22,6 +21,7 @@ from werkzeug.exceptions import RequestEntityTooLarge
 from werkzeug.utils import secure_filename
 import os
 import re
+
 
 # import mysql.connector
 # from flask_mysqldb import MySQL
@@ -75,13 +75,142 @@ def index():
 def it_class():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
+    
+
+    
     return render_template("it_class.html", display_time=display_time)
 
-
-@app.route("/class1")
+@app.route("/class1", methods= ["POST"])
 def class1():
     title = "Class One"
-    return render_template("class1.html", title=title)
+    ese_time = datetime.datetime.now()
+    display_time = (ese_time.strftime("%A" "%X"))
+    
+    project_name = request.form.get("project_name")
+    lenght_one = request.form.get("lenght_one")
+    width_one = request.form.get("width_one")
+    quantity_one = request.form.get("quantity_one")
+    
+    lenght_two = request.form.get("lenght_two")
+    width_two = request.form.get("width_two")
+    quantity_two = request.form.get("quantity_two")
+    
+
+    # calculating measurement from entries 
+    f_measure = float(lenght_one) * float(width_one)
+    f_total = float(f_measure) * float(quantity_one)
+    
+    s_measure =  float(lenght_two) * float(width_two)
+    s_total = float(s_measure) * float(quantity_two)
+ 
+    
+    # adding all entries total 
+    total_sq_area_measurement = f_total + s_total
+    display_total_sq_area_measurement = round(total_sq_area_measurement, 1)
+
+    # variable for standard board measurement 
+    # standard_board_measurement = 243.84 * 121.92
+    standard_board_measurement = 240 * 120
+    display_standard_board_measurement = round(standard_board_measurement, 1)
+    
+    board_used = total_sq_area_measurement / standard_board_measurement
+    #  global display_board_used
+    display_board_used = round(board_used, 1)
+
+ # writing to a text file 
+        # Here I added all transaction into text file 
+        #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    dba = open(f"{project_name}.txt", "a")
+    dba.write(f" Date: **************{display_time} **************\n ")
+    dba.write(f" |*************Cutting list calculation ************|\n ".upper())
+    dba.write(f" \n ")
+    dba.write(f"   Project Name is **** | {project_name} |**** \n ".upper())
+    dba.write("\n")
+    
+    dba.write(f"  First Lenght: {lenght_one}\n ")
+    dba.write(f"  First width:  {width_one}\n")
+    dba.write(f"  Quantity of first Ms:  {quantity_one}\n ")
+    dba.write("\n")
+    dba.write(f"  Second Lenght: {lenght_two}\n ")
+    dba.write(f"  Second width:  {width_two}\n")
+    dba.write(f"  Quantity of Second Ms :   {quantity_two}\n ")
+    dba.write("\n")
+    
+    
+    dba = open("wood_cutting.txt", "a")
+    dba.write(f" Date: **************{display_time} **************\n ")
+    dba.write(f" |*************Cutting list calculation ************|\n ".upper())
+    dba.write(f" \n ")
+    dba.write(f"   Project Name is **** | {project_name} |**** \n ".upper())
+    dba.write("\n")
+    
+    dba.write(f"  First Lenght: {lenght_one}\n ")
+    dba.write(f"  First width:  {width_one}\n")
+    dba.write(f"  Quantity of first Ms:  {quantity_one}\n ")
+    dba.write("\n")
+    dba.write(f"  Second Lenght: {lenght_two}\n ")
+    dba.write(f"  Second width:  {width_two}\n")
+    dba.write(f"  Quantity of Second Ms :   {quantity_two}\n ")
+    dba.write("\n")
+    
+    # dba.write(f"  Third Lenght: {third_lenght}\n ")
+    # dba.write(f"  Third width:  {third_width}\n")
+    # dba.write(f"  Quantity of Ms :           {third_quantity}\n ")
+    # dba.write("\n")
+    # dba.write(f"  Fourth Lenght: {forth_lenght}\n ")
+    # dba.write(f"  Fourth width:  {forth_width}\n")
+    # dba.write(f"  Quantity of Forth Ms :     {forth_quantity}\n ")
+
+    # cleint_expencse = float(cleint_tithe) + float(cleint_feeding) + float(cleint_rent) + float(cleint_out) + float(cleint_soft) + float(cleint_others)
+    # total_calulation = float(cleint_income) - float(cleint_expencse)
+    
+    # # calculate percentage of total income variable expenses
+    # total_percent_income = float(cleint_income) * 100 / float(cleint_income)
+    
+    # # calculate percentage of total total expenses
+    # expense_amount_percent = float(cleint_expencse) * 100 / float(cleint_income)
+    
+    # # calculate percentage of savings expenses
+    # exp_percent = float(total_calulation) * 100 / float(cleint_income)   # * float(cleint_expencse) 
+    
+    # expences_percent = f" {exp_percent:.1f} "
+    
+
+    # var_goodSavings ="  Great job! your expenses is less than your income today.\
+    #     This is quite good for your finance.  Congratulations "
+
+    # var_badSavings = " ho no! This is not very good. Your expenses is way more greater than your income "
+
+    # if float(cleint_expencse) > float(cleint_income):
+    #     user_savings = var_badSavings
+        
+
+    # else:
+    #     user_savings = var_goodSavings
+
+    # # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    # #  creating an exel file
+    # # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+    # # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    # #  creating an exel file
+    # # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+    # return render_template("finance_house.html", cleint_name=cleint_name.upper(),
+    #                        cleint_tithe= cleint_tithe,
+    #                        cleint_income=cleint_income,cleint_feeding=cleint_feeding,
+    #                         cleint_rent=cleint_rent, cleint_out=cleint_out,
+    #                             cleint_soft=cleint_soft, cleint_others=cleint_others,
+    #                               total_calulation=total_calulation, cleint_expencse=cleint_expencse, user_savings=user_savings, expences_percent=expences_percent,
+    #                               total_percent_income=total_percent_income, expense_amount_percent=expense_amount_percent, display_time=display_time ) 
+
+    
+    
+    return render_template("class1.html", display_time=display_time, title=title, project_name=project_name, standard_board_measurement=standard_board_measurement,
+                           display_board_used=display_board_used, display_total_sq_area_measurement=display_total_sq_area_measurement
+                           )
 
 @app.route("/ta")
 def ta():
@@ -145,6 +274,8 @@ def class_room():
 @app.route("/income")
 def income():
     return render_template("income.html")
+
+
 
 @app.route("/add_item", methods= ["POST"])
 def add_item():

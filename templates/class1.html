@@ -1,23 +1,10 @@
 {% extends "base.html" %}
 {% block title %} {{ title }} {% endblock %}
 
-
-
         {% block content %}
 
-  <!-- This email can only display on the smaller screen -->
-<div class="email-display">
- <!--  <p> {{ usr }} </p>  --> 
-  <!--  <p> {{ useremail }} </p>   --> 
- 
-  </div>
 
-
-
-
-
-    <div class="container">
-
+  <div class="container">
     <!--   image gallery  -->
     <style>
       div.gallery {
@@ -75,36 +62,95 @@
       </head>
       <body>
 
+<!-- card content code goes here -->
+<!--======================================================-->
+<div class="card-body">
 
+<div class="card-body"> 
 
-         <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <div class="card-body">
+  <div class="time_display">
+   <h1>  Wood Calculator  </h1>
+  </div> <!-- time ends here -->
 
-<!-- This code will display the time and date -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->   <!-- This code will display the time and date -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-<div class="card-body"> <div class="time_display">
-   <h1>  Class1 </h1>
-</div> <!-- time ends here -->
-</div> <!-- card for time ends here -->
-<!-- Time code ends here  -->
-<br/>
+  </div> <!-- card for time ends here --> <!-- Time code ends here  -->
+  <br/>
 
 {{ username }}
 {{ useremail }}
-                    <!-- Home page Welcome message   -->
-    <h2> Email Address: eeseinone@gmail.com  </h2>
-    <h3> Phone Number: 08075236542 </h3>
+    <!-- Home page Welcome message   -->
+    <h2> | Total Board Calculation |   </h2>
+<br/>
+ 
 
-   <p id="padded-p"> VIDEOS COMMING SOON .
+<div class="card-body">
 
- </p>
+<!--   table 1 starts here -->
+<!--   This table displayed the input got from users to the screen -->
+<table class="table table-dark table-striped">
+<thead>
+<tr>
+<th style="padding-left: 20px;" class="th" scope="col">PROJECT NAME</th>
+<th style="padding-left: 20px;" class="th" scope="col">Number of Board Used </th>
+
+
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding-left: 20px;" >{{ project_name }}</td>
+<td style="padding-left: 20px;" >{{display_board_used}} </td>
+
+
+</tr>
+</tbody>
+</table>
+
+<!--   table 1 starts here -->
+<!--   This table displayed the input got from users to the screen -->
+<table class="table table-dark table-striped">
+<thead>
+<tr>
+  <th style="padding-left: 20px;" scope="col"> Date/Time </th>
+<th style="padding-left: 20px;" scope="col"> Standard Measurement</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="padding-left: 20px;">{{ display_time }}</td>
+  <td style="padding-left: 20px;">(240x120){{ standard_board_measurement }}</td>
+
+</tr>
+</tbody>
+</table>
+
+
+<!--   table 1 starts here -->
+<table class="table table-dark table-striped">
+<thead>
+<tr>
+<th style="padding-left: 20px;" scope="col"> Total Area of board </th>
+<th style="padding-left: 20px;" scope="col"> Total Area of board </th>
+<th style="padding-left: 20px;" scope="col"> Total Area of board</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding-left: 20px;"> {{display_total_sq_area_measurement}}</td>
+<td style="padding-left: 20px;"> {{display_total_sq_area_measurement}}</td>
+<td style="padding-left: 20px;"> {{display_total_sq_area_measurement}}</td>
+
+</tr>
+</tbody>
+</table>
+
+</div>
+<br/>
+<h3> Phone Number: 08075236542 </h3>
 </div> <!-- card body div closes here -->
 <br/>
-
 
 
       <div class="responsive">

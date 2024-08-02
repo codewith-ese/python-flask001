@@ -1,66 +1,109 @@
 {% extends "base.html" %}
-{% block title %}WELCOME TO MONDAY MEDIA BLOG {% endblock %}
+{% block title %}view all users{% endblock %}
+
+    {% block content %}
 
 
-        {% block content %}
+    {% if error_statement %}
 
-        <div class="container">
+    <p>{{ error_statement }} </p>
 
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->  <!-- grid items code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-      <!-- grid items code goes here -->
+    {% endif %}
+
+
+<div class="container">
+
+            <!-- card content code goes here -->
+        <!--======================================================-->
         <div class="card-body">
-          <div class="grid-item">
-              <br/>
-              <h2> Expenses Tracker </h2>
-              <br/>
 
-                <iframe width="60%" height="315"
-                src="https://www.youtube.com/embed/ReGDSu6GWwY?si=oQJO--FOUfXCykyC" title="YouTube video player"
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-                encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen></iframe>
+        <!-- This code will display the time and date -->
+        <!--======================================================-->
+        <!-- card content code goes here -->   
+         <!-- This code will display the time and date -->
+        <!--======================================================-->
+        <div class="card-body"> <div class="time_display">
+        <h1>  Calculate Your Board  </h1>
+        </div> <!-- time ends here -->
+        </div> <!-- card for time ends here -->
+                <!-- Time code ends here  -->
+        <br/>
 
-              <h2 ><a href="{{ url_for('income')}}" class="btn btn-primary">Expenses Tracker  </a> </h2>
-              <br/>
 
-                <img src="static/images/017.PNG" id="grid-small-img" alt="Monday Eseinone">
+        <!-- ===============================  SECTION ONE =========================   -->
+<section>
+        <div class="grid-contaioner">
+        <!--======================================================-->
+        <!-- grid items code goes here -->
+       <div class="card-body">
+
+                   <!-- form starts here  -->
+        <div class="wood-form">
+          
+            <form  action="/class1" method = "POST">
+              <h4> Type your Cutting List</h4>
+
+            <h5> Proj Name: <input type = "text" class="mo" name = "project_name" /><br/> </h5>
+
+            <h5> Lenght 1:<input class="mo" type = "number"  name = "lenght_one" /><br/></h5>
+
+            <h5> Width  1: <input type = "text" class="mo" name = "width_one" /><br/> </h5>
+
+            <h5> Quantity 1:<input class="mo" type = "number" name = "quantity_one" /><br/></h5>
+
+            <h5> Lenght 2: <input class="mo"  type = "number"  name = "lenght_two" /><br/></h5>
+
+            <h5> Width 2: <input class="mo" type = "number"  name = "width_two" /><br/></h5>
+
+            <h5> Quantity 2:  <input class="mo" type = "number"  name = "quantity_two" /><br/></h5>
+
+          <button style="width: 100px;" type="submit" class="submit" value"submit">Submit</button>
+        </form>
 
         </div>
-      </div>
 
- <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-                      <!-- Java script code -->
- <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-              <script>
-                const d = new Date();
-                d.setDate(d.getDate() + 50);
-                document.getElementById("demo").innerHTML = d;
+        </div>
 
 
-                //let hour = 10;
+        <!--======================================================-->
+
+        <div class="card-body">
+            <div class="grid-item">
+                <br/>
+      
+
+        <h2> Wood Calculator  </h2>
+
+        <p>  This application will help you 
+          plan for your materials .
+        </p>
+        <img src="https://res.cloudinary.com/dcxluplnr/image/upload/v1713377510/025_tnxmdh.png" id="grid-small-img" alt="Monday Eseinone">
+        <a class="nav-link" href="{{ url_for('class1')}}"> class1</a>
+    </div>
+
+    </div>
+    <!--======================================================-->
+</div>   <!--   Grid container ends here -->
+
+</section>
+<!-- ===============================  SECTION ONE  ENDS HERE =========================   -->
+
+  <div class="card-body">
+      <br/>
+                                <!-- Home page Welcome message   -->
+    <h2>  GOALS</h2>
+    <p class="pading-p-class">
+              My major goal is to help as many Businesses and individuals as
+              possible with the use of modern technology to achieve success in
+              their business.
+            I am passionate about making good use of the Python programming language,
+              HTML and CSS to build dynamic websites, mobile responsive and interactive web apps,
+            for the purpose of solving  real-life problems.
+    </p>
+    </div> <!-- card body div closes here -->
+    <br/>
 
 
-                if (hour >=6 && hour <12) {
-                  console.log('Good Morning');
-                  document.getElementById("timeDisplay").innerHTML = hour;
-                }
-                else if (hour >=12 && hour <18){
-                  console.log(' Good afternoon ');
-                  document.getElementById("timeDisplay").innerHTML = hour;
-                }
-                else
-                  console.log('Good evening ');
-                  document.getElementById("timeDisplay").innerHTML = hour;
+</div> <!-- container close here -->
 
-
-              </script>
-
-    </div><!-- main container close here  -->
-
-        {% endblock %}
-
-
+{% endblock %}
