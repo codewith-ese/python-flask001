@@ -1,14 +1,17 @@
 h1{
   color: rgb(13, 2, 89);
   font-size: 24px;
+  text-align: center;
 }
 
 
 h2{
-  color: #005abb;
+  color: rgb(29, 108, 164);
   font-size: 22px;
-  align-items: center;
-  text-align: center;
+  text-align:justify;
+  padding: 5px 30px 5px 30px;
+  margin: auto;
+
 }
 
 h3{
@@ -120,13 +123,13 @@ padding: 0;
 }
 
 /*  I hide the top nav in a phone view    */
-@media only screen and (max-width:700px){
+@media (max-width:700px){
   .inner-card-body {grid-template-columns: 100%;
 
   }
 }
 
-@media only screen and (max-width:700px){
+@media (max-width:700px){
   .inner-card-body  {
 
       width: 100%;
@@ -161,7 +164,7 @@ padding: 0;
 
 
 
-@media only screen and (min-width:800px){
+@media (min-width:800px){
   .inner-card-body {grid-template-columns: 100%;
       height: auto;
       display: grid;
@@ -173,20 +176,32 @@ padding: 0;
       margin-left: 10px;
       margin-right: 10px;
       border: 4px solid navy;
-
-
-      .inner-card-item{
-          width: 90%;
-          height: 50px;
-          padding: 20px;
-          text-align:center;
-
-          margin: 5px;
+  }
+  .inner-card-item{
+      width: 90%;
+      height: 50px;
+      padding: 20px;
+      text-align:center;
+      margin: auto;
       }
 
   }
+
+@media (min-width:800px) {
+  h2{
+    color: rgb(29, 108, 164);
+    font-size: 22px;
+    text-align:justify;
+    padding: 5px 30px 5px 30px;
+    margin: auto;
+
+  } 
+  
 }
 
+#padded-p {
+  font-size: medium;
+}
 
 .card-body #padded-p{
   padding-left: 200px;
@@ -195,8 +210,22 @@ padding: 0;
   padding-bottom:5px;
   padding-top: 5px;
 
-
 }
+
+.pading-p-class{
+  padding: 5px 200px 5px 200px;
+  justify-content: center;
+  border: 0;
+}
+
+@media (max-width: 760px) { 
+.pading-p-class{
+  padding: 10px;
+  justify-content: center;
+  border: 0;
+}
+}
+
 
 
 .card-body #padded-p2{
@@ -233,8 +262,7 @@ border-radius: 10px 5px 10px 5px;
 
 @media (max-width: 760px) {
   .card-body #padded-p{
-      padding-left: 2px;
-      padding-right: 2px;
+      padding: 0 2px 0 2px;
 
   }
 
@@ -246,13 +274,9 @@ border-radius: 10px 5px 10px 5px;
       padding-left: 5px;
       padding-right: 5px;
 
-
   }
 
-
 }
-
-
 
 
 @media (max-width: 760px) {
@@ -406,7 +430,7 @@ position: relative;
 }
 }
 
-@media only screen and (max-width:800px){
+@media (max-width:800px){
 .card-body .home-image img{
 display: none;
 }
@@ -479,7 +503,6 @@ text-align: center;
 border: 0;
 padding: 0px;
 /* margin: 10px;*/
-
 border-radius: 20px;
 font-size: 20px;
 color: "black";
@@ -527,9 +550,7 @@ margin: 20px;
 width: 100%;
 height: 250px;
 align-items: center;
-margin: 5px;
-margin-left: 20px;
-margin-right: 20px;
+margin: auto;
 
 }
 
@@ -539,7 +560,7 @@ margin-right: 20px;
 width: 80%;
 height: 300px;
 align-items: center;
-margin: 20px;
+margin: auto;
 
 }
 
@@ -553,44 +574,42 @@ margin: 2px;
 }
 
 
-@media only screen and (max-width:795px){
+@media (max-width:795px){
   .grid-contaioner {grid-template-columns: 100%;
 
 }
 }
 
-@media only screen and (max-width:795px){
+@media (max-width:795px){
   .grid-contaioner {
     width: 100%;
-    /* background: #654356; */
-    background: "black";
+    background: black;
     border: 0;
     display: grid;
     grid-template: 1fr;
     gap: 2px 5px;
     margin: 10px;
-
-    .grid-item{
+  }
+  .grid-item{
+      width: 100%;
+      height: auto;
+  }
+  .grid-item.grid-item img{
+      /* float: right;  */
+        align-items: center;
+        width: 500px;
+        height: 300px;
+        margin-top: 30px;
+    }
+    .table {
         width: 100%;
-        height: auto;
+
     }
 
-    .grid-item.grid-item img{
-        /* float: right;  */
-         align-items: center;
-         width: 500px;
-         height: 300px;
-         margin-top: 30px;
-     }
-     .table {
-         width: 100%;
-
-     }
-
 }
 
 
-}
+
 
 @media only screen and (max-width:795px){
    .grid-item img{
@@ -614,28 +633,24 @@ margin: 2px;
 
 
 @media only screen and (min-width:800px){
-.grid-contaioner {grid-template-columns: 100%;
-     /* background: #654356; */
-    background: "black";
-    border: 0;
-    display: grid;
-    grid-template:auto auto / 2fr 1fr;
-    grid-template-columns: 1.8fr 1.2fr ;
-    gap: 25px 15px;
-    margin: 10px;    /*    THIS CODE WILL MOVE THE CONTENT AWAY FROM THE SIDE TO THE MIDDLE */
-    box-shadow: 2px 8px 7px 6px black;
-    padding-right: 10px;
-    padding: 10px;
-    padding-top: 0;
-
-
-
-
-
-    .grid-item{
+      .grid-contaioner {grid-template-columns: 100%;
+      /* background: #654356; */
+      background: "black";
+      border: 0;
+      display: grid;
+      grid-template:auto auto / 2fr 1fr;
+      grid-template-columns: 1.8fr 1.2fr ;
+      gap: 25px 15px;
+      margin: 10px;    /*    THIS CODE WILL MOVE THE CONTENT AWAY FROM THE SIDE TO THE MIDDLE */
+      box-shadow: 2px 8px 7px 6px black;
+      padding-right: 10px;
+      padding: 10px;
+      padding-top: 0;
+      }
+      .grid-item{
         width: 100%;
-    }
-    .grid-item img{
+      }
+      .grid-item img{
         align-items: center;
         width: 250px;
         height: 270px;
@@ -644,7 +659,7 @@ margin: 2px;
 
 
 }
-}
+
 
 
 @media only screen and (min-width:800px){
@@ -664,7 +679,9 @@ margin: 2px;
 
 /* Grid for Card-body: this is to make the reduce the size of the gid  */
 @media only screen and (min-width:800px){
-.grid-contaioner.card-body {grid-template-columns: 100%;
+
+  .grid-contaioner.card-body {grid-template-columns: 100%;
+
     background: #b7a6b0;
     border: 0;
     display: grid;
@@ -677,32 +694,28 @@ margin: 2px;
     padding: 1px;
     padding-top: 0;
     height: auto;
-
-
-    .grid-item{
-        width: 100%;
+  }
+  .grid-item{
+    width: 80%;
     }
-    .grid-item.grid-item img{
+    .grid-item img{
         align-items: center;
         width: 60%;
         height: 270px;
-        margin-top: 1px;
+        margin: auto;
     }
 
 
 }
-}
-
 
 
 @media only screen and (min-width:800px){
-.container{
+  .container{
     background: linear-gradient(90deg, #080022 0%, #8300b6 100%);
     backdrop-filter: blur(10px);
     border: 0;
     padding: 10px 10px 0 10px;
-
-}
+  }
 
 }
 
@@ -824,20 +837,19 @@ font-family: "Poppins", sans-serif;
 
 
 @media only screen and (min-width:800px){
-.footer{grid-template-columns: 100%;
-  height: 340px;
-  display: grid;
-  grid-template-columns: 1.2fr 1.2fr 1.6fr;
-  padding-top: 30px;
-  padding-left: 40px;
-  margin-top: 0;
-  margin-bottom: 5;
- /* margin-left: 20px;
-  margin-right: 20px;*/
-  border: 8px solid wheat;
-  border-radius: 40px 40px 0px 0px;
-
-
+  .footer{grid-template-columns: 100%;
+    height: 340px;
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 1.6fr;
+    padding-top: 30px;
+    padding-left: 40px;
+    margin-top: 0;
+    margin-bottom: 5;
+  /* margin-left: 20px;
+    margin-right: 20px;*/
+    border: 8px solid wheat;
+    border-radius: 40px 40px 0px 0px;
+  }
   .footer-item{
       width: 100%;
       height: auto;
@@ -864,7 +876,7 @@ font-family: "Poppins", sans-serif;
   }
 
 }
-}
+
 
 
 .footer-item img{
@@ -887,10 +899,9 @@ color: rgb(207, 231, 72);
 
 
 @media (max-width: 760px) {
-h5{
-  font-size: 12px;
-
-}
+  h5{
+    font-size: 12px;
+  }
 }
 
 /* social ico */
@@ -1032,9 +1043,7 @@ color: white;
 }
 
 
-
-
-@media only screen and (max-width:795px){
+@media (max-width:795px){
   .email-display p{
     background-color: hsl(63, 100%, 52%);
     border: 1px solid black; align-items: center;
@@ -1045,7 +1054,7 @@ color: white;
 }
 
 
-@media only screen and (min-width:800px){
+@media (min-width:800px){
   .email-display p{
     background-color: hsl(63, 100%, 52%);
     border: 1px solid black; position: absolute; top: 10px; left: 800px;
