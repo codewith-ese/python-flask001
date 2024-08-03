@@ -78,139 +78,133 @@
 {{ username }}
 {{ useremail }}
     <!-- Home page Welcome message   -->
-    <h2> | Total Board Calculation |   </h2>
+    <h2> | Furniture |   </h2>
 <br/>
  
 
-<div class="card-body">
-
-<!--   table 1 starts here -->
-<!--   This table displayed the input got from users to the screen -->
-<table class="table table-dark table-striped">
-<thead>
-<tr>
-<th style="padding-left: 20px;" class="th" scope="col">PROJECT NAME</th>
-<th style="padding-left: 20px;" class="th" scope="col">Number of Board Used </th>
-
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="padding-left: 20px;" >{{ project_name }}</td>
-<td style="padding-left: 20px;" >{{display_board_used}} </td>
-
-
-</tr>
-</tbody>
-</table>
-
-<!--   table 1 starts here -->
-<!--   This table displayed the input got from users to the screen -->
-<table class="table table-dark table-striped">
-<thead>
-<tr>
-  <th style="padding-left: 20px;" scope="col"> Date/Time </th>
-  <th style="padding-left: 20px;" scope="col">Board Size</th>
-
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td style="padding-left: 20px;">{{ display_time }}</td>
-  <td style="padding-left: 20px;">(240cm x 120cm)</td>
-  <td style="padding-left: 20px;">{{ standard_board_measurement }}Sq cm</td>
-
-</tr>
-</tbody>
-</table>
-
-
-<!--   table 1 starts here -->
-<table class="table table-dark table-striped">
-<thead>
-<tr>
-
-<th style="padding-left: 20px;" scope="col"> Total Area of board </th>
-<th style="padding-left: 20px;" scope="col"> Total Area of board </th>
-<th style="padding-left: 20px;" scope="col"> Total Area of board</th>
-
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="padding-left: 20px;"> {{display_total_sq_area_measurement}}Sq cm</td>
-<td style="padding-left: 20px;"> {{display_total_sq_area_measurement}}Sq cm</td>
-<td style="padding-left: 20px;"> {{display_total_sq_area_measurement}}Sq cm</td>
-
-</tr>
-</tbody>
-</table>
-
-
-<!--   lenght table  starts here -->
-<table class="table table-dark table-striped">
-  <thead>
+<table class="table table-dark table-striped" class="inner_black_table">
+    <thead>
+        <tr>
+        <th class="th" scope="co3">PROJECT NAME</th>
+        <th class="th" scope="co3">Date/Time</th>
+        </tr>
+        </thead>
+    <thead>
+        <tbody>
+            <tr>
+            <td> {{project_name}}</td>      
+            <td> {{display_time}}</td>      
+            </tr>
+    </tbody>
+    <br/>
     <tr>
-      <td  scope="row" colspan="5" style="padding-left: 20px;" scope="col"> Cutting List Details </td>
+    <th class="th" scope="col">standing</th>
+    <th class="th" scope="col">Quantity</th>
+    
     </tr>
-  </thead>
-  <thead>
-  <tr>
-  <th style="padding-left: 20px;" scope="col"> first Lenght </th>
-  <th style="padding-left: 20px;" scope="col"> first Width </th>
-  <th style="padding-left: 20px;" scope="col"> first Quantity </th>
-  
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="padding-left: 20px;"> {{first_lenght}}</td>
-  <td style="padding-left: 20px;"> {{first_width}}</td>
-  <td style="padding-left: 20px;"> {{first_quantity}}</td>
-  
-  </tr>
-  </tbody>
-  </table>
-
-  <!--   table 2 starts here -->
-<table class="table table-dark table-striped">
-  <thead>
-  <tr>
-  <th style="padding-left: 20px;" scope="col"> Second Lenght </th>
-  <th style="padding-left: 20px;" scope="col"> Second Width </th>
-  <th style="padding-left: 20px;" scope="col"> Second Quantity </th>
-  
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="padding-left: 20px;"> {{second_lenght}}</td>
-  <td style="padding-left: 20px;"> {{second_width}}</td>
-  <td style="padding-left: 20px;"> {{second_quantity}}</td>
-  
-  </tr>
-  </tbody>
-  </table>
-
-
-</div>
-<br/>
-<h3> Phone Number: 08075236542 </h3>
-</div> <!-- card body div closes here -->
-<br/>
-<div class="card-body">
-  <table>
-  <tbody>
+    </thead>
+<tbody>
     <tr>
-    <td style="padding-left: 20px;"> Lenght {{hight_cutting}}</td>
-    <td style="padding-left: 20px;"> Width {{hight_cutting_width}}</td>
-
+    <td> {{total_hight}}</td>
+    <td> {{h_standing}} </td>
+  
     </tr>
     </tbody>
-    </table>
 
+<thead>
+    <tr>
+    <th class="th" scope="col">Demacations</th>
+    <th class="th" scope="col">Quantity</th>
+    
+    </tr>
+    </thead>
+<tbody>
+    <tr>
+    <td> {{demacation_cutting_total}}</td>
+    <td>{{number_of_dimacation}}</td>
+    </tr>
+    </tbody>
+
+<!--   partationing -->
+<thead>
+    <tr>
+    <th class="th" scope="col">Partations</th>
+    <th class="th" scope="col">Quantity</th>
+    
+    </tr>
+    </thead>
+<tbody>
+    <tr>
+    <td> {{partation_hight}}</td>
+    <td>{{number_of_partation_c}}</td>
+    </tr>
+    </tbody>
+
+<!--  all 4  pannel -->
+<thead>
+    <tr>
+    <th class="th" scope="col">Top and Buttom pannel</th>
+    <th class="th" scope="col">Quantity</th>
+    
+    </tr>
+    </thead>
+<tbody>
+    <tr>
+    <td> {{down_and_top_pannel}}</td>
+    <td>{{all_4_pannel}}</td>
+    </tr>
+    </tbody>
+
+<!-- Long Door (1) measurement  -->
+<thead>
+    <tr>
+    <th class="th" scope="col"> Long Door</th>
+    <th class="th" scope="col">Quantity</th>
+    
+    </tr>
+    </thead>
+<tbody>
+    <tr>
+    <td> {{door_one}}</td>
+    <td>{{door_one_quantity}}</td>
+    </tr>
+    </tbody>
+
+<!--  Door Short  -->
+<thead>
+    <tr>
+    <th class="th" scope="col"> Short Door</th>
+    <th class="th" scope="col">Quantity</th>
+    
+    </tr>
+    </thead>
+<tbody>
+    <tr>
+    <td> {{door_two}}</td>
+    <td>{{door_two_quantity}}</td>
+    </tr>
+    </tbody>
+</table>
 </div> <!-- card body div closes here -->
 
+<div class="card-body">
+<!--  List -->
+<div class="list-class">
+    
+    <h2> Catting List </h2>
+    <ol class="b">
+      <li>PROJECT NAME &#160 &#160 {{project_name}}  ||&#160 &#160  Date/Time &#160 &#160 {{display_time }}</li>
+      <li> &#160 &#160     {{total_hight}}   || &#160 &#160  {{h_standing}} pices  </li>
+      <li> &#160 &#160      {{demacation_cutting_total}}  || &#160 &#160  {{number_of_dimacation}}pices</li>
+      <li> &#160 &#160    {{partation_hight}}     || &#160 &#160 {{number_of_partation_c}} pices </li>
+  
+        <li> &#160 &#160 {{down_and_top_pannel}}    || &#160 &#160  {{all_4_pannel}} pices </li>
+        <li> &#160 &#160 {{door_one}}    ||&#160 &#160  {{door_one_quantity}} pices </li>
+        <li> &#160 &#160 {{door_two}}    || &#160 &#160  {{door_two_quantity}} pices </li>
+    </ol>
+
+</div>
+</div>
 
       <div class="responsive">
         <div class="gallery">

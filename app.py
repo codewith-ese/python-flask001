@@ -142,6 +142,8 @@ def class1():
     dba.write(f"  Second width:  {width_two}\n")
     dba.write(f"  Quantity of Second Ms :   {quantity_two}\n ")
     dba.write("\n")
+    dba.write(f"   Total Number of Board **** | {display_board_used} |**** \n ".upper())
+    dba.write("\n")
     
     
     dba = open("wood_cutting.txt", "a")
@@ -159,7 +161,10 @@ def class1():
     dba.write(f"  Second width:  {width_two}\n")
     dba.write(f"  Quantity of Second Ms :   {quantity_two}\n ")
     dba.write("\n")
-    
+    dba.write(f"   Total Number of Board **** | {display_board_used} |**** \n ".upper())
+    dba.write("\n")
+
+
 
 
     # cleint_expencse = float(cleint_tithe) + float(cleint_feeding) + float(cleint_rent) + float(cleint_out) + float(cleint_soft) + float(cleint_others)
@@ -217,6 +222,105 @@ def class1():
                            second_lenght=second_lenght, second_width=second_width,
                            second_quantity=second_quantity
                            )
+
+@app.route("/design")
+def design():
+    ese_time = datetime.datetime.now()
+    display_time = (ese_time.strftime("%A" "%X"))
+    
+    return render_template("design.html", display_time=display_time)
+    
+# This code will preper a cutting list
+@app.route("/furniture", methods= ["POST"])
+def furniture():
+    title = "furnitrue"
+    ese_time = datetime.datetime.now()
+    display_time = (ese_time.strftime("%A" "%X"))
+    
+    project_name = request.form.get("project_name")
+    design_lenght = request.form.get("design_lenght")
+    design_width = request.form.get("design_width")
+    design_hight = request.form.get("design_hight")
+    
+    number_of_partation = request.form.get("number_of_partation")
+    number_of_dimacation = request.form.get("number_of_dimacation")
+    quantity_doors = request.form.get("quantity_doors") 
+    quantity_drawers = request.form.get("quantity_drawers") 
+    
+    b = number_of_dimacation.isdigit()
+    c = float(number_of_partation) + 0
+    number_of_partation_c = round(c)
+    
+ 
+    # a = 0
+    # d = int(a) + int(number_of_dimacation)
+    # standard board of mdf in Nigeria cm
+    d = int()
+    board_ticknes = 1.5875
+    reduse_from_side = board_ticknes * 2
+    h_standing = 2
+    down_pannel_width =  9
+    all_4_pannel = 4
+    
+    # standing cutting list 
+    hight_one = float(design_hight)
+    hight_cutting = round(hight_one, 1)
+    
+    width_one = float(design_width)
+    main_cutting_width = round(width_one, 1)
+    
+    total_hight = f"     {hight_cutting} x {main_cutting_width}cm "
+    
+    # lenght cutting
+    demacation_cutting_total_before_rounding = float(design_lenght) - reduse_from_side
+    round_total = round(demacation_cutting_total_before_rounding, 1)
+    demacation_cutting_total = f"     {round_total}cm x {main_cutting_width}cm "
+    
+    # this will deduct 4 cm of the buttom pannel and 
+    # board_ticknes = 1.5875 from the hight of the furniture
+    p_hight = hight_cutting - float(down_pannel_width + board_ticknes)
+    round_partation = round(p_hight, 1)
+    
+    partation_hight = f" {round_partation}cm x {main_cutting_width}cm "
+    
+    
+    # Down and top pannel (4 pices )
+    down_and_top_pannel = f" {down_pannel_width}cm X {main_cutting_width}cm "
+    
+    # Door calculation 
+    door_cal = float(design_lenght) - 1.5
+    door_one_width_c = door_cal / 3
+    door_one_width = round(door_one_width_c, 2)
+    
+    door_one_hight = hight_cutting - 7
+     
+    door_one = f" {door_one_hight}cm x {door_one_width}cm"
+    door_one_quantity = 1
+    
+    # Door 2 start here 
+    door_two_hight = hight_cutting - 48
+    round_door_two = round(door_two_hight, 1)
+    door_two = f" {round_door_two}cm x {door_one_width}cm"
+    door_two_quantity = 2
+    
+    
+      
+    
+    return render_template("furniture.html", total_hight=total_hight,
+                           demacation_cutting_total=demacation_cutting_total,
+                           number_of_dimacation=number_of_dimacation,
+                           h_standing=h_standing,
+                           project_name=project_name,
+                           display_time=display_time,
+                           partation_hight=partation_hight,
+                           number_of_partation_c=number_of_partation_c,
+                           down_and_top_pannel=down_and_top_pannel,
+                           all_4_pannel=all_4_pannel, door_one=door_one,
+                           door_two=door_two, door_one_quantity=door_one_quantity,
+                           door_two_quantity=door_two_quantity)
+    
+    
+      
 
 @app.route("/ta")
 def ta():

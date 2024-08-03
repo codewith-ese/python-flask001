@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}view all users{% endblock %}
+
+    {% block content %}
+
+
+    {% if error_statement %}
+
+    <p>{{ error_statement }} </p>
+
+    {% endif %}
+
+
+<div class="container">
+
+            <!-- card content code goes here -->
+        <!--======================================================-->
+        <div class="card-body">
+
+        <!-- This code will display the time and date -->
+        <!--======================================================-->
+        <!-- card content code goes here -->   
+         <!-- This code will display the time and date -->
+        <!--======================================================-->
+        <div class="card-body"> <div class="time_display">
+        <h1>  Design Your Furniture  </h1>
+        </div> <!-- time ends here -->
+        </div> <!-- card for time ends here -->
+                <!-- Time code ends here  -->
+        <br/>
+
+
+        <!-- ===============================  SECTION ONE =========================   -->
+<section>
+        <div class="grid-contaioner">
+        <!--======================================================-->
+        <!-- grid items code goes here -->
+       <div class="card-body">
+
+                   <!-- form starts here  -->
+        <div class="wood-form">
+          
+            <form  action="/furniture" method = "POST">
+              <h4> Type in your Dimension</h4>
+
+            <h5> Proj Name: <input type = "text" class="mo" name = "project_name" /><br/> </h5>
+
+            <h5> Lenght: <input class="mo" type = "number"  name = "design_lenght" /><br/></h5>
+
+            <h5> Dept: <input type = "text" class="mo" name = "design_width" /><br/> </h5>
+
+            <h5> Height: <input class="mo" type = "number" name = "design_hight" /><br/></h5>
+
+            <h5> Partations: <input class="mo"  type = "number"  name = "number_of_partation" /><br/></h5>
+
+            <h5> Demacations: <input class="mo" type = "number"  name = "number_of_dimacation" /><br/></h5>
+
+            <h5> Numbers of Doors:  <input class="mo" type = "number"  name = "quantity_doors" /><br/></h5>
+            <h5> Numbers of Drawers:  <input class="mo" type = "number"  name = "quantity_drawers" /><br/></h5>
+
+          <button style="width: 100px;" type="submit" class="submit" value"submit">Submit</button>
+        </form>
+
+        </div>
+
+        </div>
+
+
+        <!--======================================================-->
+
+        <div class="card-body">
+            <div class="grid-item">
+                <br/>
+      
+
+        <h2> Wood Calculator  </h2>
+
+        <p>  This application will help you 
+          plan for your materials .
+        </p>
+        <img src="https://res.cloudinary.com/dcxluplnr/image/upload/v1713377510/025_tnxmdh.png" id="grid-small-img" alt="Monday Eseinone">
+        <a class="nav-link" href="{{ url_for('class1')}}"> class1</a>
+    </div>
+
+    </div>
+    <!--======================================================-->
+</div>   <!--   Grid container ends here -->
+
+</section>
+<!-- ===============================  SECTION ONE  ENDS HERE =========================   -->
+
+  <div class="card-body">
+      <br/>
+                                <!-- Home page Welcome message   -->
+    <h2>  GOALS</h2>
+    <p class="pading-p-class">
+              My major goal is to help as many Businesses and individuals as
+              possible with the use of modern technology to achieve success in
+              their business.
+            I am passionate about making good use of the Python programming language,
+              HTML and CSS to build dynamic websites, mobile responsive and interactive web apps,
+            for the purpose of solving  real-life problems.
+    </p>
+    </div> <!-- card body div closes here -->
+    <br/>
+
+
+</div> <!-- container close here -->
+
+{% endblock %}

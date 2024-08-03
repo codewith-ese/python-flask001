@@ -141,3 +141,46 @@
    Second width:  7
   Quantity of Second Ms :   89
  
+ Date: **************Saturday08:42:02 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | STOOL |**** 
+ 
+  First Lenght: 80
+   First width:  60
+  Quantity of first Ms:  6
+ 
+  Second Lenght: 90
+   Second width:  80
+  Quantity of Second Ms :   8
+ 
+ Date: **************Saturday10:39:28 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | WARDROBE1 |**** 
+ 
+  First Lenght: 120
+   First width:  60
+  Quantity of first Ms:  44
+ 
+  Second Lenght: 44
+   Second width:  44
+  Quantity of Second Ms :   44
+ 
+   TOTAL NUMBER OF BOARD **** | 14.0 |**** 
+ 
+ Date: **************Saturday10:47:27 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | WARDROBE |**** 
+ 
+  First Lenght: 800
+   First width:  8
+  Quantity of first Ms:  77
+ 
+  Second Lenght: 6
+   Second width:  76
+  Quantity of Second Ms :   7
+ 
+   TOTAL NUMBER OF BOARD **** | 17.2 |**** 
+ 

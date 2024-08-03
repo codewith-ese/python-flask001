@@ -1,0 +1,15 @@
+ Date: **************Saturday10:39:28 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | WARDROBE1 |**** 
+ 
+  First Lenght: 120
+   First width:  60
+  Quantity of first Ms:  44
+ 
+  Second Lenght: 44
+   Second width:  44
+  Quantity of Second Ms :   44
+ 
+   TOTAL NUMBER OF BOARD **** | 14.0 |**** 
+ 

@@ -1,0 +1,13 @@
+ Date: **************Saturday08:42:02 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | STOOL |**** 
+ 
+  First Lenght: 80
+   First width:  60
+  Quantity of first Ms:  6
+ 
+  Second Lenght: 90
+   Second width:  80
+  Quantity of Second Ms :   8
+ 

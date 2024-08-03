@@ -1168,50 +1168,31 @@ figcaption {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* new list */
 
-/* table style start here */
-
-table {
-  border-collapse: collapse;
-  border: 2px solid rgb(140 140 140);
-  font-family: sans-serif;
-  font-size: 1rem;
-  letter-spacing: 1px;
+.list-class{
+  min-width: 400px;
+  max-width: 700px;
+  margin: auto;
+  padding: 40px;
+  background-color: rgb(255, 249, 241);
+  box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.751);
 }
 
-caption {
-  caption-side: bottom;
-  padding: 10px;
-  font-weight: bold;
+.list-class li{
+  font-size: 20px;
+  color: #1f045df8;
+  margin: auto;
+  text-align: justify;
+  padding: 5px 10px;
 }
 
-thead,
-tfoot {
-  background-color: steelblue;
-}
 
-th,
-td {
-  border: 1px solid rgb(160 160 160);
-  padding: 12px 14px;
-}
 
-td:last-of-type {
-  text-align: center;
-}
+ul.b {
+  list-style-type: square;
 
-tbody > tr:nth-of-type(even) {
-  background-color: rgb(237 238 242);
 }
-
-tfoot th {
-  text-align: center;
-}
-
-tfoot td {
-  font-weight: bold;
-}
-
 
 
 
