@@ -76,8 +76,6 @@ def it_class():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
     
-
-    
     return render_template("it_class.html", display_time=display_time)
 
 @app.route("/class1", methods= ["POST"])
@@ -116,6 +114,14 @@ def class1():
     board_used = total_sq_area_measurement / standard_board_measurement
     #  global display_board_used
     display_board_used = round(board_used, 1)
+    
+    first_lenght = int(lenght_one)
+    first_width = int(width_one)
+    first_quantity = int(quantity_one)
+    second_lenght = int(lenght_two)
+    second_width = int(width_two)
+    second_quantity = int(quantity_two)
+  
 
  # writing to a text file 
         # Here I added all transaction into text file 
@@ -154,13 +160,7 @@ def class1():
     dba.write(f"  Quantity of Second Ms :   {quantity_two}\n ")
     dba.write("\n")
     
-    # dba.write(f"  Third Lenght: {third_lenght}\n ")
-    # dba.write(f"  Third width:  {third_width}\n")
-    # dba.write(f"  Quantity of Ms :           {third_quantity}\n ")
-    # dba.write("\n")
-    # dba.write(f"  Fourth Lenght: {forth_lenght}\n ")
-    # dba.write(f"  Fourth width:  {forth_width}\n")
-    # dba.write(f"  Quantity of Forth Ms :     {forth_quantity}\n ")
+
 
     # cleint_expencse = float(cleint_tithe) + float(cleint_feeding) + float(cleint_rent) + float(cleint_out) + float(cleint_soft) + float(cleint_others)
     # total_calulation = float(cleint_income) - float(cleint_expencse)
@@ -207,9 +207,15 @@ def class1():
     #                               total_percent_income=total_percent_income, expense_amount_percent=expense_amount_percent, display_time=display_time ) 
 
     
-    
-    return render_template("class1.html", display_time=display_time, title=title, project_name=project_name, standard_board_measurement=standard_board_measurement,
-                           display_board_used=display_board_used, display_total_sq_area_measurement=display_total_sq_area_measurement
+    return render_template("class1.html", display_time=display_time, title=title,
+                           project_name=project_name,
+                           standard_board_measurement=standard_board_measurement,
+                           display_board_used=display_board_used,
+                           display_total_sq_area_measurement=display_total_sq_area_measurement,
+                           first_lenght=first_lenght, first_width=first_width,
+                           first_quantity=first_quantity,
+                           second_lenght=second_lenght, second_width=second_width,
+                           second_quantity=second_quantity
                            )
 
 @app.route("/ta")
