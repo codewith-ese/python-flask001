@@ -98,90 +98,106 @@
     </tbody>
     <br/>
     <tr>
-    <th class="th" scope="col">standing</th>
+    <th class="th" scope="col">Table / Stool Top</th>
     <th class="th" scope="col">Quantity</th>
     
     </tr>
     </thead>
 <tbody>
     <tr>
-    <td> {{total_hight}}</td>
-    <td> {{h_standing}} </td>
+    <td> {{display_table_top}}</td>
+    <td> 1 </td>
   
     </tr>
     </tbody>
 
 <thead>
     <tr>
-    <th class="th" scope="col">Demacations</th>
+    <th class="th" scope="col">Table Leg </th>
     <th class="th" scope="col">Quantity</th>
     
     </tr>
     </thead>
 <tbody>
     <tr>
-    <td> {{demacation_cutting_total}}</td>
-    <td>{{number_of_dimacation}}</td>
+    <td> {{dispaly_leg}}</td>
+    <td>4</td>
     </tr>
     </tbody>
 
 <!--   partationing -->
 <thead>
     <tr>
-    <th class="th" scope="col">Partations</th>
+    <th class="th" scope="col">Stool Connections (Lenght) </th>
     <th class="th" scope="col">Quantity</th>
     
     </tr>
     </thead>
 <tbody>
     <tr>
-    <td> {{partation_hight}}</td>
-    <td>{{number_of_partation_c}}</td>
+    <td> {{display_stool_connection_lenght}}</td>
+    <td>{{stool_conn_quantity}} pices </td>
     </tr>
     </tbody>
 
 <!--  all 4  pannel -->
 <thead>
     <tr>
-    <th class="th" scope="col">Top and Buttom pannel</th>
+    <th class="th" scope="col">Stool Connections (Width) </th>
     <th class="th" scope="col">Quantity</th>
     
     </tr>
     </thead>
 <tbody>
     <tr>
-    <td> {{down_and_top_pannel}}</td>
-    <td>{{all_4_pannel}}</td>
+    <td> {{display_stool_connection_width}}</td>
+    <td>{{stool_conn_quantity}} pices </td>
     </tr>
     </tbody>
 
 <!-- Long Door (1) measurement  -->
 <thead>
     <tr>
-    <th class="th" scope="col"> Long Door</th>
+    <th class="th" scope="col"> Inner top Connections </th>
     <th class="th" scope="col">Quantity</th>
     
     </tr>
     </thead>
 <tbody>
     <tr>
-    <td> {{door_one}}</td>
-    <td>{{door_one_quantity}}</td>
+    <td> {{display_stool_connection_lenght}}</td>
+    <td>{{stool_conn_quantity}} pices </td>
     </tr>
     </tbody>
 
 <!--  Door Short  -->
 <thead>
     <tr>
-    <th class="th" scope="col"> Short Door</th>
+    <th class="th" scope="col"> Top Lipping (A) (Note compulsory )</th>
     <th class="th" scope="col">Quantity</th>
     
     </tr>
     </thead>
 <tbody>
     <tr>
-    <td> {{door_two}}</td>
-    <td>{{door_two_quantity}}</td>
+    <td> {{display_top_lipping_a}}</td>
+    <td>{{stool_conn_quantity}}  pices </td>
+    </tr>
+    </tbody>
+
+
+<!--  Top Connection   -->
+<thead>
+    <tr>
+    <th class="th" scope="col"> Top Lipping (B) (Note compulsory )</th>
+    <th class="th" scope="col">Quantity</th>
+    
+    </tr>
+    </thead>
+<tbody>
+    <tr>
+    <td> {{display_top_lipping_b}}</td>
+    <td>{{stool_conn_quantity}}   pices </td>
     </tr>
     </tbody>
 </table>
@@ -193,16 +209,15 @@
     
     <h2> Catting List </h2>
     <ol class="b">
-      <li>PROJECT NAME &#160 &#160 {{project_name}}  ||&#160 &#160  Date/Time &#160 &#160 {{display_time }}</li>
-      <li> &#160 &#160     {{total_hight}}   || &#160 &#160  {{h_standing}} pices  </li>
-      <li> &#160 &#160      {{demacation_cutting_total}}  || &#160 &#160  {{number_of_dimacation}}pices</li>
-      <li> &#160 &#160    {{partation_hight}}     || &#160 &#160 {{number_of_partation_c}} pices </li>
+      <li>PROJECT NAME &#160 &#160 {{project_name}}  ||&#160 &#160  Date/Time &#160 &#160 {{display_time}}</li>
+      <li> &#160 &#160     {{display_table_top}}   || &#160 &#160  Table top &#160 &#160 1  pices  </li>
+      <li> &#160 &#160      {{dispaly_leg}}  || &#160 &#160  Stool Leg || &#160 &#160  4 pices</li>
+      <li> &#160 &#160    {{display_stool_connection_lenght}}  ||&#160 &#160 Stool conn (A)  || &#160 &#160 {{stool_conn_quantity}} pices </li>
+        <li> &#160 &#160 {{display_stool_connection_width}}  ||&#160 &#160   Stool conn (B) || &#160 &#160  {{stool_conn_quantity}} pices </li>
+        <li> &#160 &#160    {{display_stool_connection_lenght}} || &#160 &#160   Inner Top conn  || &#160 &#160 {{stool_conn_quantity}} pices </li>
+        <li> &#160 &#160 {{display_top_lipping_a}} || &#160 &#160  Top lipping (A) ||&#160 &#160 {{stool_conn_quantity}} pices </li>
+        <li> &#160 &#160 {{display_top_lipping_b}}  || &#160 &#160  Top lipping (B)  ||&#160 &#160 {{stool_conn_quantity}} pices </li>
   
-        <li> &#160 &#160 {{down_and_top_pannel}}    || &#160 &#160  {{all_4_pannel}} pices </li>
-        <li> &#160 &#160 {{door_one}}    ||&#160 &#160  {{door_one_quantity}} pices </li>
-        <li> &#160 &#160 {{door_two}}    || &#160 &#160  {{door_two_quantity}} pices </li>
-        <li> &#160 &#160 {{adding_cutting_list}}    || &#160 &#160  Total Area of Board used  </li>
-        <li> &#160 &#160 {{board_value}}    || &#160 &#160  Total Number of Board </li>
     </ol>
 
 </div>

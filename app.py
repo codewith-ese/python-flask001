@@ -165,8 +165,6 @@ def class1():
     dba.write("\n")
 
 
-
-
     # cleint_expencse = float(cleint_tithe) + float(cleint_feeding) + float(cleint_rent) + float(cleint_out) + float(cleint_soft) + float(cleint_others)
     # total_calulation = float(cleint_income) - float(cleint_expencse)
     
@@ -256,11 +254,14 @@ def furniture():
     # d = int(a) + int(number_of_dimacation)
     # standard board of mdf in Nigeria cm
     d = int()
+    global board_ticknes
     board_ticknes = 1.5875
+    
     reduse_from_side = board_ticknes * 2
     h_standing = 2
     down_pannel_width =  9
     all_4_pannel = 4
+    standard_board_measurement = 240 * 120
     
     # standing cutting list 
     hight_one = float(design_hight)
@@ -269,7 +270,7 @@ def furniture():
     width_one = float(design_width)
     main_cutting_width = round(width_one, 1)
     
-    total_hight = f"     {hight_cutting} x {main_cutting_width}cm "
+    total_hight = f"     {hight_cutting}cm x {main_cutting_width}cm "
     
     # lenght cutting minus the sice stand tickness 
     demacation_cutting_total_before_rounding = float(design_lenght) - reduse_from_side
@@ -285,7 +286,7 @@ def furniture():
     
     
     # Down and top pannel (4 pices )
-    down_and_top_pannel = f" {down_pannel_width}cm X {round_total}cm "
+    down_and_top_pannel = f" {down_pannel_width}cm X {round_total}cm " # round_total is the measurement of the dimacation 
     
     # Door calculation 
     door_cal = float(design_lenght) - 1.5
@@ -303,6 +304,25 @@ def furniture():
     door_two = f" {round_door_two}cm x {door_one_width}cm"
     door_two_quantity = 2
     
+    # ================================
+    #   cutting list starts from here 
+    # ================================
+    standing_pic =  (hight_cutting * main_cutting_width) * 2
+    demacation_pic = (round_total * main_cutting_width) * float(number_of_dimacation)
+    partation_pic = (round_partation * main_cutting_width) * float(number_of_partation)
+    door_one_pic = (door_one_width * door_one_hight) * float(door_one_quantity)
+    door_two_pic = (door_one_width * door_two_hight) * float(door_two_quantity)
+    down_top_pannel_pic = (down_pannel_width * round_total) * float(all_4_pannel)
+    
+    # Adding the total area cm of all measure 
+    adding_cutting = standing_pic + demacation_pic + partation_pic + door_one_pic + door_two_pic + down_top_pannel_pic
+    
+    # Dividing the total area with standard Board measuremnet
+    # Here is the standard_board_measurement useed for the project:  240 * 120
+    board_quantity = (adding_cutting / standard_board_measurement)
+    board_value = round(board_quantity, 1)
+    
+    
      
     return render_template("furniture.html", total_hight=total_hight,
                            demacation_cutting_total=demacation_cutting_total,
@@ -315,12 +335,105 @@ def furniture():
                            down_and_top_pannel=down_and_top_pannel,
                            all_4_pannel=all_4_pannel, door_one=door_one,
                            door_two=door_two, door_one_quantity=door_one_quantity,
-                           door_two_quantity=door_two_quantity)
+                           door_two_quantity=door_two_quantity, adding_cutting_list=adding_cutting,
+                           board_value=board_value)
+
+@app.route("/stools")
+def stools():
+    ese_time = datetime.datetime.now()
+    display_time = (ese_time.strftime("%A" "%X"))
     
+    return render_template("stools.html", display_time=display_time)
+
+@app.route("/table_display", methods= ["POST"])
+def table_display():
+    ese_time = datetime.datetime.now()
+    display_time = (ese_time.strftime("%A" "%X"))
     
+    # Tickness of baord 
+    board_ticknes = 1.5875
+    leg_width = 9
+    # This fuction will return the legs cutting size
+    def display_stool_top(user_h):
+        user_hight = float(user_h)
+        w = float(leg_width)
+        legString = f" {user_hight} x {w}"
+        return legString
     
+         # This function  will minus the tickness of the stand by 2 and also 
+         # minus the 5 cmm for allowance of both side of the  stool
+    def stool_conn_lenght(user_lenght):
+          
+        l_connection = float(user_lenght) - float(5 + board_ticknes * 4)
+        round_conn_lenght = round(l_connection, 1)
+        stool_connet = f" {round_conn_lenght}cm x {leg_width}cm "
+        return stool_connet
     
+             # This function  will minus the tickness of the stand by 2 and also 
+         # minus the 5 cmm for allowance of both side of the  stool
+    def stool_conn_width(user_width):
+        w_connection = float(user_width) - float(5 + board_ticknes * 2)
+        round_conn_width = round(w_connection, 1)
         
+        stool_connet = f" {round_conn_width}cm x {leg_width}cm "
+        return stool_connet
+    
+    def topLipping_l(user_lenght):
+        lipping_width = 6
+        a = float(user_lenght) 
+        top_lipping = f"  {a}cm x {lipping_width} "
+        return top_lipping
+    
+    
+    def topLipping_w(user_width):
+        lipping_width = 6
+        b = float(user_width) - 6
+        top_lipping = f" {b} x {lipping_width}"
+        return top_lipping
+    
+    project_name = request.form.get("project_name")
+    design_lenght = request.form.get("table_lenght")
+    design_width = request.form.get("table_width")
+    design_hight = request.form.get("table_hight")
+    
+    h = float(design_hight)
+    l = float(design_lenght)
+    w = float(design_width) 
+    
+    stool_conn_quantity = 2   
+    
+    # lenght of tabel or stool top cutting list 
+    table_lenght_one = float(design_lenght)
+    lenght_round = round(table_lenght_one, 1)
+     
+    # lenght of tabel or stool top cutting list 
+    table_width_one = float(design_width)
+    table_main_width = round(table_width_one, 1)
+    
+    display_table_top = f" {lenght_round}cm x {table_main_width}cm "
+    
+    #  dislay stool leg 
+    dispaly_leg = display_stool_top(h)
+    
+    # display stool connection 
+    display_stool_connection_lenght = stool_conn_lenght(l)
+    display_stool_connection_width = stool_conn_width(w)
+    
+    # Display top liping 
+    display_top_lipping_a =  topLipping_l(l)
+    display_top_lipping_b =  topLipping_w(w)
+    
+    
+    
+    return render_template("table_display.html", display_time=display_time,
+                           display_table_top=display_table_top,
+                           dispaly_leg=dispaly_leg, project_name=project_name,
+                           display_stool_connection_lenght=display_stool_connection_lenght, 
+                           display_stool_connection_width=display_stool_connection_width,
+                           stool_conn_quantity=stool_conn_quantity,
+                           display_top_lipping_a=display_top_lipping_a,
+                           display_top_lipping_b=display_top_lipping_b
+                           )
 
 @app.route("/ta")
 def ta():
