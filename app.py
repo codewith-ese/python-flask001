@@ -271,7 +271,7 @@ def furniture():
     
     total_hight = f"     {hight_cutting} x {main_cutting_width}cm "
     
-    # lenght cutting
+    # lenght cutting minus the sice stand tickness 
     demacation_cutting_total_before_rounding = float(design_lenght) - reduse_from_side
     round_total = round(demacation_cutting_total_before_rounding, 1)
     demacation_cutting_total = f"     {round_total}cm x {main_cutting_width}cm "
@@ -285,7 +285,7 @@ def furniture():
     
     
     # Down and top pannel (4 pices )
-    down_and_top_pannel = f" {down_pannel_width}cm X {main_cutting_width}cm "
+    down_and_top_pannel = f" {down_pannel_width}cm X {round_total}cm "
     
     # Door calculation 
     door_cal = float(design_lenght) - 1.5
@@ -303,9 +303,7 @@ def furniture():
     door_two = f" {round_door_two}cm x {door_one_width}cm"
     door_two_quantity = 2
     
-    
-      
-    
+     
     return render_template("furniture.html", total_hight=total_hight,
                            demacation_cutting_total=demacation_cutting_total,
                            number_of_dimacation=number_of_dimacation,
@@ -320,7 +318,9 @@ def furniture():
                            door_two_quantity=door_two_quantity)
     
     
-      
+    
+    
+        
 
 @app.route("/ta")
 def ta():

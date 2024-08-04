@@ -1171,8 +1171,7 @@ figcaption {
 /* new list */
 
 .list-class{
-  min-width: 400px;
-  max-width: 700px;
+  width: 700px;
   margin: auto;
   padding: 40px;
   background-color: rgb(255, 249, 241);
@@ -1187,6 +1186,15 @@ figcaption {
   padding: 5px 10px;
 }
 
+@media (max-width: 760px){
+  .list-class{
+      width:100%;
+      margin: auto;
+      padding: 40px;
+      background-color: rgb(255, 249, 241);
+      box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.751);
+    }
+}
 
 
 ul.b {
