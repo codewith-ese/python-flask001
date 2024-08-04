@@ -200,6 +200,37 @@
     <td>{{stool_conn_quantity}}   pices </td>
     </tr>
     </tbody>
+
+  <!--  Total board   -->
+<thead>
+  <tr>
+  <th class="th" scope="col"> Total Board for (1) </th>
+  <th class="th" scope="col">QUALITY</th>
+  
+  </tr>
+  </thead>
+<tbody>
+  <tr>
+  <td> {{total_board_cal}}</td>
+  <td> For  (1) Stool  </td>
+  </tr>
+  </tbody>
+
+    <!--  Total board  base on user input  -->
+<thead>
+  <tr>
+  <th class="th" scope="col"> Total Board Base on your input  </th>
+  <th class="th" scope="col">QUALITY</th>
+  
+  </tr>
+  </thead>
+<tbody>
+  <tr>
+  <td> {{finner_quantity}}</td>
+  <td> Will produce {{tquant}} Stool </td>
+  </tr>
+  </tbody>
+</table>
 </table>
 </div> <!-- card body div closes here -->
 
@@ -210,13 +241,15 @@
     <h2> Catting List </h2>
     <ol class="b">
       <li>PROJECT NAME &#160 &#160 {{project_name}}  ||&#160 &#160  Date/Time &#160 &#160 {{display_time}}</li>
-      <li> &#160 &#160     {{display_table_top}}   || &#160 &#160  Table top &#160 &#160 1  pices  </li>
+      <li> &#160 &#160     {{display_table_top}}   || &#160 &#160  Table top &#160 &#160 1  pieces  </li>
       <li> &#160 &#160      {{dispaly_leg}}  || &#160 &#160  Stool Leg || &#160 &#160  4 pices</li>
-      <li> &#160 &#160    {{display_stool_connection_lenght}}  ||&#160 &#160 Stool conn (A)  || &#160 &#160 {{stool_conn_quantity}} pices </li>
-        <li> &#160 &#160 {{display_stool_connection_width}}  ||&#160 &#160   Stool conn (B) || &#160 &#160  {{stool_conn_quantity}} pices </li>
-        <li> &#160 &#160    {{display_stool_connection_lenght}} || &#160 &#160   Inner Top conn  || &#160 &#160 {{stool_conn_quantity}} pices </li>
-        <li> &#160 &#160 {{display_top_lipping_a}} || &#160 &#160  Top lipping (A) ||&#160 &#160 {{stool_conn_quantity}} pices </li>
-        <li> &#160 &#160 {{display_top_lipping_b}}  || &#160 &#160  Top lipping (B)  ||&#160 &#160 {{stool_conn_quantity}} pices </li>
+      <li> &#160 &#160    {{display_stool_connection_lenght}}  ||&#160 &#160 Stool conn (A)  || &#160 &#160 {{stool_conn_quantity}} pieces </li>
+        <li> &#160 &#160 {{display_stool_connection_width}}  ||&#160 &#160   Stool conn (B) || &#160 &#160  {{stool_conn_quantity}} pieces </li>
+        <li> &#160 &#160    {{display_stool_connection_lenght}} || &#160 &#160   Inner Top conn  || &#160 &#160 {{stool_conn_quantity}} pieces </li>
+        <li> &#160 &#160 {{display_top_lipping_a}} || &#160 &#160  Top lipping (A) ||&#160 &#160 {{stool_conn_quantity}} pieces </li>
+        <li> &#160 &#160 {{display_top_lipping_b}}  || &#160 &#160  Top lipping (B)  ||&#160 &#160 {{stool_conn_quantity}} pieces </li>
+        <li> &#160 &#160 {{total_board_cal}}  || &#160 &#160  Total  board   ||&#160 &#160 1  Product </li>
+        <li> &#160 &#160 {{finner_quantity}}  || &#160 &#160 Will Produce a Total  board   ||&#160 &#160 {{tquant}} pieces </li>
   
     </ol>
 

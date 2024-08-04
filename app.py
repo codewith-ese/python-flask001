@@ -366,39 +366,40 @@ def table_display():
           
         l_connection = float(user_lenght) - float(5 + board_ticknes * 4)
         round_conn_lenght = round(l_connection, 1)
-        stool_connet = f" {round_conn_lenght}cm x {leg_width}cm "
-        return stool_connet
+      #  stool_connet = f" {round_conn_lenght}cm x {leg_width}cm "
+        return round_conn_lenght
     
              # This function  will minus the tickness of the stand by 2 and also 
          # minus the 5 cmm for allowance of both side of the  stool
     def stool_conn_width(user_width):
         w_connection = float(user_width) - float(5 + board_ticknes * 2)
         round_conn_width = round(w_connection, 1)
-        
-        stool_connet = f" {round_conn_width}cm x {leg_width}cm "
-        return stool_connet
+        # stool_connet = f" {round_conn_width}cm x {leg_width}cm "
+        return round_conn_width
     
+    lipping_width = 6
     def topLipping_l(user_lenght):
-        lipping_width = 6
         a = float(user_lenght) 
-        top_lipping = f"  {a}cm x {lipping_width} "
-        return top_lipping
+      #  top_lipping = f"  {a}cm x {lipping_width} "
+        return a
     
     
     def topLipping_w(user_width):
-        lipping_width = 6
         b = float(user_width) - 6
-        top_lipping = f" {b} x {lipping_width}"
-        return top_lipping
+        # top_lipping = f" {b} x {lipping_width}"
+        return b
     
     project_name = request.form.get("project_name")
     design_lenght = request.form.get("table_lenght")
     design_width = request.form.get("table_width")
     design_hight = request.form.get("table_hight")
+    design_quant = request.form.get("table_quant")
     
     h = float(design_hight)
     l = float(design_lenght)
     w = float(design_width) 
+    t = float(design_quant)
+    tquant = round(t)
     
     stool_conn_quantity = 2   
     
@@ -416,14 +417,36 @@ def table_display():
     dispaly_leg = display_stool_top(h)
     
     # display stool connection 
-    display_stool_connection_lenght = stool_conn_lenght(l)
-    display_stool_connection_width = stool_conn_width(w)
+    stool_connet_l  = stool_conn_lenght(l)
+    display_stool_connection_lenght = f" {stool_connet_l}cm x {leg_width}cm "
+    stool_connect_w = stool_conn_width(w)
+    display_stool_connection_width = f" {stool_connect_w}cm x {leg_width}cm "
     
     # Display top liping 
-    display_top_lipping_a =  topLipping_l(l)
-    display_top_lipping_b =  topLipping_w(w)
+    top_lippingL =  topLipping_l(l)
+    display_top_lipping_a = f"  {top_lippingL}cm x {lipping_width} "
+    top_lippingW =  topLipping_w(w)
+    display_top_lipping_b = f" {top_lippingW} x {lipping_width}"
     
     
+    # Varriable for standard board 
+    standard_board_measurement = 240 * 120
+    
+    # total board used 
+    sum_con_and_lip = (stool_connet_l * leg_width) + (stool_connect_w * leg_width) + (top_lippingL * lipping_width) + (top_lippingW * lipping_width)
+    leg_sum = float(h * leg_width ) * 8
+    sum_for_top_and_legs = (l * w) + leg_sum
+    
+    total_sum = sum_con_and_lip + sum_for_top_and_legs
+    
+    #   This is the finner calculation of board use for the calculation
+    sum = total_sum / standard_board_measurement
+    total_board_cal = round(sum, 1)
+    
+    # This code will display numbers board base on the
+    # quantity input by user for this  calculation can   
+    quantity_by_user = tquant * total_board_cal
+    finner_quantity = round(quantity_by_user, 1)
     
     return render_template("table_display.html", display_time=display_time,
                            display_table_top=display_table_top,
@@ -432,7 +455,9 @@ def table_display():
                            display_stool_connection_width=display_stool_connection_width,
                            stool_conn_quantity=stool_conn_quantity,
                            display_top_lipping_a=display_top_lipping_a,
-                           display_top_lipping_b=display_top_lipping_b
+                           display_top_lipping_b=display_top_lipping_b,
+                           total_board_cal=total_board_cal, finner_quantity=finner_quantity,
+                           tquant=tquant 
                            )
 
 @app.route("/ta")
