@@ -3,7 +3,7 @@ Author: Monday Erirore Eseinone erirore
 
 Purpose: Displaying  project from 09/02/2024.
 """
-import pyttsx3
+
 import sqlite3
 from time import strftime
 from datetime import datetime
