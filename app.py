@@ -3,6 +3,7 @@ Author: Monday Erirore Eseinone erirore
 
 Purpose: Displaying  project from 09/02/2024.
 """
+import pyttsx3
 import sqlite3
 from time import strftime
 from datetime import datetime
@@ -447,6 +448,14 @@ def table_display():
     # quantity input by user for this  calculation can   
     quantity_by_user = tquant * total_board_cal
     finner_quantity = round(quantity_by_user, 1)
+    
+    
+    # engine = pyttsx3.init()
+    # engine.setProperty("rate", 130)
+
+    # engine.say(f" please hold on, while i create your {project_name} list, and calcuate the quantity needed for your project ")
+    # engine.runAndWait()
+        
     
     return render_template("table_display.html", display_time=display_time,
                            display_table_top=display_table_top,

@@ -121,7 +121,7 @@
 <tbody>
     <tr>
     <td> {{dispaly_leg}}</td>
-    <td>4</td>
+    <td>8</td>
     </tr>
     </tbody>
 
@@ -227,7 +227,7 @@
 <tbody>
   <tr>
   <td> {{finner_quantity}}</td>
-  <td> Will produce {{tquant}} Stool </td>
+  <td> Will produce {{tquant}}   {{project_name}} </td>
   </tr>
   </tbody>
 </table>
@@ -249,7 +249,7 @@
         <li> &#160 &#160 {{display_top_lipping_a}} || &#160 &#160  Top lipping (A) ||&#160 &#160 {{stool_conn_quantity}} pieces </li>
         <li> &#160 &#160 {{display_top_lipping_b}}  || &#160 &#160  Top lipping (B)  ||&#160 &#160 {{stool_conn_quantity}} pieces </li>
         <li> &#160 &#160 {{total_board_cal}}  || &#160 &#160  Total  board   ||&#160 &#160 1  Product </li>
-        <li> &#160 &#160 {{finner_quantity}}  || &#160 &#160 Will Produce a Total  board   ||&#160 &#160 {{tquant}} pieces </li>
+        <li> &#160 &#160 {{finner_quantity}}  Boards || &#160 &#160 Will Produce a Total of   ||&#160 &#160 {{tquant}} {{project_name }}</li>
   
     </ol>
 
@@ -265,37 +265,9 @@
         </div>
       </div>
 
-
       <div class="responsive">
         <div class="gallery">
-          <a target="_blank" href="#">
-            <img src="static/images/024.jpeg" alt="Forest" width="600" height="400">
-          </a>
-          <div class="desc">E1</div>
-        </div>
-      </div>
-
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="#">
-            <img src="static/images/029.png" alt="Forest" width="600" height="400">
-          </a>
-          <div class="desc">E1</div>
-        </div>
-      </div>
-
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="#">
-            <img src="static/images/030.png" alt="Forest" width="600" height="400">
-          </a>
-          <div class="desc">E1</div>
-        </div>
-      </div>
-
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="#">
+          <a  href="{{ url_for('contact')}}">
             <img src="static/images/004.jpg" alt="Forest" width="600" height="400">
           </a>
           <div class="desc">E1</div>
@@ -306,7 +278,7 @@
 
       <div class="responsive">
         <div class="gallery">
-          <a target="_blank" href="#">
+          <a  href="{{ url_for('it_class')}}">
             <img src="static/images/005.jpg" alt="Northern Lights" width="600" height="400">
           </a>
           <div class="desc">T1</div>
@@ -315,7 +287,7 @@
 
       <div class="responsive">
         <div class="gallery">
-          <a target="_blank" href="#">
+          <a  href="{{ url_for('it_class')}}">
             <img src="static/images/018.png" alt="Mountains" width="600" height="400">
           </a>
           <div class="desc">B1</div>

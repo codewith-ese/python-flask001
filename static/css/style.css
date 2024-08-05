@@ -1225,7 +1225,7 @@ ul.b {
 
 .stool-tables input {
   float: right;
-  width: 60%;
+  width: 50%;
   padding: 2px;
   align-items: center;
   padding-left: 5px; /*  this code will padding the text inside the input only*/
@@ -1278,6 +1278,43 @@ ul.b {
 
 }
 
+
+.map-class{
+  display: grid;
+  width: 800px;
+  margin: auto;
+  padding: 30px;
+  box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.751);
+}
+
+.map-class iframe{
+  display: grid;
+  width: 600px;
+  height: 250px;
+  margin: auto;
+  padding: 0;
+  box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.751);
+}
+
+@media (max-width: 760px) {
+  .map-class{
+    display: grid;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.751);
+  }
+  .map-class iframe{
+    display: grid;
+    width: 100%;
+    height: inherit;
+    margin: auto;
+    padding: 0;
+    box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.751);
+  }
+  
+  
+}
 
 
 
