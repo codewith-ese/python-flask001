@@ -25,20 +25,20 @@
         <!--   form starts here --> 
         <div class="login-form">   
 
-        <form action="#" method="post">
+        <form action="/login" method="post">
             <h1> LOGIN </h1>
-            <p>{{ name }}</p>
-            <p> {{ usr }} </p>
+
             <P>  Name : <input type="text" name="username" /> </P> 
             <P>  Email : <input type="email" name="useremail" /> </P> 
-            <P> <input class="submit" type="submit" class="btn btn-secondary" value="submite" /> </P> 
+            <P> <input class="submit" type="submit" class="btn btn-secondary" value="Submit" /> </P> 
 
         </form>
 
     </div>
             <!--   form ends here --> 
-        <h2 style="color:rgb(172, 46, 0)">  Monday Media login </h2>
-        <h1>  BEST QUALITY WEBSITE DESIGNERS  </h1>
+        <h2 style="color:rgb(172, 46, 0)">  <a href="{{ url_for('signup')}}">  SINGUP HERE </a> </h2>
+      
+        <h1>  To get accuarate estimation of your board  </h1>
     
 </div>
     

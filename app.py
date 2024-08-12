@@ -24,52 +24,27 @@ import os
 import re
 
 
-# import mysql.connector
-# from flask_mysqldb import MySQL
-# import MySQLdb.cursors
+from flask import Flask, render_template
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 app.secret_key = "hello"
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['SQLALCHEMY_TRACK-MODIFICATIONS'] = False
-app.permanent_session_lifetime = timedelta(days=5)
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'monday12ESE'
+app.config['MYSQL_DB'] = 'codewithesedb'
 
-UPLOAD_FOLDER = './upload'
-
-db = SQLAlchemy(app)
-app.app_context().push()
-
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-# creating a model
-class users(db.Model):
-    id = db.Column("id", db.Integer, primary_key=True)
-    name = db.Column(db.String(100))
-    email = db.Column(db.String(100))
-  
-
-    def __init__(self, name, email):
-        self.name = name
-        self.email = email
-
-        
-# # creating a model
-# class students(db.Model):
-#     stdtid = db.Column("id", db.Integer, primary_key=True)
-#     stdname = db.Column(db.String(100))
-#     stdemail = db.Column(db.String(100))
-
-#     def __init__(self, name, email):
-#         self.name = name
-#         self.email = email
-
+mysql = MySQL(app)
+       
 
 @app.route("/")
 def index():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
+   # return render_template("index.html", display_time=display_time)
+
     return render_template("index.html", display_time=display_time)
+    # return render_template("it_class.html", display_time=display_time)
 
 
 @app.route("/it_class")
@@ -165,51 +140,6 @@ def class1():
     dba.write(f"   Total Number of Board **** | {display_board_used} |**** \n ".upper())
     dba.write("\n")
 
-
-    # cleint_expencse = float(cleint_tithe) + float(cleint_feeding) + float(cleint_rent) + float(cleint_out) + float(cleint_soft) + float(cleint_others)
-    # total_calulation = float(cleint_income) - float(cleint_expencse)
-    
-    # # calculate percentage of total income variable expenses
-    # total_percent_income = float(cleint_income) * 100 / float(cleint_income)
-    
-    # # calculate percentage of total total expenses
-    # expense_amount_percent = float(cleint_expencse) * 100 / float(cleint_income)
-    
-    # # calculate percentage of savings expenses
-    # exp_percent = float(total_calulation) * 100 / float(cleint_income)   # * float(cleint_expencse) 
-    
-    # expences_percent = f" {exp_percent:.1f} "
-    
-
-    # var_goodSavings ="  Great job! your expenses is less than your income today.\
-    #     This is quite good for your finance.  Congratulations "
-
-    # var_badSavings = " ho no! This is not very good. Your expenses is way more greater than your income "
-
-    # if float(cleint_expencse) > float(cleint_income):
-    #     user_savings = var_badSavings
-        
-
-    # else:
-    #     user_savings = var_goodSavings
-
-    # # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    # #  creating an exel file
-    # # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-
-    # # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    # #  creating an exel file
-    # # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-    # return render_template("finance_house.html", cleint_name=cleint_name.upper(),
-    #                        cleint_tithe= cleint_tithe,
-    #                        cleint_income=cleint_income,cleint_feeding=cleint_feeding,
-    #                         cleint_rent=cleint_rent, cleint_out=cleint_out,
-    #                             cleint_soft=cleint_soft, cleint_others=cleint_others,
-    #                               total_calulation=total_calulation, cleint_expencse=cleint_expencse, user_savings=user_savings, expences_percent=expences_percent,
-    #                               total_percent_income=total_percent_income, expense_amount_percent=expense_amount_percent, display_time=display_time ) 
-
     
     return render_template("class1.html", display_time=display_time, title=title,
                            project_name=project_name,
@@ -228,6 +158,8 @@ def design():
     display_time = (ese_time.strftime("%A" "%X"))
     
     return render_template("design.html", display_time=display_time)
+
+
     
 # This code will preper a cutting list
 @app.route("/furniture", methods= ["POST"])
@@ -472,11 +404,11 @@ def table_display():
 @app.route("/ta")
 def ta():
     title = "Class One"
-    return "<p> ddd <\p> "
+    return render_template("ta.html")
 
 @app.route("/view")
 def view():
-    return render_template("view.html", values=users.query.all())
+    return render_template("view.html")
 
 
 @app.route("/minor")
@@ -672,240 +604,224 @@ def admin():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
     
-    if request.method == "POST":
-        adname = request.form["admin_name"]
-        ademail = request.form["admin_email"]
-        adpassw = request.form["admin_passw"]
-      
-                
-        # #  Reading from my data base 
-        # conn = sqlite3.connect('newusers.db')
-        # c = conn.cursor()
-        
-        # query = "SELECT uname, upassword, uemail FROM adminone WHERE uname='"+adname+"' and upassword='"+adpassw+"' and uemail='"+ademail+"' "  
-        # c.execute(query)
-        
-        # results = c.fetchall()
-        
-        # if len(results) == 0 or adname =="" or adpassw =="" or ademail =="":
-        #     flash("Sorry Incorrect Credential provided")
-        #     return render_template('admin.html')
-        # else:
-        #     return redirect(url_for("alluser"))
-            
-    return render_template('admin.html')
+    try:  
+        if request.method == "POST":
+            # Collect email and password from the login form
+            adname = request.form["admin_name"]
+            ademail = request.form["admin_email"]
+            adpassw = request.form["admin_passw"]
+
+            # Check if the email and password match an existing account
+            with mysql.connection.cursor() as cursor:
+                cursor.execute("SELECT * FROM admin WHERE name_admin=%s AND email_admin=%s AND password", (adname, ademail, adpassw))
+                account = cursor.fetchone()
+
+            if account:
+                # If the login is successful, store the visitor ID in the session
+                session["visitor_id"] = account[0]
+                flash("Logged in successfully!")
+                return redirect(url_for("alluser"))
+            else:
+                flash("Invalid email or password!")
+
+        # Render the login template
+        return render_template("admin.html")
+
+    except Exception as e:
+        flash(f"Error occurred: {str(e)}")
+        return render_template("admin.html")
+
 
 ################################################################################
-#  Sing In    
+# #  Sing In    
 @app.route("/signin", methods=["POST", "GET"])
 def signin():
     ese_time = datetime.datetime.now()
-    display_time = (ese_time.strftime("%A" "%X"))
-    
-    if request.method == "POST":
-        sssemail = request.form["us_email"]
-        sssname = request.form["us_name"]
-                
-        #  Reading from my data base 
-        conn = sqlite3.connect('users.db')
-        c = conn.cursor()
-        
-        query = "SELECT susername, spassword FROM students1 WHERE susername='"+sssname+"' and spassword='"+sssemail+"'"  
-        c.execute(query)
-        
-        results = c.fetchall()
-        
-        if len(results) == 0 or sssemail =="" or sssname =="":
-            flash("Sorry Incorrect Credential provided")
-            return render_template('signin.html')
-        else:
-            return redirect(url_for("class1"))
-            
-    return render_template('signin.html')
+    display_time = (ese_time.strftime("%A %X"))
+
+    try:
+        if request.method == "POST":
+            sssemail = request.form["us_email"]
+            sssname = request.form["us_name"]
+
+            with mysql.connection.cursor() as cursor:
+                cursor.execute("SELECT * FROM visitors WHERE email=%s AND name=%s", (sssemail, sssname))
+                account = cursor.fetchone()
+
+            if not account or sssemail == "" or sssname == "":
+                flash("Sorry, incorrect credential provided")
+                return render_template('signin.html')
+            else:
+                session.permanent = True
+
+                return redirect(url_for("user_design"))
+
+    except Exception as e:
+        flash(f"Error occurred: {str(e)}")
+        return render_template("signin.html")
+
+    return render_template("signin.html", display_time=display_time)
 
   
-#  Sing up    
+#  Sing up  
 @app.route("/signup", methods=["POST", "GET"])
 def signup():
-    
     ese_time = datetime.datetime.now()
-    display_time = (ese_time.strftime("%A" "%X"))
-
-    if request.method == "POST" and 'username_s' in request.form and 'useremail_s' in request.form:
-   # if request.method == 'POST' and 'name' in request.form and 'password' in request.form and 'email' in request.form :
+    display_time = (ese_time.strftime("%A %X"))
     
-            # collect names and email from users 
-        stdname = request.form["username_s"]
-        stdemail = request.form["useremail_s"]
-        
-        #  Adding new register member to a database 13-04-2024
-        conn = sqlite3.connect('users.db')
-        c = conn.cursor()
-        
-        # check if username allready exist 
-              
-        query = "SELECT * FROM students1 WHERE spassword='"+stdemail+"'"  
-        c.execute(query)
-        account = c.fetchone()
-        
-        if account:
-            flash("Account already exists !")
+    try:
+        if request.method == "POST":
+            # Collect names and email from users
+            stdname = request.form["username_s"]
+            stdemail = request.form["useremail_s"]
             
-        elif not re.match(r'[^@]+@[^@]+\.[^@]+', stdemail):
-            flash("Invalid email address ! !!")
-        # elif not userName or not password or not stdemail:
-        #     mesage = 'Please fill out the form !'
-        else:
-        
             
-            c.execute("INSERT INTO students1 (susername, spassword, sdate) VALUES (?, ?, ?)", (stdname, stdemail, display_time))
 
-            conn.commit()
-            conn.close()
-            
-        if stdname =="" and stdemail =="":
-            flash("Invalid entry, try again with a proper emial ") 
-            return render_template("signup.html")
-            
-            
-        else:
-            flash("Account created sucessfuly")  
-            return redirect(url_for("signin"))
+            # Check if the email already exists
+            with mysql.connection.cursor() as cursor:
+                cursor.execute("SELECT * FROM visitors WHERE email=%s", (stdemail,))
+                account = cursor.fetchone()
 
-    return render_template("signup.html")    
-    
-    # ese_time = datetime.datetime.now()
-    # display_time = (ese_time.strftime("%A" "%X"))
-    
-    # if request.method == "POST":
-    #     try:
-        
-    #             # collect names and email from users 
-    #         stdname = request.form["username_s"]
-    #         stdemail = request.form["useremail_s"]
-            
-    #         #  Adding new register member to a database 13-04-2024
-    #         conn = sqlite3.connect('newusers.db')
-    #         c = conn.cursor()
-    #         c.execute("INSERT INTO students1 (susername, spassword, sdate) VALUES (?, ?, ?)", (stdname, stdemail, display_time))
-        
-    #         conn.commit()
-    #         conn.close()
-            
-    #         if stdname =="" and stdemail =="":
-    #             flash("Invalid entry, try again with a proper emial ") 
-    #             return render_template("signup.html")
-            
-          
-    #         else:
-    #             flash("Account created sucessfuly")  
-    #             return redirect(url_for("signin"))
-            
-            
-    #     except Exception as e:
-    #         flash(" user allready exist, Try a diffrent email or move to the login page")
-    #       #  ("Error", str(e))
-    # else:
-    #     flash(" user allready exist, Try a diffrent email or move to the login page")
-    #    # ("Error", "Please fill in the entry box to add data")  
-        
-    # return render_template("signup.html")      
-#   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            if account:
+                flash("Account already exists!")
+            elif not re.match(r'[^@]+@[^@]+\.[^@]+', stdemail):
+                flash("Invalid email address!")
+            else:
+                with mysql.connection.cursor() as cursor:
+                    cursor.execute("INSERT INTO visitors (name, email, visitor_date) VALUES (%s, %s, %s)", (stdname, stdemail, display_time))
+                    mysql.connection.commit()
+                    flash("Account created successfully!")
+                    return redirect(url_for("signin"))
 
+        return render_template("signup.html")
+
+    except Exception as e:
+        flash(f"Error occurred: {str(e)}")
+        return render_template("signup.html")  
 
 @app.route("/alluser")
 def alluser():
+    try:
+        with mysql.connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM visitors")
+            alluser = cursor.fetchall()
+            return render_template("alluser.html", userDetails=alluser)
+    except Exception as e:
+        return f"Error occurred: {str(e)}"
 
-  #  Reading from my data base 
-    conn = sqlite3.connect('newusers.db')
-    c = conn.cursor()
-    
-    query = "SELECT * FROM students1"  
-    c.execute(query)
-    
-    alluser = c.fetchall()
-
-    # for row in alluser:
-    #     print(row)
-        
-        # userDetails = row
-    userDetails = alluser
-  
-        
-    return render_template("alluser.html", userDetails=userDetails)   
-    
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
+# login route 
 @app.route("/login", methods=["POST", "GET"])
 def login():
-    if request.method == "POST":
-        
-        session.permanent = True
-        user = request.form['username']
-        useremail = request.form["useremail"]
-        session["user"] = user
 
-        found_user = users.query.filter_by(name=user).first()
-        if found_user:
-            session['email'] = found_user.email
-            print(user)
+    try:
+        if request.method == "POST":
+            # Collect email and password from the login form
+            login_email = request.form["useremail"]
+            login_password = request.form["username"]
 
+            # Check if the email and password match an existing account
+            with mysql.connection.cursor() as cursor:
+                cursor.execute("SELECT * FROM visitors WHERE email=%s AND name=%s", (login_email, login_password))
+                account = cursor.fetchone()
 
-        else:
-            usr = users(user, " ")
-            db.session.add(usr)
-            db.session.commit()
+            if account:
+                # If the login is successful, store the visitor ID in the session
+                session["visitor_id"] = account[0]
+                flash("Logged in successfully!")
+                return redirect(url_for("user_design"))
+            else:
+                flash("Invalid email or password!")
 
-        flash(" Login succesfull!")
-        return redirect(url_for("user"))
-    else:
-        if "user" in session:
-            flash("Allready Logged In!")
-            return redirect(url_for("user"))
-
+        # Render the login template
         return render_template("login.html")
 
-@app.route("/user", methods=["POST", "GET"])
-def user():
-    
-    button_display = "TUTORIALS"
+    except Exception as e:
+        flash(f"Error occurred: {str(e)}")
+        return render_template("login.html")
+
+
    
-    email = None
-    if "user" in session:
-        user = session["user"]
 
-        if request.method == "POST":
-            email = request.form["email"]
-            session["email"] = email
-            # this will change the user email
-            found_user = users.query.filter_by(name=user).first()
-            found_user.email = email
-            db.session.commit()
-            flash(" Email was saved!")
+# @app.route("/user_design")
+# def user_design():
+#     try:
+#         # Check if the visitor is logged in
+#         if "visitor_id" in session:
+#             # Retrieve the visitor's information from the database
+#             with mysql.connection.cursor() as cursor:
+#                 cursor.execute("SELECT * FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
+#                 visitor = cursor.fetchone()
+
+#             # Render the design template with the visitor's information
+#             # return redirect(url_for("user_design", visitor=visitor))
+#             return render_template("user_design.html", visitor=visitor)
+#         else:
+#             # If the visitor is not logged in, redirect them to the login page
+#             flash("Please log in to access the design page.")
+#             return redirect(url_for("login"))
+
+#     except Exception as e:
+#         flash(f"Error occurred: {str(e)}")
+#         return redirect(url_for("login"))
+    
+
+@app.route("/user_design")
+def user_design():
+    try:
+        # Check if the visitor is logged in
+        if "visitor_id" in session:
+            # Retrieve the visitor's information from the database
+            with mysql.connection.cursor() as cursor:
+                # cursor.execute("SELECT * FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
+                cursor.execute("SELECT name FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
+                visitor = cursor.fetchone()
+
+            # Render the design template with the visitor's information
+            #return redirect(url_for("user_design", visitor=visitor))
             
-           
-
-
+            # lopping through visitor account 
+            # to print out the username only 
+        
+                # print(datas)
+                   
+                    # visitor_email = datas[2]
+                 
+            return render_template("user_design.html", visitor=visitor)
         else:
-            if "email" in session:
-                email = session["email"]
-               
-               
-                
-        return render_template("user.html", email=email, button_display=button_display)
-    else:
-        flash(" You are not Logged In! ")
+            # If the visitor is not logged in, redirect them to the login page
+            flash("Please log in to access the design page.")
+            return redirect(url_for("login"))
+
+    except Exception as e:
+        flash(f"Error occurred: {str(e)}")
         return redirect(url_for("login"))
+
+
+
+# @app.route("/logout")
+# def logout():
+
+#     # here i flash the logout message
+#     flash(" you have been logged out! ", "info")
+#     session.pop("user", None)
+#     session.pop("email", None)
+#     return redirect(url_for("login"))
+
+from flask import session, redirect, url_for, flash
 
 @app.route("/logout")
 def logout():
-
-    # here i flash the logout message
-    flash(" you have been logged out! ", "info")
-    session.pop("user", None)
-    session.pop("email", None)
-    return redirect(url_for("login"))
-
+    try:
+        # Check if the visitor is logged in
+        if "visitor_id" in session:
+            # Remove the visitor's ID from the session
+            del session["visitor_id"]
+            flash("You have been logged out.")
+        # Redirect the visitor to the login page
+        return redirect(url_for("login"))
+    except Exception as e:
+        flash(f"Error occurred: {str(e)}")
+        return redirect(url_for("login"))
 #   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 @app.route('/upload_file', methods=['GET', 'POST'])
@@ -933,6 +849,6 @@ def upload_file():
 
 
 if __name__ == "__main__":
-    db.create_all()
+ #   db.create_all()
     app.run(debug=True)
 

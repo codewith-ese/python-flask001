@@ -1316,5 +1316,19 @@ ul.b {
   
 }
 
+#username1{
+  padding: 5px;
+  text-shadow: 2px 3px 4px rgb(1, 1, 11);
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f045df8;
+  /* border: 2px solid rgb(29, 108, 164); */
+  border-radius: 5px;
+  width:fit-content;
+  background-color: #b7a6b0;
+  display: inline;
+  align-self: baseline;
+}
+
 
 

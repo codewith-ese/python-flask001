@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}WELCOME TO MONDAY MEDIA BLOG {% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="container">
+
+<div class="card-body">
+        <!-- Display current user  -->
+        <p id="username1"> User: {{ visitor }}  <img src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Profile/v1712531830/018_ar8inb.png" alt="Monday eseinone" width="30" height="30"></p>
+
+            
+   
+
+<div class="card-body"> 
+    <div class="time_display">
+    <h1>  Contact Me </h1>
+    </div> <!-- time ends here -->
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+<!-- Time code ends here  -->
+<br/>
+                    <!-- Home page Welcome message   -->
+    <h2> Contact Adress  </h2>
+    <p class="pading-p-class">Ayobo Lagos Nigeria. <br/>
+        Contact Phone: 08075236542 <br/>
+        WhatsApp Number:  +2348075236542. <br/>
+        Email Address: eeseinone@gmail.com </p>
+
+        <div class="list-class">
+    
+            <h2> Designing Your Furniture  </h2>
+            <ol class="b">
+              <li> &#160 &#160 || <a class="nav-link" href="{{ url_for('design')}}"> Design</a>  {{display_time }} || &#160 &#160 </li>
+              <li> &#160 &#160 ||  <a class="nav-link" href="{{ url_for('income')}}"> Expenses Tracker</a>  {{display_time }} || &#160 &#160 </li>
+              <li> &#160 &#160 ||  <a class="nav-link" href="{{ url_for('it_class')}}"> Check board with your cutting list </a>  {{display_time }} || &#160 &#160 </li>
+
+            </ol>
+        
+        </div>
+
+ <img src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Profile/v1712531830/018_ar8inb.png" alt="Monday eseinone" width="30" height="30">
+
+    <h2>  </h2>
+</div> <!-- card body div closes here -->
+<br/>
+        <section class="map-class">
+        <h2>Office Location </h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.6313051847746!2d3.239037332212586!3d6.601402441757054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9a8952f3c043%3A0xc535e05cd3311792!2sAyobo%2C%20Lagos%20102213%2C%20Lagos!5e0!3m2!1sen!2sng!4v1716897011860!5m2!1sen!2sng"
+         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+        </section>
+
+ </div>   <!--   Grid container ends here -->
+    
+</div> <!-- container div closes here -->
+</div> <!-- card for time ends here -->
+
+
+
+{% endblock %}
+
