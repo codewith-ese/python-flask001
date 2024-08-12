@@ -29,13 +29,13 @@ from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 app.secret_key = "hello"
-app.config['MYSQL_HOST'] = 'EseflowTech.mysql.pythonanywhere-services.com'
-app.config['MYSQL_USER'] = 'EseflowTech'
-app.config['MYSQL_PASSWORD'] = 'Mon@Ese12'
-app.config['MYSQL_DB'] = 'EseflowTech$codewithesedb'
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'monday12ESE'
+app.config['MYSQL_DB'] = 'codewithesedb'
 
 mysql = MySQL(app)
-
+       
 
 @app.route("/")
 def index():
@@ -51,7 +51,7 @@ def index():
 def it_class():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
-
+    
     return render_template("it_class.html", display_time=display_time)
 
 @app.route("/class1", methods= ["POST"])
@@ -59,57 +59,57 @@ def class1():
     title = "Class One"
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
-
+    
     project_name = request.form.get("project_name")
     lenght_one = request.form.get("lenght_one")
     width_one = request.form.get("width_one")
     quantity_one = request.form.get("quantity_one")
-
+    
     lenght_two = request.form.get("lenght_two")
     width_two = request.form.get("width_two")
     quantity_two = request.form.get("quantity_two")
+    
 
-
-    # calculating measurement from entries
+    # calculating measurement from entries 
     f_measure = float(lenght_one) * float(width_one)
     f_total = float(f_measure) * float(quantity_one)
-
+    
     s_measure =  float(lenght_two) * float(width_two)
     s_total = float(s_measure) * float(quantity_two)
-
-
-    # adding all entries total
+ 
+    
+    # adding all entries total 
     total_sq_area_measurement = f_total + s_total
     display_total_sq_area_measurement = round(total_sq_area_measurement, 1)
 
-    # variable for standard board measurement
+    # variable for standard board measurement 
     # standard_board_measurement = 243.84 * 121.92
     standard_board_measurement = 240 * 120
     display_standard_board_measurement = round(standard_board_measurement, 1)
-
+    
     board_used = total_sq_area_measurement / standard_board_measurement
     #  global display_board_used
     display_board_used = round(board_used, 1)
-
+    
     first_lenght = int(lenght_one)
     first_width = int(width_one)
     first_quantity = int(quantity_one)
     second_lenght = int(lenght_two)
     second_width = int(width_two)
     second_quantity = int(quantity_two)
+  
 
-
- # writing to a text file
-        # Here I added all transaction into text file
+ # writing to a text file 
+        # Here I added all transaction into text file 
         #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+    
     dba = open(f"{project_name}.txt", "a")
     dba.write(f" Date: **************{display_time} **************\n ")
     dba.write(f" |*************Cutting list calculation ************|\n ".upper())
     dba.write(f" \n ")
     dba.write(f"   Project Name is **** | {project_name} |**** \n ".upper())
     dba.write("\n")
-
+    
     dba.write(f"  First Lenght: {lenght_one}\n ")
     dba.write(f"  First width:  {width_one}\n")
     dba.write(f"  Quantity of first Ms:  {quantity_one}\n ")
@@ -120,15 +120,15 @@ def class1():
     dba.write("\n")
     dba.write(f"   Total Number of Board **** | {display_board_used} |**** \n ".upper())
     dba.write("\n")
-
-
+    
+    
     dba = open("wood_cutting.txt", "a")
     dba.write(f" Date: **************{display_time} **************\n ")
     dba.write(f" |*************Cutting list calculation ************|\n ".upper())
     dba.write(f" \n ")
     dba.write(f"   Project Name is **** | {project_name} |**** \n ".upper())
     dba.write("\n")
-
+    
     dba.write(f"  First Lenght: {lenght_one}\n ")
     dba.write(f"  First width:  {width_one}\n")
     dba.write(f"  Quantity of first Ms:  {quantity_one}\n ")
@@ -140,7 +140,7 @@ def class1():
     dba.write(f"   Total Number of Board **** | {display_board_used} |**** \n ".upper())
     dba.write("\n")
 
-
+    
     return render_template("class1.html", display_time=display_time, title=title,
                            project_name=project_name,
                            standard_board_measurement=standard_board_measurement,
@@ -156,89 +156,89 @@ def class1():
 def design():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
-
+    
     return render_template("design.html", display_time=display_time)
 
 
-
+    
 # This code will preper a cutting list
 @app.route("/furniture", methods= ["POST"])
 def furniture():
     title = "furnitrue"
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
-
+    
     project_name = request.form.get("project_name")
     design_lenght = request.form.get("design_lenght")
     design_width = request.form.get("design_width")
     design_hight = request.form.get("design_hight")
-
+    
     number_of_partation = request.form.get("number_of_partation")
     number_of_dimacation = request.form.get("number_of_dimacation")
-    quantity_doors = request.form.get("quantity_doors")
-    quantity_drawers = request.form.get("quantity_drawers")
-
+    quantity_doors = request.form.get("quantity_doors") 
+    quantity_drawers = request.form.get("quantity_drawers") 
+    
     b = number_of_dimacation.isdigit()
     c = float(number_of_partation) + 0
     number_of_partation_c = round(c)
-
-
+    
+ 
     # a = 0
     # d = int(a) + int(number_of_dimacation)
     # standard board of mdf in Nigeria cm
     d = int()
     global board_ticknes
     board_ticknes = 1.5875
-
+    
     reduse_from_side = board_ticknes * 2
     h_standing = 2
     down_pannel_width =  9
     all_4_pannel = 4
     standard_board_measurement = 240 * 120
-
-    # standing cutting list
+    
+    # standing cutting list 
     hight_one = float(design_hight)
     hight_cutting = round(hight_one, 1)
-
+    
     width_one = float(design_width)
     main_cutting_width = round(width_one, 1)
-
+    
     total_hight = f"     {hight_cutting}cm x {main_cutting_width}cm "
-
-    # lenght cutting minus the sice stand tickness
+    
+    # lenght cutting minus the sice stand tickness 
     demacation_cutting_total_before_rounding = float(design_lenght) - reduse_from_side
     round_total = round(demacation_cutting_total_before_rounding, 1)
     demacation_cutting_total = f"     {round_total}cm x {main_cutting_width}cm "
-
-    # this will deduct 4 cm of the buttom pannel and
+    
+    # this will deduct 4 cm of the buttom pannel and 
     # board_ticknes = 1.5875 from the hight of the furniture
     p_hight = hight_cutting - float(down_pannel_width + board_ticknes)
     round_partation = round(p_hight, 1)
-
+    
     partation_hight = f" {round_partation}cm x {main_cutting_width}cm "
-
-
+    
+    
     # Down and top pannel (4 pices )
-    down_and_top_pannel = f" {down_pannel_width}cm X {round_total}cm " # round_total is the measurement of the dimacation
-
-    # Door calculation
+    down_and_top_pannel = f" {down_pannel_width}cm X {round_total}cm " # round_total is the measurement of the dimacation 
+    
+    # Door calculation 
     door_cal = float(design_lenght) - 1.5
     door_one_width_c = door_cal / 3
     door_one_width = round(door_one_width_c, 2)
-
+    
     door_one_hight = hight_cutting - 7
-
+     
     door_one = f" {door_one_hight}cm x {door_one_width}cm"
     door_one_quantity = 1
-
-    # Door 2 start here
+    
+    # Door 2 start here 
     door_two_hight = hight_cutting - 48
     round_door_two = round(door_two_hight, 1)
     door_two = f" {round_door_two}cm x {door_one_width}cm"
     door_two_quantity = 2
-
+    
     # ================================
-    #   cutting list starts from here
+    #   cutting list starts from here 
     # ================================
     standing_pic =  (hight_cutting * main_cutting_width) * 2
     demacation_pic = (round_total * main_cutting_width) * float(number_of_dimacation)
@@ -246,17 +246,17 @@ def furniture():
     door_one_pic = (door_one_width * door_one_hight) * float(door_one_quantity)
     door_two_pic = (door_one_width * door_two_hight) * float(door_two_quantity)
     down_top_pannel_pic = (down_pannel_width * round_total) * float(all_4_pannel)
-
-    # Adding the total area cm of all measure
+    
+    # Adding the total area cm of all measure 
     adding_cutting = standing_pic + demacation_pic + partation_pic + door_one_pic + door_two_pic + down_top_pannel_pic
-
+    
     # Dividing the total area with standard Board measuremnet
     # Here is the standard_board_measurement useed for the project:  240 * 120
     board_quantity = (adding_cutting / standard_board_measurement)
     board_value = round(board_quantity, 1)
-
-
-
+    
+    
+     
     return render_template("furniture.html", total_hight=total_hight,
                            demacation_cutting_total=demacation_cutting_total,
                            number_of_dimacation=number_of_dimacation,
@@ -275,15 +275,15 @@ def furniture():
 def stools():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
-
+    
     return render_template("stools.html", display_time=display_time)
 
 @app.route("/table_display", methods= ["POST"])
 def table_display():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
-
-    # Tickness of baord
+    
+    # Tickness of baord 
     board_ticknes = 1.5875
     leg_width = 9
     # This fuction will return the legs cutting size
@@ -292,113 +292,113 @@ def table_display():
         w = float(leg_width)
         legString = f" {user_hight} x {w}"
         return legString
-
-         # This function  will minus the tickness of the stand by 2 and also
+    
+         # This function  will minus the tickness of the stand by 2 and also 
          # minus the 5 cmm for allowance of both side of the  stool
     def stool_conn_lenght(user_lenght):
-
+          
         l_connection = float(user_lenght) - float(5 + board_ticknes * 4)
         round_conn_lenght = round(l_connection, 1)
       #  stool_connet = f" {round_conn_lenght}cm x {leg_width}cm "
         return round_conn_lenght
-
-             # This function  will minus the tickness of the stand by 2 and also
+    
+             # This function  will minus the tickness of the stand by 2 and also 
          # minus the 5 cmm for allowance of both side of the  stool
     def stool_conn_width(user_width):
         w_connection = float(user_width) - float(5 + board_ticknes * 2)
         round_conn_width = round(w_connection, 1)
         # stool_connet = f" {round_conn_width}cm x {leg_width}cm "
         return round_conn_width
-
+    
     lipping_width = 6
     def topLipping_l(user_lenght):
-        a = float(user_lenght)
+        a = float(user_lenght) 
       #  top_lipping = f"  {a}cm x {lipping_width} "
         return a
-
-
+    
+    
     def topLipping_w(user_width):
         b = float(user_width) - 6
         # top_lipping = f" {b} x {lipping_width}"
         return b
-
+    
     project_name = request.form.get("project_name")
     design_lenght = request.form.get("table_lenght")
     design_width = request.form.get("table_width")
     design_hight = request.form.get("table_hight")
     design_quant = request.form.get("table_quant")
-
+    
     h = float(design_hight)
     l = float(design_lenght)
-    w = float(design_width)
+    w = float(design_width) 
     t = float(design_quant)
     tquant = round(t)
-
-    stool_conn_quantity = 2
-
-    # lenght of tabel or stool top cutting list
+    
+    stool_conn_quantity = 2   
+    
+    # lenght of tabel or stool top cutting list 
     table_lenght_one = float(design_lenght)
     lenght_round = round(table_lenght_one, 1)
-
-    # lenght of tabel or stool top cutting list
+     
+    # lenght of tabel or stool top cutting list 
     table_width_one = float(design_width)
     table_main_width = round(table_width_one, 1)
-
+    
     display_table_top = f" {lenght_round}cm x {table_main_width}cm "
-
-    #  dislay stool leg
+    
+    #  dislay stool leg 
     dispaly_leg = display_stool_top(h)
-
-    # display stool connection
+    
+    # display stool connection 
     stool_connet_l  = stool_conn_lenght(l)
     display_stool_connection_lenght = f" {stool_connet_l}cm x {leg_width}cm "
     stool_connect_w = stool_conn_width(w)
     display_stool_connection_width = f" {stool_connect_w}cm x {leg_width}cm "
-
-    # Display top liping
+    
+    # Display top liping 
     top_lippingL =  topLipping_l(l)
     display_top_lipping_a = f"  {top_lippingL}cm x {lipping_width} "
     top_lippingW =  topLipping_w(w)
     display_top_lipping_b = f" {top_lippingW} x {lipping_width}"
-
-
-    # Varriable for standard board
+    
+    
+    # Varriable for standard board 
     standard_board_measurement = 240 * 120
-
-    # total board used
+    
+    # total board used 
     sum_con_and_lip = (stool_connet_l * leg_width) + (stool_connect_w * leg_width) + (top_lippingL * lipping_width) + (top_lippingW * lipping_width)
     leg_sum = float(h * leg_width ) * 8
     sum_for_top_and_legs = (l * w) + leg_sum
-
+    
     total_sum = sum_con_and_lip + sum_for_top_and_legs
-
+    
     #   This is the finner calculation of board use for the calculation
     sum = total_sum / standard_board_measurement
     total_board_cal = round(sum, 1)
-
+    
     # This code will display numbers board base on the
-    # quantity input by user for this  calculation can
+    # quantity input by user for this  calculation can   
     quantity_by_user = tquant * total_board_cal
     finner_quantity = round(quantity_by_user, 1)
-
-
+    
+    
     # engine = pyttsx3.init()
     # engine.setProperty("rate", 130)
 
     # engine.say(f" please hold on, while i create your {project_name} list, and calcuate the quantity needed for your project ")
     # engine.runAndWait()
-
-
+        
+    
     return render_template("table_display.html", display_time=display_time,
                            display_table_top=display_table_top,
                            dispaly_leg=dispaly_leg, project_name=project_name,
-                           display_stool_connection_lenght=display_stool_connection_lenght,
+                           display_stool_connection_lenght=display_stool_connection_lenght, 
                            display_stool_connection_width=display_stool_connection_width,
                            stool_conn_quantity=stool_conn_quantity,
                            display_top_lipping_a=display_top_lipping_a,
                            display_top_lipping_b=display_top_lipping_b,
                            total_board_cal=total_board_cal, finner_quantity=finner_quantity,
-                           tquant=tquant
+                           tquant=tquant 
                            )
 
 @app.route("/ta")
@@ -437,7 +437,7 @@ def class_room():
     user_phone = request.form.get("user_phone")
     user_file = request.form.get("user_file")
     user_age = request.form.get("user_age")
-
+    
     if user_name == "" or user_age < "18" or user_email =="" or user_phone == "":
         flash("you are not eligible for this programing class room  ")
         return redirect(url_for("minor"))
@@ -448,9 +448,9 @@ def class_room():
 
     elif user_age > "18" and user_name != "" and user_email != "" and user_phone != "":
         flash("You have login succesfull!")
-
-
-
+        
+  
+    
         return render_template("class_room.html", user_name=user_name.upper(), user_email=user_email.lower(), user_phone=user_phone, user_file=user_file, user_age=user_age)
     else:
         flash(" Check your entery and try again ")
@@ -458,7 +458,7 @@ def class_room():
 
 
 
-
+  
  # income calculation starts here
 @app.route("/income")
 def income():
@@ -541,18 +541,18 @@ def finance_house():
 
     cleint_expencse = float(cleint_tithe) + float(cleint_feeding) + float(cleint_rent) + float(cleint_out) + float(cleint_soft) + float(cleint_others)
     total_calulation = float(cleint_income) - float(cleint_expencse)
-
+    
     # calculate percentage of total income variable expenses
     total_percent_income = float(cleint_income) * 100 / float(cleint_income)
-
+    
     # calculate percentage of total total expenses
     expense_amount_percent = float(cleint_expencse) * 100 / float(cleint_income)
-
+    
     # calculate percentage of savings expenses
-    exp_percent = float(total_calulation) * 100 / float(cleint_income)   # * float(cleint_expencse)
-
+    exp_percent = float(total_calulation) * 100 / float(cleint_income)   # * float(cleint_expencse) 
+    
     expences_percent = f" {exp_percent:.1f} "
-
+    
 
     var_goodSavings ="  Great job! your expenses is less than your income today.\
         This is quite good for your finance.  Congratulations "
@@ -561,7 +561,7 @@ def finance_house():
 
     if float(cleint_expencse) > float(cleint_income):
         user_savings = var_badSavings
-
+        
 
     else:
         user_savings = var_goodSavings
@@ -581,7 +581,7 @@ def finance_house():
                             cleint_rent=cleint_rent, cleint_out=cleint_out,
                                 cleint_soft=cleint_soft, cleint_others=cleint_others,
                                   total_calulation=total_calulation, cleint_expencse=cleint_expencse, user_savings=user_savings, expences_percent=expences_percent,
-                                  total_percent_income=total_percent_income, expense_amount_percent=expense_amount_percent, display_time=display_time )
+                                  total_percent_income=total_percent_income, expense_amount_percent=expense_amount_percent, display_time=display_time ) 
 
     user_client = cleint_nam(cleint_nam, " ")
     db.session.add(cleint_nam)
@@ -598,13 +598,13 @@ def finance_house():
 # mysql = MySQL(app)
 
 
-#  admin
+#  admin     
 @app.route("/admin", methods=["POST", "GET"])
 def admin():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A" "%X"))
-
-    try:
+    
+    try:  
         if request.method == "POST":
             # Collect email and password from the login form
             adname = request.form["admin_name"]
@@ -633,7 +633,7 @@ def admin():
 
 
 ################################################################################
-# #  Sing In
+# #  Sing In    
 @app.route("/signin", methods=["POST", "GET"])
 def signin():
     ese_time = datetime.datetime.now()
@@ -662,20 +662,20 @@ def signin():
 
     return render_template("signin.html", display_time=display_time)
 
-
-#  Sing up
+  
+#  Sing up  
 @app.route("/signup", methods=["POST", "GET"])
 def signup():
     ese_time = datetime.datetime.now()
     display_time = (ese_time.strftime("%A %X"))
-
+    
     try:
         if request.method == "POST":
             # Collect names and email from users
             stdname = request.form["username_s"]
             stdemail = request.form["useremail_s"]
-
-
+            
+            
 
             # Check if the email already exists
             with mysql.connection.cursor() as cursor:
@@ -697,7 +697,7 @@ def signup():
 
     except Exception as e:
         flash(f"Error occurred: {str(e)}")
-        return render_template("signup.html")
+        return render_template("signup.html")  
 
 @app.route("/alluser")
 def alluser():
@@ -709,7 +709,7 @@ def alluser():
     except Exception as e:
         return f"Error occurred: {str(e)}"
 
-# login route
+# login route 
 @app.route("/login", methods=["POST", "GET"])
 def login():
 
@@ -740,7 +740,7 @@ def login():
         return render_template("login.html")
 
 
-
+   
 
 # @app.route("/user_design")
 # def user_design():
@@ -763,7 +763,7 @@ def login():
 #     except Exception as e:
 #         flash(f"Error occurred: {str(e)}")
 #         return redirect(url_for("login"))
-
+    
 
 @app.route("/user_design")
 def user_design():
@@ -778,14 +778,14 @@ def user_design():
 
             # Render the design template with the visitor's information
             #return redirect(url_for("user_design", visitor=visitor))
-
-            # lopping through visitor account
-            # to print out the username only
-
+            
+            # lopping through visitor account 
+            # to print out the username only 
+        
                 # print(datas)
-
+                   
                     # visitor_email = datas[2]
-
+                 
             return render_template("user_design.html", visitor=visitor)
         else:
             # If the visitor is not logged in, redirect them to the login page
