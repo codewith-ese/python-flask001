@@ -1,0 +1,60 @@
+ Date: **************Monday08:54:02 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | WARDROBE  |**** 
+ 
+  First Lenght: 23
+   First width:  23
+  Quantity of first Ms:  23
+ 
+  Second Lenght: 22
+   Second width:  23
+  Quantity of Second Ms :   23
+ 
+   TOTAL NUMBER OF BOARD **** | 0.8 |**** 
+ 
+ Date: **************Monday08:54:51 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | WARDROBE  |**** 
+ 
+  First Lenght: 23
+   First width:  23
+  Quantity of first Ms:  23
+ 
+  Second Lenght: 22
+   Second width:  23
+  Quantity of Second Ms :   23
+ 
+   TOTAL NUMBER OF BOARD **** | 0.8 |**** 
+ 
+ Date: **************Monday10:14:00 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | WARDROBE  |**** 
+ 
+  First Lenght: 221
+   First width:  2
+  Quantity of first Ms:  2
+ 
+  Second Lenght: 12
+   Second width:  2
+  Quantity of Second Ms :   22
+ 
+   TOTAL NUMBER OF BOARD **** | 0.0 |**** 
+ 
+ Date: **************Monday10:21:47 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | WARDROBE  |**** 
+ 
+  First Lenght: 44
+   First width:  4
+  Quantity of first Ms:  4
+ 
+  Second Lenght: 4
+   Second width:  4
+  Quantity of Second Ms :   4
+ 
+   TOTAL NUMBER OF BOARD **** | 0.0 |**** 
+ 

@@ -11,3 +11,18 @@
    Second width:  80
   Quantity of Second Ms :   8
  
+ Date: **************Monday10:32:17 **************
+  |*************CUTTING LIST CALCULATION ************|
+  
+    PROJECT NAME IS **** | STOOL |**** 
+ 
+  First Lenght: 77
+   First width:  7
+  Quantity of first Ms:  7
+ 
+  Second Lenght: 7
+   Second width:  7
+  Quantity of Second Ms :   7
+ 
+   TOTAL NUMBER OF BOARD **** | 0.1 |**** 
+ 

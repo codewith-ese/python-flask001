@@ -4,6 +4,7 @@
     {% block content %}
 
 
+    <div class="container">
     {% if error_statement %}
 
     <p>{{ error_statement }} </p>
@@ -11,7 +12,8 @@
     {% endif %}
 
 
-<div class="container">
+
+
 
             <!-- card content code goes here -->
         <!--======================================================-->
@@ -25,9 +27,17 @@
         <div class="card-body"> <div class="time_display">
         <h1>  Calculate Your Board  </h1>
         </div> <!-- time ends here -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+            <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
         </div> <!-- card for time ends here -->
                 <!-- Time code ends here  -->
         <br/>
+
 
 
         <!-- ===============================  SECTION ONE =========================   -->
@@ -47,7 +57,7 @@
 
             <h5> Lenght 1:<input class="mo" type = "number"  name = "lenght_one" /><br/></h5>
 
-            <h5> Width  1: <input type = "text" class="mo" name = "width_one" /><br/> </h5>
+            <h5> Width  1: <input type = "text" class="number" name = "width_one" /><br/> </h5>
 
             <h5> Quantity 1:<input class="mo" type = "number" name = "quantity_one" /><br/></h5>
 

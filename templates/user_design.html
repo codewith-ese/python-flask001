@@ -17,7 +17,7 @@
 
 <div class="card-body"> 
     <div class="time_display">
-    <h1>  Contact Me </h1>
+    <h1>  Wood Calculator  </h1>
     </div> <!-- time ends here -->
     <a href="{{ url_for('logout') }}">Logout</a>
 
@@ -28,9 +28,9 @@
 
         <div class="designer">   
            <p> <button class="sub"><a class="disgnb" href="{{ url_for('design')}}">Calculate Wardrobe Measurement</a>  {{display_time }}</button> </p>
-           <p> <button class="sub"><a class="disgnb" href="{{ url_for('income')}}"> Expenses Tracker</a>  {{display_time }} </button></p>
             <p> <button class="sub"><a class="disgnb" href="{{ url_for('it_class')}}"> Calculate Board Using Your cutting list </a>  {{display_time }} </button></p>
                 <p><button class="sub" ><a class="disgnb" href="{{ url_for('stools')}}"> Side Stool / Table</a></button></p>
+                <p> <button class="sub"><a class="disgnb" href="{{ url_for('income')}}"> Expenses Tracker</a>  {{display_time }} </button></p>
         </div>
           
     </div>
