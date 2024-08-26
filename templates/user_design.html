@@ -21,26 +21,20 @@
     </div> <!-- time ends here -->
     <a href="{{ url_for('logout') }}">Logout</a>
 
-<!-- Time code ends here  -->
-<br/>
-                    <!-- Home page Welcome message   -->
-    <h2> Contact Adress  </h2>
-    <p class="pading-p-class">Ayobo Lagos Nigeria. <br/>
-        Contact Phone: 08075236542 <br/>
-        WhatsApp Number:  +2348075236542. <br/>
-        Email Address: eeseinone@gmail.com </p>
 
-        <div class="list-class">
-    
-            <h2> Designing Your Furniture  </h2>
-            <ol class="b">
-              <li> &#160 &#160 || <a class="nav-link" href="{{ url_for('design')}}"> Design</a>  {{display_time }} || &#160 &#160 </li>
-              <li> &#160 &#160 ||  <a class="nav-link" href="{{ url_for('income')}}"> Expenses Tracker</a>  {{display_time }} || &#160 &#160 </li>
-              <li> &#160 &#160 ||  <a class="nav-link" href="{{ url_for('it_class')}}"> Check board with your cutting list </a>  {{display_time }} || &#160 &#160 </li>
 
-            </ol>
-        
+    <div class="design-list-class">
+        <h2> Designing Your Furniture  </h2>
+
+        <div class="designer">   
+           <p> <button class="sub"><a class="disgnb" href="{{ url_for('design')}}">Calculate Wardrobe Measurement</a>  {{display_time }}</button> </p>
+           <p> <button class="sub"><a class="disgnb" href="{{ url_for('income')}}"> Expenses Tracker</a>  {{display_time }} </button></p>
+            <p> <button class="sub"><a class="disgnb" href="{{ url_for('it_class')}}"> Calculate Board Using Your cutting list </a>  {{display_time }} </button></p>
+                <p><button class="sub" ><a class="disgnb" href="{{ url_for('stools')}}"> Side Stool / Table</a></button></p>
         </div>
+          
+    </div>
+
 
  <img src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Profile/v1712531830/018_ar8inb.png" alt="Monday eseinone" width="30" height="30">
 

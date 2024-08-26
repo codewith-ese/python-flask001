@@ -742,6 +742,15 @@ def login():
 
    
 
+@app.route("/user_design")
+def user_design():
+
+            # return redirect(url_for("user_design", visitor=visitor))
+        return render_template("user_design.html")
+
+
+    
+
 # @app.route("/user_design")
 # def user_design():
 #     try:
@@ -749,11 +758,20 @@ def login():
 #         if "visitor_id" in session:
 #             # Retrieve the visitor's information from the database
 #             with mysql.connection.cursor() as cursor:
-#                 cursor.execute("SELECT * FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
+#                 # cursor.execute("SELECT * FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
+#                 cursor.execute("SELECT name FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
 #                 visitor = cursor.fetchone()
 
 #             # Render the design template with the visitor's information
-#             # return redirect(url_for("user_design", visitor=visitor))
+#             #return redirect(url_for("user_design", visitor=visitor))
+            
+#             # lopping through visitor account 
+#             # to print out the username only 
+        
+#                 # print(datas)
+                   
+#                     # visitor_email = datas[2]
+                 
 #             return render_template("user_design.html", visitor=visitor)
 #         else:
 #             # If the visitor is not logged in, redirect them to the login page
@@ -763,38 +781,6 @@ def login():
 #     except Exception as e:
 #         flash(f"Error occurred: {str(e)}")
 #         return redirect(url_for("login"))
-    
-
-@app.route("/user_design")
-def user_design():
-    try:
-        # Check if the visitor is logged in
-        if "visitor_id" in session:
-            # Retrieve the visitor's information from the database
-            with mysql.connection.cursor() as cursor:
-                # cursor.execute("SELECT * FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
-                cursor.execute("SELECT name FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
-                visitor = cursor.fetchone()
-
-            # Render the design template with the visitor's information
-            #return redirect(url_for("user_design", visitor=visitor))
-            
-            # lopping through visitor account 
-            # to print out the username only 
-        
-                # print(datas)
-                   
-                    # visitor_email = datas[2]
-                 
-            return render_template("user_design.html", visitor=visitor)
-        else:
-            # If the visitor is not logged in, redirect them to the login page
-            flash("Please log in to access the design page.")
-            return redirect(url_for("login"))
-
-    except Exception as e:
-        flash(f"Error occurred: {str(e)}")
-        return redirect(url_for("login"))
 
 
 
