@@ -23,7 +23,7 @@ from werkzeug.utils import secure_filename
 import os
 import re
 
-
+import mysql.connector
 from flask import Flask, render_template
 from flask_mysqldb import MySQL
 
@@ -31,7 +31,7 @@ app = Flask(__name__)
 app.secret_key = "hello"
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'monday12ESE'
+app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'codewithesedb'
 
 mysql = MySQL(app)
@@ -615,10 +615,11 @@ def finance_house():
 
 
 #  admin     
+
 @app.route("/admin", methods=["POST", "GET"])
 def admin():
     ese_time = datetime.datetime.now()
-    display_time = (ese_time.strftime("%A" "%X"))
+    display_time = (ese_time.strftime("%A %X"))
     
     try:  
         if request.method == "POST":
@@ -629,7 +630,7 @@ def admin():
 
             # Check if the email and password match an existing account
             with mysql.connection.cursor() as cursor:
-                cursor.execute("SELECT * FROM admin WHERE name_admin=%s AND email_admin=%s AND password", (adname, ademail, adpassw))
+                cursor.execute("SELECT * FROM admin WHERE name_admin=%s AND email_admin=%s AND password=%s", (adname, ademail, adpassw))
                 account = cursor.fetchone()
 
             if account:
@@ -641,11 +642,45 @@ def admin():
                 flash("Invalid email or password!")
 
         # Render the login template
-        return render_template("admin.html")
+        return render_template("admin.html", display_time=display_time)
 
     except Exception as e:
         flash(f"Error occurred: {str(e)}")
-        return render_template("admin.html")
+        return render_template("admin.html", display_time=display_time)
+# @app.route("/admin", methods=["POST", "GET"])
+# def admin():
+#     ese_time = datetime.datetime.now()
+#     display_time = (ese_time.strftime("%A" "%X"))
+    
+#     try:  
+#         if request.method == "POST":
+#             # Collect email and password from the login form
+#             adname = request.form["admin_name"]
+#             ademail = request.form["admin_email"]
+#             adpassw = request.form["admin_passw"]
+
+#             # Check if the email and password match an existing account
+#             with mysql.connection.cursor() as cursor:
+#                 cursor.execute("SELECT * FROM adminnew WHERE name_admin=%s AND email_admin=%s AND password", (adname, ademail, adpassw))
+#                 account = cursor.fetchone()
+#             # cursor = mysql.connection()
+#             # cursor.execute("SELECT * FROM admin WHERE name_admin=%s AND email_admin=%s AND password", (adname, ademail, adpassw))
+#             # account = cursor.fetchone()
+
+#             if account:
+#                 # If the login is successful, store the visitor ID in the session
+#                 # session["visitor_id"] = account[0]
+#                 flash("Logged in successfully!")
+#                 return redirect(url_for("alluser"))
+#             else:
+#                 flash("Invalid email or password!")
+
+#         # Render the login template
+#         return render_template("admin.html")
+
+#     except Exception as e:
+#         flash(f"Error occurred: {str(e)}")
+#         return render_template("admin.html")
 
 
 ################################################################################
