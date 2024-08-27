@@ -1,7 +1,6 @@
-"""
-Author: Monday Erirore Eseinone erirore
-
-Purpose: Displaying  project from 09/02/2024.
+""" 
+    Author: Monday Erirore Eseinone erirore
+    Purpose: Displaying  project from 09/02/2024.
 """
 
 import sqlite3
@@ -10,6 +9,7 @@ from datetime import datetime
 
 from time import strftime
 from datetime import datetime
+
 
 import os
 from flask import Flask, redirect, url_for, render_template, request, session, flash
@@ -34,7 +34,8 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'codewithesedb'
 
-mysql = MySQL(app)
+# mysql = MySQL(app)
+conn = MySQL(app)
        
 
 @app.route("/")
@@ -605,17 +606,7 @@ def finance_house():
 
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-# app.config['MYSQL'] = "localhost"
-# app.config['MYSQL_USER'] = "root"
-# app.config['MYSQL_PASSWORD'] = "monday12ESE"
-# app.config['MYSQL_DB'] = "esedb1"
-
-# mysql = MySQL(app)
-
-
-#  admin     
-
+  
 @app.route("/admin", methods=["POST", "GET"])
 def admin():
     ese_time = datetime.datetime.now()
@@ -629,7 +620,7 @@ def admin():
             adpassw = request.form["admin_passw"]
 
             # Check if the email and password match an existing account
-            with mysql.connection.cursor() as cursor:
+            with conn.connection.cursor() as cursor:
                 cursor.execute("SELECT * FROM admin WHERE name_admin=%s AND email_admin=%s AND password=%s", (adname, ademail, adpassw))
                 account = cursor.fetchone()
 
@@ -647,40 +638,6 @@ def admin():
     except Exception as e:
         flash(f"Error occurred: {str(e)}")
         return render_template("admin.html", display_time=display_time)
-# @app.route("/admin", methods=["POST", "GET"])
-# def admin():
-#     ese_time = datetime.datetime.now()
-#     display_time = (ese_time.strftime("%A" "%X"))
-    
-#     try:  
-#         if request.method == "POST":
-#             # Collect email and password from the login form
-#             adname = request.form["admin_name"]
-#             ademail = request.form["admin_email"]
-#             adpassw = request.form["admin_passw"]
-
-#             # Check if the email and password match an existing account
-#             with mysql.connection.cursor() as cursor:
-#                 cursor.execute("SELECT * FROM adminnew WHERE name_admin=%s AND email_admin=%s AND password", (adname, ademail, adpassw))
-#                 account = cursor.fetchone()
-#             # cursor = mysql.connection()
-#             # cursor.execute("SELECT * FROM admin WHERE name_admin=%s AND email_admin=%s AND password", (adname, ademail, adpassw))
-#             # account = cursor.fetchone()
-
-#             if account:
-#                 # If the login is successful, store the visitor ID in the session
-#                 # session["visitor_id"] = account[0]
-#                 flash("Logged in successfully!")
-#                 return redirect(url_for("alluser"))
-#             else:
-#                 flash("Invalid email or password!")
-
-#         # Render the login template
-#         return render_template("admin.html")
-
-#     except Exception as e:
-#         flash(f"Error occurred: {str(e)}")
-#         return render_template("admin.html")
 
 
 ################################################################################
@@ -695,13 +652,13 @@ def signin():
             sssemail = request.form["us_email"]
             sssname = request.form["us_name"]
 
-            with mysql.connection.cursor() as cursor:
+            with conn.connection.cursor() as cursor:
                 cursor.execute("SELECT * FROM visitors WHERE email=%s AND name=%s", (sssemail, sssname))
                 account = cursor.fetchone()
 
             if not account or sssemail == "" or sssname == "":
                 flash("Sorry, incorrect credential provided")
-                return render_template('signin.html')
+                return render_template('signin.html', sssemail=sssemail)
             else:
                 session.permanent = True
 
@@ -729,7 +686,7 @@ def signup():
             
 
             # Check if the email already exists
-            with mysql.connection.cursor() as cursor:
+            with conn.connection.cursor() as cursor:
                 cursor.execute("SELECT * FROM visitors WHERE email=%s", (stdemail,))
                 account = cursor.fetchone()
 
@@ -738,9 +695,9 @@ def signup():
             elif not re.match(r'[^@]+@[^@]+\.[^@]+', stdemail):
                 flash("Invalid email address!")
             else:
-                with mysql.connection.cursor() as cursor:
+                with conn.connection.cursor() as cursor:
                     cursor.execute("INSERT INTO visitors (name, email, visitor_date) VALUES (%s, %s, %s)", (stdname, stdemail, display_time))
-                    mysql.connection.commit()
+                    conn.connection.commit()
                     flash("Account created successfully!")
                     return redirect(url_for("signin"))
 
@@ -753,7 +710,7 @@ def signup():
 @app.route("/alluser")
 def alluser():
     try:
-        with mysql.connection.cursor() as cursor:
+        with conn.connection.cursor() as cursor:
             cursor.execute("SELECT * FROM visitors")
             alluser = cursor.fetchall()
             return render_template("alluser.html", userDetails=alluser)
@@ -771,7 +728,7 @@ def login():
             login_password = request.form["username"]
 
             # Check if the email and password match an existing account
-            with mysql.connection.cursor() as cursor:
+            with conn.connection.cursor() as cursor:
                 cursor.execute("SELECT * FROM visitors WHERE email=%s AND name=%s", (login_email, login_password))
                 account = cursor.fetchone()
 
@@ -799,52 +756,6 @@ def user_design():
             # return redirect(url_for("user_design", visitor=visitor))
         return render_template("user_design.html")
 
-
-    
-
-# @app.route("/user_design")
-# def user_design():
-#     try:
-#         # Check if the visitor is logged in
-#         if "visitor_id" in session:
-#             # Retrieve the visitor's information from the database
-#             with mysql.connection.cursor() as cursor:
-#                 # cursor.execute("SELECT * FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
-#                 cursor.execute("SELECT name FROM visitors WHERE visitor_id=%s", (session["visitor_id"],))
-#                 visitor = cursor.fetchone()
-
-#             # Render the design template with the visitor's information
-#             #return redirect(url_for("user_design", visitor=visitor))
-            
-#             # lopping through visitor account 
-#             # to print out the username only 
-        
-#                 # print(datas)
-                   
-#                     # visitor_email = datas[2]
-                 
-#             return render_template("user_design.html", visitor=visitor)
-#         else:
-#             # If the visitor is not logged in, redirect them to the login page
-#             flash("Please log in to access the design page.")
-#             return redirect(url_for("login"))
-
-#     except Exception as e:
-#         flash(f"Error occurred: {str(e)}")
-#         return redirect(url_for("login"))
-
-
-
-# @app.route("/logout")
-# def logout():
-
-#     # here i flash the logout message
-#     flash(" you have been logged out! ", "info")
-#     session.pop("user", None)
-#     session.pop("email", None)
-#     return redirect(url_for("login"))
-
-from flask import session, redirect, url_for, flash
 
 @app.route("/logout")
 def logout():
