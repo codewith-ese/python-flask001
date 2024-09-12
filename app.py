@@ -230,20 +230,45 @@ def furniture():
         down_and_top_pannel = f" {down_pannel_width}cm X {round_total}cm " # round_total is the measurement of the dimacation 
         
         # Door calculation 
-        door_cal = float(design_lenght) - 1.5
-        door_one_width_c = door_cal / 3
-        door_one_width = round(door_one_width_c, 2)
         
-        door_one_hight = hight_cutting - 7
+        if (quantity_doors =="3"):   
+            door_cal = float(design_lenght) - 1.5
+            door_one_width_c = door_cal / 3
+            door_one_width = round(door_one_width_c, 2)
+
+            door_one_hight = hight_cutting - 7
+            
+            door_one = f" {door_one_hight}cm x {door_one_width}cm"
+            door_one_quantity = 1
+            
+
+            # Door 2 start here 
+            door_two_hight = hight_cutting - 48
+            round_door_two = round(door_two_hight, 1)
+            door_two = f" {round_door_two}cm x {door_one_width}cm"
+            door_two_quantity = 2
+            
+        elif (quantity_doors =="2"):
+            door_cal = float(design_lenght) - 1.5
+            door_one_width_c = door_cal / 2
+            door_one_width = round(door_one_width_c, 2)
+       
+
+            # Door 2 start here 
+            door_two_hight = hight_cutting - 48
+            round_door_two = round(door_two_hight, 1)
+            door_two = f" {round_door_two}cm x {door_one_width}cm"
+            door_two_quantity = 2
+            
+            door_one_hight = hight_cutting - 7        
+            door_one = f" {0}"
+            door_one_quantity = 0
+        else:
+            door_one = 0
+            door_one_quantity = 0
+
         
-        door_one = f" {door_one_hight}cm x {door_one_width}cm"
-        door_one_quantity = 1
-        
-        # Door 2 start here 
-        door_two_hight = hight_cutting - 48
-        round_door_two = round(door_two_hight, 1)
-        door_two = f" {round_door_two}cm x {door_one_width}cm"
-        door_two_quantity = 2
+
         
         # ================================
         #   cutting list starts from here 
