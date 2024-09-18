@@ -231,7 +231,25 @@ def furniture():
         
         # Door calculation 
         
-        if (quantity_doors =="3"):   
+        if (quantity_doors =="4"):   
+            door_cal = float(design_lenght) - 1.5
+            door_one_width_c = door_cal / 4
+            door_one_width = round(door_one_width_c, 2)
+
+            door_one_hight = hight_cutting - 7
+            
+            door_one = f" {door_one_hight}cm x {door_one_width}cm"
+            door_one_quantity = 2
+            
+
+            # Door 2 start here 
+            door_two_hight = hight_cutting - 48
+            round_door_two = round(door_two_hight, 1)
+            door_two = f" {round_door_two}cm x {door_one_width}cm"
+            door_two_quantity = 2
+            
+                    
+        elif (quantity_doors =="3"):   
             door_cal = float(design_lenght) - 1.5
             door_one_width_c = door_cal / 3
             door_one_width = round(door_one_width_c, 2)
@@ -263,13 +281,50 @@ def furniture():
             door_one_hight = hight_cutting - 7        
             door_one = f" {0}"
             door_one_quantity = 0
+            
+            if (number_of_partation =="0"):
+                partation_hight = 0
+                # partation_hight = f" {0}cm x {0}cm " 
+                
+            else:
+                partation_hight = f" {round_partation}cm x {main_cutting_width}cm " 
+
+        elif (quantity_doors =="0"):
+            door_cal = float(design_lenght) - 1.5
+            door_one_width_c = door_cal / 2
+            door_one_width = round(door_one_width_c, 2)
+       
+
+            # Door 2 start here 
+            door_two_hight = hight_cutting - 48
+            round_door_two = round(door_two_hight, 1)
+            # door_two = f" {round_door_two}cm x {door_one_width}cm"
+            door_two = f" {0}cm"
+            door_two_quantity = 0
+            
+            door_one_hight = hight_cutting - 7       
+            door_one = f" {0}"
+            door_one_quantity = 0
+            
+            
+            if (number_of_partation =="0"):
+                partation_hight = 0
+                # partation_hight = f" {0}cm x {0}cm " 
+                
+            else:
+                partation_hight = f" {round_partation}cm x {main_cutting_width}cm " 
         else:
+            
+           
             door_one = 0
             door_one_quantity = 0
+            door_one_quantity = 0
+            door_two_quantity = 0
+            
 
-        
-
-        
+    
+           
+           
         # ================================
         #   cutting list starts from here 
         # ================================
