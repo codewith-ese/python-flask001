@@ -18,15 +18,15 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 1.4rem;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 h4 {
@@ -51,7 +51,7 @@ body {
 }
 
 h1 {
-  color: rgb(13, 2, 89);
+  color: wheat;
 }
 
 h2 {
@@ -74,16 +74,88 @@ p {
   color: #35383c;
 }
 
-header {
-  background-color: #14485f;
+
+nav {
+	background-color: #14485f;
+	display: flex;
+	flex-direction: column;
 }
 
-header h1 {
-  color: #F9F8F5;
+nav a {
+	display: block;
+	color: #fff;
+	text-align: center;
+	padding: 1rem;
+	text-decoration: none;
+}
+
+nav a:hover {
+	text-decoration: underline double;
+	background-color: #eee;
+	color: #000;
+}
+
+.active {
+	color: yellow;
+}
+
+/* new nav starts here  */
+
+
+/* small view navigation */
+#menu {
+	font-size: 1.5rem;
+	border: 0;
+	background: none;
+	color: #000;
+	position: absolute;
+	top: 1rem;
+	right: 2rem;
+}
+
+#menu::before {
+	content: "☰";
+	color: #fff;
+}
+
+#menu.open::before {
+	content: "❎";
+}
+
+.navigation {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	background-color: #222;
+	color: #fff;
+	max-width: 900px;
+}
+
+.navigation a {
+	display: none;
+	padding: 1rem;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+
+.navigation a:hover {
+	background-color: #bbb;
+	color: #333;
+	/* font-weight: 700; */
+}
+
+/* when the button is clicked - the open class is toggled (added/removed) */
+.open a {
+	display: block;
+}
+
+.active::before {
+	content: "🔽";
+	/* just a wayfinding symbol for the user */
 }
 
 /* Layout and Spacing */
-
 h1, h3 {
   text-align: center;
 }
@@ -94,20 +166,24 @@ h2 {
   margin: auto;
 }
 
-p {
+/* p {
   margin: 0.25rem;
   padding: 0.5rem 0.75rem;
   background-color: #F9F8F5;
-}
+} */
 
+/* mobile **************************/
 header {
-  display: block;
-  padding: 20px 0 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #222;
+	display: grid;
+	grid-gap: 1rem;
+	padding: 10px 20px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 2px 30px rgb(66, 44, 3);
 }
 
-header h1 {
-  padding-bottom: 10px;
+header h1{
+  font-size: 1rem;
 }
 
 .hero {
@@ -190,6 +266,7 @@ header h1 {
   align-items: center;
   color: #FBC404;
 }
+
 
 .card-body .time_display h1 {
   text-align: center;
@@ -647,7 +724,7 @@ color: #f9f8f5;
 .grid-item {
   background-color: #ddd;
   /* border: 1px solid #14485f; */
-  padding: 0px 20px;
+  padding: 0px 10px;
   margin: 10px;
   border-radius: 19px;
   font-size: 20px;
@@ -687,10 +764,10 @@ color: #f9f8f5;
 .grid-item p {
   font-size: 18px;
   color: #35383c;
-  margin: 10px;
+  margin: auto;
   margin-bottom: 10px;
   text-align: left;
-  padding: 0 40px 0 40px;
+  padding: 5px 10px;
   background: none;
 }
 
@@ -704,6 +781,7 @@ color: #f9f8f5;
 
 
 .grid-item img {
+  display: block;
   width: 250px;
   height: auto;
   border-radius: 10px;
@@ -719,7 +797,6 @@ color: #f9f8f5;
   width: 200px;
   height: auto;
   margin: auto;
-
 
 }
 
@@ -741,8 +818,8 @@ color: #f9f8f5;
 #grid-profile-img {
   width: 200px;
   height: auto;
-  margin: 1rem 1rem 1rem 1rem;
-  /* margin: auto; */
+  /* margin: 1rem 1rem 1rem 1rem; */
+  margin: auto;
 
 }
 
@@ -787,19 +864,19 @@ color: #f9f8f5;
         align-items: center;
         width: 500px;
         height: auto;
-        margin-top: 30px;
+        margin: 1rem auto;
     }
     .table {
         width: 100%;
 
     }
-    #grid-small-img {
+    /* #grid-small-img {
       width: 80%;
       height: auto;
       align-items: center;
-      margin: 20px;
+      margin: auto;
       
-      }
+      } */
 }
 
 @media only screen and (max-width:795px){
@@ -813,10 +890,8 @@ color: #f9f8f5;
         width: 100%;
         height: auto;
         align-items: center;
-        margin: 20px;
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-bottom: 5px;
+        margin: auto;
+
       }
 }
 
@@ -880,13 +955,12 @@ color: #f9f8f5;
   
 }
 
-
 /* Footers start here */
 footer {
   margin-top: 20px;
-  border-top: 2px solid #000;
+  border-top: 2px solid #14485f;
   text-align: center;
-  background-color: #14485f;
+  background-color: #222;
   padding: 5px 40px;
 }
 
@@ -901,21 +975,25 @@ footer p {
 	color: #fff;	
 }
 
-
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding: 10px 2px;
-  background-color: #14485f;
+  background-color: #222;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 5px;
+  padding: 10px 2px;
+  background-color: #222;
 }
 
 .footer-grid-item {
-  /* border-top: 1px dotted #FBC404; */
-  /* border-top: 2px dotted #FBC404; */
   padding: 2px 10px;
   margin: 0 40px;
-  /* text-align: center; */
 }
 
 .footer-grid-item a :hover{
@@ -930,12 +1008,22 @@ footer p {
 .footer-grid-item p {
   margin: 0.15rem;
   padding: 0.2rem 0.75rem;
-  background-color: #14485f;
+  background-color: #222;
   letter-spacing: .05rem;
   line-height: 1.2rem;
   font-size: small;
   color: #fff;	
   text-align: left;
+}
+
+.footer-grid-item h4 {
+  margin: auto;
+  padding: 0.2rem 0.75rem;
+  letter-spacing: .05rem;
+  line-height: 1.2rem;
+  font-size: 1rem;
+  color: wheat;	
+  text-align: center;
 }
 
 .footer-grid-item img {
@@ -959,21 +1047,40 @@ footer a {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
       grid-gap: 20px;
-      padding:  20px;
-      border-top: 10px solid #333;
-      padding: 5px 2px;
-      background-color: #14485f;  
+      border-top: 10px solid #14485f;
+      padding: 2px;
+      background-color: #222;  
   }
   .footer-grid-item p {
     margin: 0.25rem;
     padding: 0.1rem 0.75rem;
-    background-color: #14485f;
+    background-color: #222;
     letter-spacing: .05rem;
     line-height: 1.2rem;
     font-size: small;
     color: #fff;	
     text-align: center;
   }
+  .footer-grid-item {
+    padding: 2px 10px;
+    margin: 0px auto;
+  }
+  .footer-grid-item img {
+    border: 2px solid wheat;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 20px auto;
+    width: 20px;
+  }
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 5px;
+    padding: 10px 2px;
+    background-color: #222;
+  }
+
   
   
 }
@@ -1006,15 +1113,15 @@ footer a {
 }
 
 .copyright-d p{
-    color: rgb(17, 17, 17);
+    color: wheat;
     font-size: 12px;
     align-items: center;
     text-align: center;
-    background-color: #FBC404;
+    background-color: #14485f;
 }
-.copyright-mobile{
+/* .copyright-mobile{
   display: none;
-}
+} */
 .footer-item p{
     text-align: left;
 }
@@ -1035,6 +1142,11 @@ color: rgb(207, 231, 72);
 @media (max-width: 760px) {
   h5{
     font-size: 12px;
+
+  }
+  .copyright-mobile{
+    display: grid;
+    align-items: center;
   }
 }
 
@@ -1249,9 +1361,9 @@ figcaption {
 .list-class{
   width: 700px;
   margin: auto;
-  padding: 40px;
+  padding: 5px;
   background-color: rgb(255, 249, 241);
-  box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.751);
+  box-shadow: 0 0 2px  rgba(0, 0, 0, 0.751);
 }
 
 .list-class li{
@@ -1266,9 +1378,9 @@ figcaption {
   .list-class{
       width:100%;
       margin: auto;
-      padding: 40px;
+      padding: 5px;
       background-color: rgb(255, 249, 241);
-      box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.751);
+      /* box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.751); */
     }
 }
 
@@ -1328,7 +1440,7 @@ ul.b {
   }
 .stool-tables h1{
   text-align: center;
-  font-size: 25px;
+  font-size: 1.5rem;
   color: #FBC404;
   text-shadow: 2px 3px 4px black;
   padding: 0 0 4px 0;
@@ -1576,7 +1688,7 @@ tfoot td {
 
 .designer h1{
   text-align: center;
-  font-size: 25px;
+  font-size: 1.5rem;
   color: #FBC404;
   text-shadow: 2px 3px 4px black;
   padding-top: 10px;
