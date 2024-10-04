@@ -1,47 +1,28 @@
 {% extends "base.html" %}
 {% block title %}SIGN IN PAGE {% endblock %}
 
-        {% block content %}
+{% block content %}
 
-     
-    <div class="container"> 
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-<div class="card-body">
-
-                <!-- {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for msg in messages %}
-                    <p>{{msg}}</p>     
-                {% endfor %}
-                    {% endif %}
-                    {% endwith %} -->
+<div class="container">
+    <div class="card-body">
 
         <!--   form starts here --> 
         <div class="stool-tables">   
-
-        <form action="/table_display" method="post">
-            <h1> Stool / Table Calculator </h1>
-        <!--   <p>{{ name }}</p>
-            <p> {{ usr }} </p>--> 
-            <P> P Name: <input type="text" name="project_name" /> </P> 
-            <P>  Lenght : <input type="number" name="table_lenght" /> </P> 
-            <P>  Width  : <input type="number" name="table_width" /> </P> 
-            <P>  Height : <input type="number" name="table_hight" /> </P> 
-            <P>  QUALITY : <input type="number" name="table_quant" /> </P> 
-            <button style="width: 100px;" type="submit" class="submit" value"submit">Submit</button>
-        </form>
-       
-      <p>  <a href="{{ url_for('signup')}}">  SINGUP </a> </p>
+            <form action="/table_display" method="post">
+                <h1> Stool / Table Calculator </h1>
+                <P> P Name: <input type="text" name="project_name" /> </P> 
+                <P>  Lenght : <input type="number" name="table_lenght" /> </P> 
+                <P>  Width  : <input type="number" name="table_width" /> </P> 
+                <P>  Height : <input type="number" name="table_hight" /> </P> 
+                <P>  QUALITY : <input type="number" name="table_quant" /> </P> 
+                <button style="width: 100px;" type="submit" class="submit" value"submit">Submit</button>
+            </form>
+        </div>
+        
+        <!--{{mesage}}-->
+        <!--form ends here--> 
+        <p> Stools and Tables  </p>
 
     </div>
-
-    {{  mesage }}
-            <!--   form ends here --> 
-        <h2 style="color:rgb(172, 46, 0)">  Monday Media login </h2>
-       <!--  <h1>  BEST QUALITY WEBSITE DESIGNERS  </h1>  -->  
 </div>
-    
-    </div>
-        {% endblock %}ss
+{% endblock %}

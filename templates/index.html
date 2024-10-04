@@ -2,201 +2,100 @@
 {% block title %}WELCOME TO MONDAY MEDIA BLOG 2024 {% endblock %}
 
 
-        {% block content %}
+    {% block content %}
+   
+    <!-- Home page Welcome message  starts here -->
+    <div class="hero"> <!-- hero class starts here -->
+        <img id="home-img" src="static/images/015.png" alt="home page image for background"> 
+        <h1> Welcome to My World of Code<br>Let's Build Something Together  </h1>  
+    </div>   <!-- hero class ends here -->
+    <div class="container">
+        <section>
+            <!--<h2>  CodeWith Ese <br/> WEBSITE AND SOFTWARE DEVELOPMENT <br/>
+                Turning creative ideas into real life solution is my main motivation </h2>-->
+            <div class="grid-contaioner">
 
-       <!-- --> <div class="container">
-
-        <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->
-        <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <div class="card-body">
-
-        <!-- This code will display the time and date -->
-        <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->   <!-- This code will display the time and date -->
-        <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <div class="card-body"> <div class="time_display">
-        <h1>  Date: {{ display_time }}  </h1>
-        </div> <!-- time ends here -->
-        </div> <!-- card for time ends here -->
-        <!-- Time code ends here  -->
-        <br/>
-                    <!-- Home page Welcome message   -->
-    <h1>  Eseflow Tech 2024  </h1>
-    <h2> WEBSITE AND SOFTWARE DEVELOPMENT <br/>
-    Turning creative ideas into real life solution is my main motivation </h2>
-    <p class="pading-p-class">
-        My primary motivation is to translate innovative concepts into practical
-        solutions. Monday Eseinone is a Brigham Young University student studying
-         software development. He is imaginative, and diligent, and possesses 
-         strong leadership qualities. Strong understanding of how to apply the
-          growth mindset to resolve to accomplish goals and objectives in
-           every aspect of life. Proficiency in Python, HTML, and CSS 
-           languages for coding.
- </p>
+                <!-- grid items code goes here -->
+                <div class="grid-item">
+                 
+                    <!--  <div class="line"></div> this empty div will creat line in this class -->
+                    <h2> Welcome to My World of Code</h2>   
+                    <img src="https://res.cloudinary.com/dcxluplnr/image/upload/v1700416114/IMG-20231105-WA0009-removebg-preview_cw9f4i.png" id="grid-profile-img" alt="Monday Eseinone"> 
+                    <p>I'm Monday Eseinone, and I'm excited to share
+                        my wood calculator project with you</p>
+                        <p> <a class="nav-link" href="{{ url_for('user_design')}}"> ➡️Get Started</a></p>
+                    <!--<h2 ><a href="{{ url_for('upload_file')}}" class="btn btn-primary"> Upload File </a> </h2>-->
+                    <br>
+                </div>
 
 
+                <div class="grid-item">
+                    <!-- <div class="line"> </div> this empty div will creat line in this class -->
+                    <h2> Generate Your Cutting List </h2>
+                    <p>Quickly calculate measurements
+                         and generate a cutting list for any furniture project. 
+                         <br/>
+                         <p> <a class="nav-link" href="{{ url_for('user_design')}}"> ➡️Get Started</a></p>
+                         <br/>
+                         
+                         <b><i> Let's Build Something Together</i> </b>
+                         <br/> Feel free to explore my website, where I'll be sharing my projects,
+                         experiences, and insights in the world of software development.
+                          I'm excited to collaborate, share ideas, and explore opportunities
+                           for mutual growth and success. Let's connect and build something 
+                           amazing together!</p>
+                    <p><a class="nav-link" href="{{ url_for('minor')}}"> Videos </a></p>
+                    <br/>
+                </div>
+                <div class="grid-item">
+                  
+                   <!--  <div class="line"></div> this empty div will creat line in this class -->
+                    <h2> Let's Build Something Together</h2>
+                    <p> Feel free to explore my website, where I'll be sharing my projects,
+                         experiences, and insights in the world of software development.
+                          I'm excited to collaborate, share ideas, and explore opportunities
+                           for mutual growth and success. Let's connect and build something 
+                           amazing together! </p>
+                    <!--<img  src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Thumbnail/v1713377500/022_wanvui.png" id="grid-small-img"  alt="Monday Eseinone">-->
+                </div>
 
-
-</div> <!-- card body div closes here -->
-<br/>
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-    <section>
-        <div class="grid-contaioner">
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-        <!-- grid items code goes here -->
-        <div class="card-body">
-        <div class="grid-item">
-            <br/>
-            <h2> SAMPLE PROJECT </h2>
-            <p> Watch the video below to see one of my expenses
-                tracker application built with Python programming.
-            </p>
-            <br/>
-
-                <iframe width="100%" height="315px"
-                src="https://www.youtube.com/embed/ReGDSu6GWwY?si=oQJO--FOUfXCykyC" title="YouTube video player"
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-                encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen></iframe>
-
-              <h2 ><a href="{{ url_for('income')}}" class="btn btn-primary">Expenses Tracker  </a> </h2>
-              <h2 ><a href="{{ url_for('upload_file')}}" class="btn btn-primary"> Upload File </a> </h2>
-              <br>
-
-
-            </div>
-        </div>
-
-  <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-  <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-        <!-- grid items code goes here -->
-        <div class="card-body">
-             <div class="grid-item">
-            <br>
-
-              <h2> WHAT I DO </h2>
-              <p>
-                  I am into Apps and website development for both small- and large-scale businesses,
-                  making good use of the Python programming language, HTML and CSS. My service
-                  provides lasting solutions to the challenges faced by most Businesses around the world.
-                  Feel free to check out the simple expenses tracker App I built recently. </p>
-
-              <h2 ><a href="{{ url_for('income')}}" class="btn btn-primary">Expenses Tracker  </a> </h2>
-
-              <br/>
-
-            <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-            </div>
-         </div>
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->  <!-- grid items code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-        <div class="card-body">
-            <div class="grid-item">
-                <br/>
-
-                  <h2> MANAGEMENT APP  </h2>
-
-                  <p> Getting an app to help manage your business is one of
-                        the most inportant aspect of a business plan in 2024.
-                  </p>
-
-                  <img  src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Thumbnail/v1713377500/022_wanvui.png" id="grid-small-img"  alt="Monday Eseinone">
-
-
-            </div>
-        </div>
-
- <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-        <!-- grid items code goes here -->
-        <div class="card-body">
-              <div class="grid-item">
-
+                <!-- grid items code goes here -->
+                <div class="grid-item">
+                    <h2> Dynamic Website   </h2>
+                    <!-- <div class="line"></div> this empty div will creat line in this class -->
                     <img src="static/images/009.jpg" id="grid-small-img" alt="Monday Eseinone">
-
-                  <h2> Dynamic Website   </h2>
-
-                  <p> Every business needs a website to
+                    <p> Every business needs a website to
                        grow and to expand their reach to potential clients around the
-                       world.<!-- a good website will always help increase sales, and customers
-                       certisfaction that includes boosting the revenue of the business.
-                       so, it is very inportant to have a good website for your business.-->
-                  </p>
+                       world. </p>
+                </div>
 
             </div>
-             </div>
+        </section>
 
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
         <!-- card content code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <div class="card-body">
+            <br/>
+            <!-- Home page Welcome message   -->
+            <h2>My Goals</h2>
+            <p class="pading-p-class">
+                My major goal is to help as many Businesses and individuals as 
+                possible with the use of modern technology to achieve success in 
+                their business. I am passionate about making good use of the Python 
+                programming language, HTML, and CSS to build dynamic websites, and 
+                mobile responsive and interactive web apps, to solve real-life problems.</p>
+        </div> <!-- card body div closes here -->
+            <br/>
 
+       <!-- <div class="card-body">
+            <br/>
+            <a href="{{ url_for('class1')}}" class="btn btn-primary">Blog </a>
+            <a href="{{ url_for('contact')}}" class="btn btn-primary">Contact </a>
+            <a href="{{ url_for('signup')}}" class="btn btn-primary">Tutorials </a>
+            <a href="{{ url_for('it_class')}}" class="btn btn-secondary">VIDEOS</a>
+            <a href="{{ url_for('signup')}}" class="btn btn-secondary">signup</a>
+        </div>     --><!-- card body div closes here -->
+            <br/>
 
-
-        </div>
-    </section>
-
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <div class="card-body">
-        <br/>
-                                <!-- Home page Welcome message   -->
-                <h2>  GOALS</h2>
-
-    
-                <p class="pading-p-class">
-                         My major goal is to help as many Businesses and individuals as
-                         possible with the use of modern technology to achieve success in
-                         their business.
-                        I am passionate about making good use of the Python programming language,
-                         HTML and CSS to build dynamic websites, mobile responsive and interactive web apps,
-                        for the purpose of solving  real-life problems.
-
-                </p>
-
-    </div> <!-- card body div closes here -->
-    <br/>
-
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <div class="card-body">
-        <br/>
-       <!-- <a href="#" class="btn btn-primary">Connect with US </a>-->
-        <a href="{{ url_for('class1')}}" class="btn btn-primary">Blog </a>
-        <a href="{{ url_for('contact')}}" class="btn btn-primary">Contact </a>
-        <a href="{{ url_for('signup')}}" class="btn btn-primary">Tutorials </a>
-        <a href="{{ url_for('it_class')}}" class="btn btn-secondary">VIDEOS</a>
-        <a href="{{ url_for('signup')}}" class="btn btn-secondary">signup</a>
-       <!--  <a href="{{ url_for('signin')}}" class="btn btn-secondary">signin</a>-->
-       <!-- <a href="{{ url_for('upload_file')}}" class="btn btn-secondary">upload_file</a>-->
-       <!-- <a href="{{ url_for('admin')}}" class="btn btn-secondary">Admin</a>-->
-        <!-- link to other pages ends here  -->
-
-    </div> <!-- card body div closes here -->
-    <br/>
-<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  -->
-
-
-
-</div> <!-- container div closes here -->
-
-        {% endblock %}
+    </div> <!-- container div closes here -->
+    {% endblock %}
 

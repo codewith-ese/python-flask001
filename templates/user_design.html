@@ -1,69 +1,48 @@
 {% extends "base.html" %}
 {% block title %}WELCOME TO MONDAY MEDIA BLOG {% endblock %}
 
-
 {% block content %}
-
-
-
 <div class="container">
-
-<div class="card-body">
+    <div class="card-body">
         <!-- Display current user  -->
-        <p id="username1"> User: {{sssemail}}  <img src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Profile/v1712531830/018_ar8inb.png" alt="Monday eseinone" width="30" height="30"></p>
-      <p>  {{sssemail}} </p>
-            
-   
+        <!--<p id="username1"> User: {{sssemail}}  <img src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Profile/v1712531830/018_ar8inb.png" alt="Monday eseinone" width="30" height="30"></p>
+        <p>  {{sssemail}} </p> -->
 
-<div class="card-body"> 
-    <div class="time_display">
-    <h1>  Wood Calculator  </h1>
-    </div> <!-- time ends here -->
-    <a href="{{ url_for('logout') }}">Logout</a>
+        <div class="time_display">
+            <h1>  Wood Calculator  </h1>
+        </div> <!-- time ends here -->
+        <!--<a href="{{ url_for('logout') }}">Logout</a> -->
+        <br/>
+        <div class="design-list-class">
+            <h2> Designing Your Furniture  </h2>
+            <h2>  {{sssemail}} </h2>
 
-
-
-    <div class="design-list-class">
-        <h2> Designing Your Furniture  </h2>
-        <h2>  {{sssemail}} </h2>
-
-        <div class="designer">   
-           <p> <button class="sub"><a class="disgnb" href="{{ url_for('design')}}">Calculate Wardrobe Measurement</a>  {{display_time }}</button> </p>
-            <p> <button class="sub"><a class="disgnb" href="{{ url_for('it_class')}}"> Calculate Board Using Your cutting list </a>  {{display_time }} </button></p>
+            <div class="designer">
+                <p> <button class="sub"><a class="disgnb" href="{{ url_for('design')}}">Calculate Wardrobe Measurement</a>  {{display_time }}</button> </p>
+                <p> <button class="sub"><a class="disgnb" href="{{ url_for('it_class')}}"> Calculate Board Using Your cutting list </a>  {{display_time }} </button></p>
                 <p><button class="sub" ><a class="disgnb" href="{{ url_for('stools')}}"> Side Stool / Table</a></button></p>
                 <p> <button class="sub"><a class="disgnb" href="{{ url_for('income')}}"> Expenses Tracker</a>  {{display_time }} </button></p>
-        </div>
-        
-    
+            </div>
+            <br/>
+
             <h2>Wood Calculate </h2>
-    
-            <p id="padded-p"> 
-              Welcome! This web app is designed to help you quickly calculate 
-              measurements and generate a cutting list for
-               any furniture project. Whether you're a professional builder
+            <p id="padded-p">
+                Welcome! This web app is designed to help you quickly calculate 
+                measurements and generate a cutting list for
+                any furniture project. Whether you're a professional builder
                 or a DIY enthusiast, this tool simplifies the process, 
                 ensuring accurate material estimates and efficient planning 
-                for your next project.
-            </p>
-    
-    </div>
-
- <img src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Profile/v1712531830/018_ar8inb.png" alt="Monday eseinone" width="30" height="30">
-
-    <h2>  </h2>
-</div> <!-- card body div closes here -->
-<br/>
+                for your next project.</p>
+        
+        </div> <!-- Design-list-class ends here -->
+        <br/>
         <section class="map-class">
-        <h2>Office Location </h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.6313051847746!2d3.239037332212586!3d6.601402441757054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9a8952f3c043%3A0xc535e05cd3311792!2sAyobo%2C%20Lagos%20102213%2C%20Lagos!5e0!3m2!1sen!2sng!4v1716897011860!5m2!1sen!2sng"
-         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+            <h2>Office Location </h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.6313051847746!2d3.239037332212586!3d6.601402441757054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9a8952f3c043%3A0xc535e05cd3311792!2sAyobo%2C%20Lagos%20102213%2C%20Lagos!5e0!3m2!1sen!2sng!4v1716897011860!5m2!1sen!2sng"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
         </section>
 
- </div>   <!--   Grid container ends here -->   
+    </div><!--   Card body ends here  -->   
 </div> <!-- container div closes here -->
-</div> <!-- card for time ends here -->
-
-
-
 {% endblock %}
 
