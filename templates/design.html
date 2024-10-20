@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 {% block title %}view all users{% endblock %}
-
 {% block content %}
 
-  {% if error_statement %}
-    <p>{{ error_statement }} </p>
-  {% endif %}
+{% if error_statement %}
+  <p>{{ error_statement }} </p>
+{% endif %}
 
 <div class="container">
-  <!-- card content code goes here -->
   <div class="card-body">
     <div class="time_display">
       <h1>  Wardrobe Calculator </h1>
       </div> <!-- time ends here -->
+    </div>
 
       {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -22,13 +21,6 @@
       {% endif %}
       {% endwith %}
       <br/>
-      
-    <!-- ===============================  SECTION ONE =========================   -->
-    <section>
-      <div class="grid-contaioner">
-        <!-- grid items code goes here -->
-        <div class="card-body">
-
           <!-- form starts here  -->
           <div class="wood-form">
             <form  action="/furniture" method = "POST">                 
@@ -44,23 +36,8 @@
               <button style="width: 100px;" type="submit" class="submit" value"submit">Submit</button>
             </form>
           </div>
-        </div>
 
-        <!--======================================================-->
-        <div class="card-body">
-          <div class="grid-item">
-            <br/>
-            <h2> Wood Calculator  </h2>
-
-            <p>  Generate parfect estimates for your furniture projects. </p>
-            <img src="static/images/036.png" id="grid-small-img" alt="Monday Eseinone">
-            <!--<img src="https://res.cloudinary.com/dcxluplnr/image/upload/v1713377510/025_tnxmdh.png" id="grid-small-img" alt="Monday Eseinone">-->
-            <!--<p> <a class="nav-link" href="{{ url_for('class1')}}"> class1</a> </p>-->
-          </div>
-
-        </div>
-      </div> <!--Grid container ends here-->
-    </section>
+   
     <!-- ===============================  SECTION ONE  ENDS HERE =========================   -->
     
     <div class="card-body">
@@ -73,7 +50,7 @@
         ensuring accurate material estimates and efficient planning for your next project.</p>
     </div> <!-- card body div closes here -->
     <br/>
-  </div>
+
   
 </div> <!-- container close here -->
 

@@ -100,10 +100,9 @@ def class1():
         second_width = int(width_two)
         second_quantity = int(quantity_two)
     
-
-    # writing to a text file 
-            # Here I added all transaction into text file 
-            #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        # writing to a text file 
+        # Here I added all transaction into text file 
+        #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         dba = open(f"{project_name}.txt", "a")
         dba.write(f" Date: **************{display_time} **************\n ")
@@ -146,8 +145,6 @@ def class1():
         flash("All Input boxes must be filled")
         return redirect(url_for("it_class"))
         
-       
-    
     return render_template("class1.html", display_time=display_time, title=title,
                            project_name=project_name,
                            standard_board_measurement=standard_board_measurement,
@@ -166,8 +163,7 @@ def design():
     
     return render_template("design.html", display_time=display_time)
 
-
-    
+ 
 # This code will preper a cutting list
 @app.route("/furniture", methods= ["POST"])
 def furniture():
@@ -190,10 +186,7 @@ def furniture():
         c = float(number_of_partation) + 0
         number_of_partation_c = round(c)
         
-    
-        # a = 0
-        # d = int(a) + int(number_of_dimacation)
-        # standard board of mdf in Nigeria cm
+
         d = int()
         global board_ticknes
         board_ticknes = 1.5875
@@ -321,10 +314,6 @@ def furniture():
             door_one_quantity = 0
             door_two_quantity = 0
             
-
-    
-           
-           
         # ================================
         #   cutting list starts from here 
         # ================================
@@ -346,8 +335,6 @@ def furniture():
         flash(f"Error occurred: {str(e)} ")
         flash("Please fill all the Boxes ")
         return redirect(url_for("design"))
-    
-    
      
     return render_template("furniture.html", total_hight=total_hight,
                            demacation_cutting_total=demacation_cutting_total,
@@ -560,10 +547,12 @@ def class_room():
 @app.route("/income")
 def income():
     return render_template("income.html")
+@app.route("/mabel_cal")
+def mabel_cal():
+    return render_template("mabel_cal.html")
 
 
-
-@app.route("/add_item", methods= ["POST"])
+@app.route("/add_item", methods= ["POST"]) # change POST to get 
 def add_item():
     # HERE IS MY TIME CALCULATOR
     ese_time = datetime.datetime.now()
@@ -679,10 +668,6 @@ def finance_house():
                                 cleint_soft=cleint_soft, cleint_others=cleint_others,
                                   total_calulation=total_calulation, cleint_expencse=cleint_expencse, user_savings=user_savings, expences_percent=expences_percent,
                                   total_percent_income=total_percent_income, expense_amount_percent=expense_amount_percent, display_time=display_time ) 
-
-    user_client = cleint_nam(cleint_nam, " ")
-    db.session.add(cleint_nam)
-    db.session.commit()
 
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -1,46 +1,24 @@
 {% extends "base.html" %}
 {% block title %}view all users{% endblock %}
 
-    {% block content %}
-
-
-    {% if error_statement %}
-
-    <p>{{ error_statement }} </p>
-
-    {% endif %}
-
+{% block content %}
+{% if error_statement %}
+<p>{{ error_statement }} </p>
+{% endif %}
 
 <div class="container">
-
-            <!-- card content code goes here -->
-        <!--======================================================-->
-        <div class="card-body">
-
-        <!-- This code will display the time and date -->
-        <!--======================================================-->
-        <!-- card content code goes here -->   
-         <!-- This code will display the time and date -->
-        <!--======================================================-->
-        <div class="card-body"> <div class="time_display">
+<div class="card-body"> <div class="time_display">
         <h1>  Calculate Your Expenses </h1>
-        </div> <!-- time ends here -->
-        </div> <!-- card for time ends here -->
-                <!-- Time code ends here  -->
+        </div> 
+        </div> 
         <br/>
 
-
-        <!-- ===============================  SECTION ONE =========================   -->
 <section>
-        <div class="grid-contaioner">
-        <!--======================================================-->
-        <!-- grid items code goes here -->
        <div class="card-body">
-
-                   <!-- form starts here  -->
+        <!-- FORM CENTER FOR INCOME CALCULATOR STARTS HERE  -->
         <div class="form_center">
                 <form  action="/finance_house" method = "POST">
-                <h2>Calculate your Expences</h2>
+                        <h2>Calculate your Expences</h2>
 
                 <h5> Name: <input type = "text" class="mo" name = "cleint_name" /><br/> </h5>
                 <h5> Income:<input class="mo" type = "number"  name = "cleint_income" /><br/></h5>
@@ -51,125 +29,29 @@
                 <h5> Soft Drink:  <input class="mo" type = "number"  name = "cleint_soft" /><br/></h5>
                 <h5> others:  <input class="mo" type = "number"  name = "cleint_others" /><br/></h5>
                 <button style="width: 100px;" type="submit" class="submit" value"submit">Submit</button>
-        </form>
-
+                </form>
         </div>
-
         </div>
-
-        <!--======================================================-->
-
-        <div class="card-body">
-            <div class="grid-item">
-    
-
-        <h2> TAKING CHARGE OF YOUR FINANCE </h2>
-
-        <p>  This application will help keep tabs on your spending.
-                Simply enter your daily transactions and the app will
-                do the rest for you.
-        </p>
-
-        <img src="https://res.cloudinary.com/dcxluplnr/image/upload/v1713377510/025_tnxmdh.png" id="grid-small-img" alt="Monday Eseinone">
-    </div>
-    </div>
-    <!--======================================================-->
-<!--
-        <div class="card-body">
-            <div class="grid-item">
-                <br/>
-            <h1> Keep Track of your Expenses  </h1>
-
-            <p> This application help keep track of your income and Expenses
-              simply enter your daily transaction and the app will
-              do the rest for you
-            </p>
-            <img id="grid-small-img" src="static/images/015.jpg" alt="Monday Eseinone">
-
-          </div>
-        </div>-->
-
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->  <!-- grid items code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-<!--
-        <div class="card-body">
-            <div class="grid-item">
-                <br/>
-
-
-            <h1> Keep Track of your Expenses  </h1>
-
-            <p> This application help keep track of your income and Expenses
-              simply enter your daily transaction and the app will
-              do the rest for you
-            </p>
-            <img id="grid-small-img"  src="static/images/014.jpg" alt="Monday Eseinone">
-
-          </div>
-        </div>   -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->  <!-- grid items code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
- <!--     <div class="card-body">
-            <div class="grid-item">
-                <br/>
-
-          <h1>   Goals   </h1>
-          <img src="static/images/007.jpg" id="grid-small-img" alt="Monday Eseinone">
-          <p>    My goal is to serve the public, including friends and neighbour  with my  skills and talent.
-          it is my desire to always have solution to any challange that people around me might be facing, either in their
-          businesses or their personla life.
-
-
-          </p>
-
-            </div>
-        </div>   -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->  <!-- grid items code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-  <!--      <div class="card-body">
-            <div class="grid-item">
-                <br/>
-
-          <img src="static/images/015.jpg" id="grid-small-img"  alt="Monday Eseinone">
-          <h1> Creative  </h1>
-          <p>Building software to help solve a real life problem is our responsibility.
-          </p>
-        </div>
-        </div>  -->
-
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-</div>   <!--   Grid container ends here -->
+</div> 
 </section>
-<!-- ===============================  SECTION ONE  ENDS HERE =========================   -->
 
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
     <div class="card-body">
         <br/>
-                                <!-- Home page Welcome message   -->
-                <h2>  GOALS</h2>
 
-                <p id="padded-p">
-                         My major goal is to help as many Businesses and individuals as
-                         possible with the use of modern technology to achieve success in
-                         their business.
-                        I am passionate about making good use of the Python programming language,
-                         HTML and CSS to build dynamic websites, mobile responsive and interactive web apps,
-                        for the purpose of solving  real-life problems.
+        <h2>  GOALS</h2>
 
-                </p>
+        <p id="padded-p">
+                My major goal is to help as many Businesses and individuals as
+                possible with the use of modern technology to achieve success in
+                their business.
+                I am passionate about making good use of the Python programming language,
+                        HTML and CSS to build dynamic websites, mobile responsive and interactive web apps,
+                for the purpose of solving  real-life problems.</p>
 
-    </div> <!-- card body div closes here -->
+    </div>
     <br/>
 
 
-</div> <!-- container close here -->
+</div> 
 
 {% endblock %}

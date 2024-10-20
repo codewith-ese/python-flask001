@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}view all users{% endblock %}
+{% block content %}
+
+{% if error_statement %}
+<p>{{ error_statement }} </p>
+{% endif %}
+
+<div class="container">
+    <div class="card-body"> <div class="time_display">
+    <h1>  Calculate Your Expenses </h1>
+    </div> <!-- time ends here -->
+    <br/>
+
+    <div class="form-mabel">
+        <form  action="/finance_house" method = "POST">
+            <h2>Calculate your Expences</h2>
+
+            <h5> Name: <input type = "text" class="mo" name = "cleint_name" /><br/> </h5>
+            <h5> Income:<input class="mo" type = "number"  name = "cleint_income" /><br/></h5>
+            <h5> Tithe: <input type = "text" class="mo" name = "cleint_tithe" /><br/> </h5>
+            <h5> Feeding:<input class="mo" type = "number" name = "cleint_feeding" /><br/></h5>
+            <h5> Rent: <input class="mo"  type = "number"  name = "cleint_rent" /><br/></h5>
+            <h5> Eating out: <input class="mo" type = "number"  name = "cleint_out" /><br/></h5>
+            <h5> Soft Drink:  <input class="mo" type = "number"  name = "cleint_soft" /><br/></h5>
+            <h5> others:  <input class="mo" type = "number"  name = "cleint_others" /><br/></h5>
+            <button style="width: 100px;" type="submit" class="submit" value"submit">Submit</button>
+        </form>
+    </div>
+    <div class="grid-contaioner"></div>
+ <!--   Grid container ends here -->
+<div class="card-body">
+    <br/>
+    <!-- Home page Welcome message   -->
+    <h2>  GOALS</h2>
+    <p id="padded-p">
+        My major goal is to help as many Businesses and individuals as
+        possible with the use of modern technology to achieve success in
+        their business.
+        I am passionate about making good use of the Python programming language,
+            HTML and CSS to build dynamic websites, mobile responsive and interactive web apps,
+        for the purpose of solving  real-life problems.</p>
+    </div> <!-- card body div closes here -->
+    <br/>
+</div> <!-- container close here -->
+{% endblock %}

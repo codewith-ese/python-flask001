@@ -1,25 +1,18 @@
 {% extends "base.html" %}
 {% block title %}LOGIN PAGE {% endblock %}
 
-        {% block content %}
+{% block content %}
 
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for msg in messages %}
-                <p>{{msg}}</p>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {% for msg in messages %}
+    <p>{{msg}}</p>
+    {% endfor %}
+{% endif %}
+{% endwith %}
 
-    <div class="container">
-  <!--     {{ cleint_name }}
-        {{ cleint_income }}
-        {{ cleint_feeding }}
-        {{ cleint_rent }}
-        {{ cleint_out }}
-        {{ cleint_soft }}
-        {{ cleint_others }}  -->
-
+<div class="container">
+  
     <p style="background-color:
         green; border: 1px solid black;
         padding: 2px; text-align: center; color: white; width: 300px; box-shadow: 1px 1px 4px 2px;"> Income:   #{{ cleint_income }} || {{ total_percent_income }}% </p>
@@ -92,10 +85,8 @@
       </tr>
   </tbody>
       </table>
-
-      <!--  table new tow ends here -->
-
-            <!--   table 3 starts here -->
+    
+      <!--   table 3 starts here -->
     <table class="table table-dark table-striped">
 
         <thead>
@@ -133,32 +124,17 @@
                   </table>
 
                 </div>
-                <br/>
-                <br/>
 
- <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-        <!-- card content code goes here -->      <!-- This card will only display image -->
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+  <div class="card-body">
 
-       <div class="card-body">
+  <p id="padded-p2"> {{ cleint_name}} {{ user_savings }} </p>
 
-        <p id="padded-p2"> {{ cleint_name}} {{ user_savings }} </p>
+  <p id="padded-p2">  #{{ cleint_income}}  is  {{ total_percent_income }}% of your total Income.  </p>
+  <p id="padded-p2">  #{{ total_calulation }} is what is left from your income and it is {{ expences_percent }}%  after your expenses of  {{ cleint_expencse }} </p>
+  <p id="padded-p2">Please Note that you have just spent  {{ cleint_expencse }} which is  {{  expense_amount_percent }}% of your total Income  </p>
 
-        <p id="padded-p2">  #{{ cleint_income}}  is  {{ total_percent_income }}% of your total Income.  </p>
-        <p id="padded-p2">  #{{ total_calulation }} is what is left from your income and it is {{ expences_percent }}%  after your expenses of  {{ cleint_expencse }} </p>
-        <p id="padded-p2">Please Note that you have just spent  {{ cleint_expencse }} which is  {{  expense_amount_percent }}% of your total Income  </p>
-
-       
-       <br/>
-      </div>
-      <br/>
-
-      <div class="card-body">
-        <img src="static/images/028.png" id="grid-big-img"  alt="monday ese">
-            <br/>
-            <img src="static/images/003.jpg" id="grid-big-img" alt="monday ese">
-       </div>
-
-
-    </div>
-        {% endblock %}
+  
+  <br/>
+</div>
+</div>
+{% endblock %}
