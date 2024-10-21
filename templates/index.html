@@ -4,67 +4,46 @@
    
     <!-- Home page Welcome message  starts here -->
     <div class="hero"> <!-- hero class starts here -->
-        <img id="home-img" src="static/images/015.png" alt="home page image for background"> 
-        <h1> Welcome to My World of Code<br>Let's Build Something Together  </h1>  
+        <img id="home-img" src="static/images/bg1.webp" loading="lazy" alt="home page image for background"> 
+        <h1> Welcome to My World of Code<br>Let's Generate Cutting List Together  </h1>  
     </div>   <!-- hero class ends here -->
+    <!-- get in touch starts here  -->
+    <div id="get-touch">
+        <div class="get-touch-content">
+            <div class="row">
+                <h3>Quickly calculate measurements and generate</h3>
+                <p> a cutting list for any furniture project</p>
+            </div>
+            <div class="row">
+                <div class="button"><a href="{{ url_for('user_design')}}" class="button-exp"> Get Started &#8594;</a></div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <section>
-            <!--<h2>  CodeWith Ese <br/> WEBSITE AND SOFTWARE DEVELOPMENT <br/>
-                Turning creative ideas into real life solution is my main motivation </h2>-->
             <div class="grid-contaioner">
 
-                <!-- grid items code goes here -->
                 <div class="grid-item">
-                 
-                    <!--  <div class="line"></div> this empty div will creat line in this class -->
-                    <h2> Welcome to My World of Code</h2>   
-                    <img src="https://res.cloudinary.com/dcxluplnr/image/upload/v1700416114/IMG-20231105-WA0009-removebg-preview_cw9f4i.png" id="grid-profile-img" alt="Monday Eseinone"> 
-                    <p>I'm Monday Eseinone, and I'm excited to share
-                        my wood calculator project with you</p>
-                        <p> <a class="nav-link" href="{{ url_for('user_design')}}"> ➡️Get Started</a></p>
-                    <!--<h2 ><a href="{{ url_for('upload_file')}}" class="btn btn-primary"> Upload File </a> </h2>-->
-            
+                    <div class="grid-img-box">
+                        <img src="https://res.cloudinary.com/dcxluplnr/image/upload/v1700416114/IMG-20231105-WA0009-removebg-preview_cw9f4i.png" loading="lazy" id="grid-profile-img" alt="Monday Eseinone"> 
+                        <p> Monday Eseinon </p>
+                    </div>
                 </div>
 
 
                 <div class="grid-item">
-                    <!-- <div class="line"> </div> this empty div will creat line in this class -->
-                    <h2> Generate Your Cutting List </h2>
-                    <p>Quickly calculate measurements
-                         and generate a cutting list for any furniture project. 
-                         <br/>
-                         <p> <a class="nav-link" href="{{ url_for('user_design')}}"> ➡️Get Started</a></p>
-                         <br/>
-                         
+                    <h2> Let's Build Something Together</h2>
                          <b><i> Let's Build Something Together</i> </b>
-                         <br/> Feel free to explore my website, where I'll be sharing my projects,
+                         <br/>  Quickly calculate measurements
+                         and generate a cutting list for any furniture project. Feel free to explore my website, where I'll be sharing my projects,
                          experiences, and insights in the world of software development.
                           I'm excited to collaborate, share ideas, and explore opportunities
                            for mutual growth and success. Let's connect and build something 
                            amazing together!</p>
-                    <p><a class="nav-link" href="{{ url_for('minor')}}"> Videos </a></p>
-                </div>
-                <div class="grid-item">
-                  
-                   <!--  <div class="line"></div> this empty div will creat line in this class -->
-                    <h2> Let's Build Something Together</h2>
-                    <p> Feel free to explore my website, where I'll be sharing my projects,
-                         experiences, and insights in the world of software development.
-                          I'm excited to collaborate, share ideas, and explore opportunities
-                           for mutual growth and success. Let's connect and build something 
-                           amazing together! </p>
-                    <!--<img  src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Thumbnail/v1713377500/022_wanvui.png" id="grid-small-img"  alt="Monday Eseinone">-->
-                </div>
+                           <p> <a class="nav-link" href="{{ url_for('user_design')}}"> ➡️Get Started</a></p>
 
-                <!-- grid items code goes here -->
-                <div class="grid-item">
-                    <h2> Dynamic Website   </h2>
-                    <!-- <div class="line"></div> this empty div will creat line in this class -->
-                    <img src="static/images/009.jpg" id="grid-small-img" alt="Monday Eseinone">
-                    <p> Every business needs a website to
-                       grow and to expand their reach to potential clients around the
-                       world. </p>
                 </div>
+ 
 
             </div>
         </section>

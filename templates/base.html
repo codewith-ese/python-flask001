@@ -23,15 +23,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    <!--<title> Home| Monday Eseinone  </title>-->
+    <title> Home| Monday Eseinone  </title>
 
-    <title>
-        {% block title %}Home| Monday Eseinone {% endblock %}
-    </title>
 </head>
     <body>
         <header>
-            <h1> <i>Factory Assistance - Wood Calculator</i></h1>
+            <h1> <i>Factory Assistance</i></h1>
             <button type="button" id="menu"></button>
             <nav class="navigation">
                 <a class="active" href="{{ url_for('index')}}">Home</a>
@@ -39,48 +36,21 @@
                 <a  href="{{ url_for('contact')}}"> Contact</a>
                 <a  href="{{ url_for('stools')}}"> Stools</a>
                 <a  href="{{ url_for('user_design')}}"> Cutting </a>
-                <a  href="{{ url_for('add_item')}}"> Add_Item </a>
+                <!--<a  href="{{ url_for('add_item')}}"> Add_Item </a>-->
                 <a  href="{{ url_for('mabel_cal')}}"> Mabel Calc </a>
                 
             </nav>
         </header>
-        <!-- <header> Change from Bootstrap navigation bar to 
-                        html, css and javascript. 4th Octomber 2024
-            <h1> <i>Factory Assistance - Wood Calculator</i></h1>
-            
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">MD</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="{{ url_for('index')}}">Home</a>
-                            <a class="nav-link"  href="/about">About</a>
-                            <a class="nav-link" href="{{ url_for('contact')}}"> Contact</a>
-                            <a class="nav-link" href="{{ url_for('stools')}}"> Side Stool / Table</a>
-                            <a class="nav-link" href="{{ url_for('user_design')}}"> All Furniture / Measurement</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header> -->
-        <div class="container">
-            <!--<h2> EseFlow-Tech  </h2>-->
-            
-            {% block content %}
-            
-            {% endblock %}
-
-        </div> <!-- container div  code ends here -->
+        <div class="container">  
+        {% block content %}
+        
+        {% endblock %}
+        </div> 
 
         <!-- Footers code starts here  -->
-
         <footer>
             <div class="footer-grid">
                 <div class="footer-grid-item">
-                    <!--<img src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Profile/v1712531830/018_ar8inb.png" alt="Monday eseinone" width="30" height="30">-->
                     <img src="static/images/001.jpg" alt="Monday eseinone" width="30" height="30">
                     <h4> Ese-Tech</h4>
                     <p><b>App Developement</b></p>
@@ -91,12 +61,10 @@
                 <img src="https://res.cloudinary.com/dcxluplnr/image/upload/t_Profile/v1712532127/017_w9jkhi.png"  alt="Monday eseinone" width="30" height="30">
                 
                 <h4>Quick Links </h4>
-
                     <a href="{{ url_for('about')}}"> <p id="colored_p"><b>About Us</b></p></a>
                     <a href="{{ url_for('about')}}"> <p id="colored_policy">Privacy Policy</p></a>
                     <a href="{{ url_for('about')}}"> <p id="colored_terms">Terms & Conditions</p></a>
-                <br>
-                
+                <br>     
                 <div class="copyright-d">
                     <hr style="color: wheat; length: 100px;">
                     <p id="colored_copyright">COPYRIGHT© 2023-MondayEseinone</p>
@@ -110,12 +78,6 @@
                 <p><b>Email:</b><i> eesinone@gmail.com</i></p>
                 <p><b>Address:</b><i> Lagos Nigeria  </i></p>
                 <br/>
-                <!--<div class="copyright-mobile">
-                    <hr style="color: red; length: 100px;">
-                    <p id="colored_p">COPYRIGHT© 2023-EseFlow-Tech   </p>
-                    <p>🗽Codewith-ese  🗽 Monday Erirore Eseinone 🗽 Nigeria Lagos🗽 </p>
-                </div>-->
-
             </div> 
         </div>
             <div class="footer-bottom">
@@ -131,16 +93,12 @@
                         🗽Codewith-ese  🗽 Monday Erirore Eseinone 🗽 Nigeria Lagos🗽   </p>
             
                 </div>
-
-
             </div>
     
         </footer><!-- footers class ends her -->
             <link rel="stylesheet" href="{{ url_for('static', filename ='/css/style.css')}}">
             <link rel="stylesheet" href="{{ url_for('static', filename ='/css/large-view.css')}}">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
     </body>
-
 </html>
 
